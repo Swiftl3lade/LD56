@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Project._Scripts
@@ -19,12 +20,16 @@ namespace _Project._Scripts
         [Header("PowerUp")]
         [SerializeField] private float powerUpRate;
 
+        [SerializeField] private ParticleSystem explosionParticles;
+
+        private Rigidbody _rigidbody;
+        private CarController _carController;
         private bool _isDestroyed;
         
         // Start is called before the first frame update
         void Start()
         {
-            currentHealth = maxHealth;
+            Reset();
         }
 
         // Update is called once per frame
@@ -34,22 +39,34 @@ namespace _Project._Scripts
             {
                 return;
             }
-            
-            if (currentHealth <= 0)
-            {
-                _isDestroyed = true;
-            }
         }
 
         public void TakeDamage(float damageReceived)
         {
-            currentHealth = damageReceived - endurance * enduranceModifier;
-            print(currentHealth);
+            currentHealth -= damageReceived - endurance * enduranceModifier;
+            if (currentHealth <= 0)
+            {
+                Destroy();
+            }
         }
 
         public float DealDamage()
         {
             return damage * currentSpeed * speedModifier;
+        }
+
+        public void Reset()
+        {
+            currentHealth = maxHealth;
+            _rigidbody.constraints = RigidbodyConstraints.None;
+        }
+
+        private void Destroy()
+        {
+            _carController.enabled = false;
+            _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            explosionParticles.Play();
+            _isDestroyed = true;
         }
     }
 }
