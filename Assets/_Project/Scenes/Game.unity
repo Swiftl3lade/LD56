@@ -3608,7 +3608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.122685164, y: 0.6963824, z: -0.12268518, w: 0.69638234}
+  m_LocalRotation: {x: 0.122685164, y: 0.69638234, z: -0.122685164, w: 0.69638234}
   m_LocalPosition: {x: -19.249994, y: 9.02, z: 41.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6615,7 +6615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530634978}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.122685164, y: 0.6963824, z: -0.12268518, w: 0.69638234}
+  m_LocalRotation: {x: 0.122685164, y: 0.69638234, z: -0.122685164, w: 0.69638234}
   m_LocalPosition: {x: -19.249994, y: 9.02, z: 41.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11511,7 +11511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 4, z: -11}
-  m_XDamping: 0
+  m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
   m_AngularDampingMode: 0
@@ -20628,90 +20628,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 482899772643548945, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 482899772643548945, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 482899772643548945, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 8000
-      objectReference: {fileID: 0}
-    - target: {fileID: 482899772643548945, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 2.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1456175256563379306, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1456175256563379306, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1456175256563379306, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 8000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1456175256563379306, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 2.4
-      objectReference: {fileID: 0}
     - target: {fileID: 4138642040287103192, guid: 52ebf2b93bb2d784ca42368bf593c03e,
         type: 3}
       propertyPath: m_Name
       value: SR_Veh_DerbyCar_Lime
-      objectReference: {fileID: 0}
-    - target: {fileID: 6596759095320304299, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6596759095320304299, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6596759095320304299, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 8000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6596759095320304299, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 2.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8005968442471881169, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8005968442471881169, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8005968442471881169, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 8000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8005968442471881169, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8226234485480654336, guid: 52ebf2b93bb2d784ca42368bf593c03e,
         type: 3}
