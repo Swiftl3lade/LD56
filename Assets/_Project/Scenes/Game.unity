@@ -20760,7 +20760,7 @@ PrefabInstance:
     - target: {fileID: 4138642040287103192, guid: 52ebf2b93bb2d784ca42368bf593c03e,
         type: 3}
       propertyPath: m_Name
-      value: SR_Veh_DerbyCar_Lime
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8226234485480654336, guid: 52ebf2b93bb2d784ca42368bf593c03e,
         type: 3}
@@ -20811,11 +20811,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8585138413347912411, guid: 52ebf2b93bb2d784ca42368bf593c03e,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
