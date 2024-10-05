@@ -249,7 +249,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 3.3261147, y: 1.484405, z: 5.166328}
   m_Center: {x: 0.0000019073486, y: 1.6347988, z: -0.0020794868}
@@ -270,7 +270,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -287,18 +287,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8ec8dfdfab980428e719f4d51e96d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontLeftWheelCollider: {fileID: 9073829402299863216}
-  frontRightWheelCollider: {fileID: 558570923098721251}
-  rearLeftWheelCollider: {fileID: 5535878119764889907}
-  rearRightWheelCollider: {fileID: 813983799758350736}
-  frontLeftWheelTransform: {fileID: 5588552577225359619}
-  frontRightWheelTransform: {fileID: 309528126369793285}
-  rearLeftWheelTransform: {fileID: 5393283139857660288}
-  rearRightWheelTransform: {fileID: 6437301183531080167}
-  motorForce: 3000
+  maxAcceleration: 30
+  brakeAcceleration: 50
+  turnSensitivity: 1
   maxSteerAngle: 30
-  breakForce: 9000
+  centerOfMass: {x: 0, y: 0, z: 0}
+  wheels: []
   angleErrorMargin: 0.5
+  turnFactor: 90
 --- !u!114 &6497967082040203883
 MonoBehaviour:
   m_ObjectHideFlags: 0

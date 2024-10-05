@@ -3,14 +3,13 @@ using UnityEngine;
 
 namespace AI
 {
-    public class MeleEnemyInput : CarController
+    public class MeleeEnemyInput : CarController
     {
-        SpringHandler springHandler;
-        [SerializeField] float angleErrorMargin = 0.1f;
+        [SerializeField] private float angleErrorMargin = 0.1f;
+        [SerializeField] private float turnFactor = 90;
 
-        Vector3 previousVector = Vector3.zero;
-
-        [SerializeField] float turnFactor = 90;
+        private SpringHandler springHandler;
+        private Vector3 previousVector = Vector3.zero;
 
         private void Start()
         {
@@ -71,14 +70,13 @@ namespace AI
             {
                 return 1f;
             }
-            else if (dir < -errorMargin)
+            
+            if (dir < -errorMargin)
             {
                 return -1f;
             }
-            else
-            {
-                return 0f;
-            }
+            
+            return 0f;
         }
 
         private void OnDrawGizmos()

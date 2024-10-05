@@ -58,9 +58,27 @@ public class CarController : MonoBehaviour
 
     private void Move()
     {
-        foreach(var wheel in wheels)
+        // Get the current speed of the car
+        float currentSpeed = carRigidbody.velocity.magnitude;
+
+        foreach (var wheel in wheels)
         {
-            wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * Time.deltaTime;
+            // Only apply motor torque to wheels on the rear axle
+            if (wheel.axel == Axel.Rear)
+            {
+                // If the current speed is less than maxSpeed, allow acceleration
+                if (currentSpeed < maxSpeed)
+                {
+                    // Apply motor torque proportional to the current speed for smooth acceleration
+                    float torque = moveInput * maxAcceleration * (1 - (currentSpeed / maxSpeed));
+                    wheel.wheelCollider.motorTorque = torque;
+                }
+                else
+                {
+                    // If speed exceeds maxSpeed, stop applying motor torque
+                    wheel.wheelCollider.motorTorque = 0;
+                }
+            }
         }
     }
 
@@ -71,7 +89,8 @@ public class CarController : MonoBehaviour
             if (wheel.axel == Axel.Front)
             {
                 var steerAngle = steerInput * turnSensitivity * maxSteerAngle;
-                wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, steerAngle, 0.6f);
+                // wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, steerAngle, 0.6f);
+                wheel.wheelCollider.steerAngle = steerAngle;
             }
         }
     }
@@ -94,7 +113,11 @@ public class CarController : MonoBehaviour
         {
             foreach (var wheel in wheels)
             {
-                wheel.wheelCollider.brakeTorque = 300 * brakeAcceleration * Time.deltaTime;
+                if (wheel.axel == Axel.Rear)
+                {
+                    // Apply brake torque only to the rear wheels
+                    wheel.wheelCollider.brakeTorque = 300 * brakeAcceleration * Time.deltaTime;
+                }
             }
         }
         else

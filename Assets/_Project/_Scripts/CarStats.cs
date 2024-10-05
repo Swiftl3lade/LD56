@@ -29,6 +29,9 @@ namespace _Project._Scripts
         // Start is called before the first frame update
         void Start()
         {
+            _rigidbody = GetComponent<Rigidbody>();
+            _carController = GetComponent<CarController>();
+            
             Reset();
         }
 

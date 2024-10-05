@@ -37,7 +37,7 @@ public class Controller : MonoBehaviour
     [SerializeField] private float deceleration = 10f;
     [SerializeField] private float steerStrength = 15f;
     [SerializeField] private AnimationCurve turningCurve;
-    [SerializeField] private float dragCoeficient;
+    [SerializeField] private float dragCoefficient;
 
     private Vector3 currentCarLocalVelocity = Vector3.zero;
     private float carVelocityRatio = 0;
@@ -123,8 +123,11 @@ public class Controller : MonoBehaviour
 
     private void GetPlayerInput()
     {
-        moveInput = Input.GetAxis("Vertical");
-        steerInput = Input.GetAxis("Horizontal");
+        // if (isGrounded)
+        // {
+            moveInput = Input.GetAxis("Vertical");
+            steerInput = Input.GetAxis("Horizontal");
+        // }
     }
 
     private void CalculateCarVelocity()
@@ -142,6 +145,7 @@ public class Controller : MonoBehaviour
             Turn();
             SidewaysDrag();
         }
+        
     }
 
     private void Acceleration()
@@ -163,7 +167,7 @@ public class Controller : MonoBehaviour
     {
         float currentSidewaysSpeed = currentCarLocalVelocity.x;
 
-        float dragForceMagnitude = -currentSidewaysSpeed * dragCoeficient;
+        float dragForceMagnitude = -currentSidewaysSpeed * dragCoefficient;
 
         Vector3 dragForce = transform.right * dragForceMagnitude;
         
@@ -219,22 +223,22 @@ public class Controller : MonoBehaviour
     {
         foreach (var skidMark in skidMarks)
         {
-            skidMark.emitting = toggle;
+            // skidMark.emitting = toggle;
         }
     }
     
     private void ToggleSkidSmokes(bool toggle)
     {
-        foreach (var smoke in skidSmokes)
-        {
-            if (toggle)
-            {
-                smoke.Play();
-            }
-            else
-            {
-                smoke.Stop();
-            }
-        }
+        // foreach (var smoke in skidSmokes)
+        // {
+        //     if (toggle)
+        //     {
+        //         smoke.Play();
+        //     }
+        //     else
+        //     {
+        //         smoke.Stop();
+        //     }
+        // }
     }
 }
