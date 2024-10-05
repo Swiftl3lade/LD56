@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _Project._Scripts
 {
@@ -25,6 +26,9 @@ namespace _Project._Scripts
         private Rigidbody _rigidbody;
         private CarController _carController;
         private bool _isDestroyed;
+
+        public Action<TakeDamageEventObj> takeDamage;
+        public Action<DestroyedEventObj> destroyed;
         
         // Start is called before the first frame update
         void Start()
@@ -47,6 +51,7 @@ namespace _Project._Scripts
         public void TakeDamage(float damageReceived)
         {
             currentHealth -= damageReceived - endurance * enduranceModifier;
+            takeDamage?.Invoke(new TakeDamageEventObj(damageReceived));
             if (currentHealth <= 0)
             {
                 Destroy();
@@ -70,6 +75,7 @@ namespace _Project._Scripts
             _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             explosionParticles.Play();
             _isDestroyed = true;
+            destroyed?.Invoke(new DestroyedEventObj());
         }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace AI
 {
-    public class MeleeEnemyInput : CarController
+    public class MeleeEnemyInput : Controller
     {
         [SerializeField] private float angleErrorMargin = 0.1f;
         [SerializeField] private float turnFactor = 90;
@@ -11,27 +11,18 @@ namespace AI
         private SpringHandler springHandler;
         private Vector3 previousVector = Vector3.zero;
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             springHandler = new SpringHandler(GetComponents<SpringComponent>().Where(x => x.Data.SpringTag != SpringEnum.overrideE).ToList());
         }
 
-        void Update()
-        {
-            if (springHandler == null)
-            {
-                Debug.LogError("No Spring Data Object");
-                return;
-            }
-
-            var _vector = springHandler.CalculateDirectionVector();
-        }
-
-        protected override void GetInputs()
+        protected override void GetPlayerInput()
         {
             var _vector = springHandler.CalculateDirectionVector();
             steerInput = SetSteering(_vector);
-            moveInput = SetAcceleration(_vector);
+            //Debug.Log(steerInput);
+            moveInput = 1;//SetAcceleration(_vector);
             //isBreaking = (verticalInput <= 0);
         }
 

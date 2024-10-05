@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpringEntity : MonoBehaviour
 {
-	[field: SerializeField] public SpringEnum springTag { get; private set; } = SpringEnum.melee;
+	[field: SerializeField] public SpringEnum springTag { get; private set; } = SpringEnum.walls;
 	private void Start()
 	{
 		if (springTag == SpringEnum.overrideE)
@@ -30,7 +30,7 @@ public enum SpringEnum
 {
 	overrideE,
 	player,
-	melee,
+	walls,
 	danger,
 	solid,
 	pickup

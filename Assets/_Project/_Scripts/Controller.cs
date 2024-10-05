@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    [Header("References")] 
-    
+    [Header("References")]
+
     [SerializeField] private Rigidbody carRB;
     [SerializeField] private Transform[] rayPoints;
     [SerializeField] private LayerMask driveable;
@@ -16,8 +16,8 @@ public class Controller : MonoBehaviour
     [SerializeField] private TrailRenderer[] skidMarks = new TrailRenderer[2];
     [SerializeField] private ParticleSystem[] skidSmokes = new ParticleSystem[2];
 
-    [Header("Suspension Settings")] 
-    
+    [Header("Suspension Settings")]
+
     [SerializeField] private float springStiffness;
     [SerializeField] private float damperStiffness;
     [SerializeField] private float restLength;
@@ -27,11 +27,11 @@ public class Controller : MonoBehaviour
     private int[] wheelIsGrounded = new int[4];
     private bool isGrounded = false;
 
-    [Header("Input")] 
-    private float moveInput = 0;
-    private float steerInput = 0;
+    [Header("Input")]
+    protected float moveInput = 0;
+    protected float steerInput = 0;
 
-    [Header("Car Settings")] 
+    [Header("Car Settings")]
     [SerializeField] private float acceleration = 25f;
     [SerializeField] private float maxSpeed = 100f;
     [SerializeField] private float deceleration = 10f;
@@ -42,12 +42,12 @@ public class Controller : MonoBehaviour
     private Vector3 currentCarLocalVelocity = Vector3.zero;
     private float carVelocityRatio = 0;
 
-    [Header("Visuals")] 
+    [Header("Visuals")]
     [SerializeField] private float tireRotationSpeed = 3000f;
     [SerializeField] private float maxSteeringAngle = 30f;
     [SerializeField] private float minSideSkidVelocity = 10f;
 
-    private void Start()
+    protected virtual void Start()
     {
         carRB = GetComponent<Rigidbody>();
     }
@@ -76,26 +76,26 @@ public class Controller : MonoBehaviour
             if (Physics.Raycast(rayPoints[i].position, -rayPoints[i].up, out hit, maxLength + wheelRadius, driveable))
             {
                 wheelIsGrounded[i] = 1;
-                
+
                 float currentSpringLength = hit.distance - wheelRadius;
                 float springCompression = (restLength - currentSpringLength) / springTravel;
 
                 float springVelocity = Vector3.Dot(carRB.GetPointVelocity(rayPoints[i].position), rayPoints[i].up);
                 float dampForce = damperStiffness * springVelocity;
-                    
+
                 float springForce = springStiffness * springCompression;
 
                 float netForce = springForce - dampForce;
-                
+
                 carRB.AddForceAtPosition(netForce * rayPoints[i].up, rayPoints[i].position);
-                
+
                 SetTirePosition(tires[i], hit.point + rayPoints[i].up * wheelRadius);
                 Debug.DrawLine(rayPoints[i].position, hit.point, Color.red);
             }
             else
             {
                 wheelIsGrounded[i] = 0;
-                
+
                 SetTirePosition(tires[i], rayPoints[i].position - rayPoints[i].up * (maxLength / 1.5f));
                 Debug.DrawLine(rayPoints[i].position, rayPoints[i].position + (maxLength + wheelRadius) * -rayPoints[i].up, Color.green);
             }
@@ -121,12 +121,27 @@ public class Controller : MonoBehaviour
         }
     }
 
-    private void GetPlayerInput()
+    protected virtual void GetPlayerInput()
     {
         // if (isGrounded)
         // {
-            moveInput = Input.GetAxis("Vertical");
-            steerInput = Input.GetAxis("Horizontal");
+        moveInput = Input.GetAxis("Vertical");
+        Debug.Log(moveInput);
+        steerInput = Input.GetAxis("Horizontal");
+
+        if (moveInput > 0 && carRB.velocity.z < 0)
+        {
+            carRB.drag = 5;
+            return;
+        }
+
+        if (moveInput <= 0 && carRB.velocity.z > 0)
+        {
+            carRB.drag = 5;
+            return;
+        }
+
+        carRB.drag = 0;
         // }
     }
 
@@ -145,7 +160,7 @@ public class Controller : MonoBehaviour
             Turn();
             SidewaysDrag();
         }
-        
+
     }
 
     private void Acceleration()
@@ -160,7 +175,7 @@ public class Controller : MonoBehaviour
 
     private void Turn()
     {
-        carRB.AddRelativeTorque (steerStrength * steerInput * turningCurve.Evaluate(Mathf.Abs(carVelocityRatio)) * Mathf.Sign(carVelocityRatio) * carRB.transform.up, ForceMode.Acceleration);
+        carRB.AddRelativeTorque(steerStrength * steerInput * turningCurve.Evaluate(Mathf.Abs(carVelocityRatio)) * Mathf.Sign(carVelocityRatio) * carRB.transform.up, ForceMode.Acceleration);
     }
 
     private void SidewaysDrag()
@@ -170,7 +185,7 @@ public class Controller : MonoBehaviour
         float dragForceMagnitude = -currentSidewaysSpeed * dragCoefficient;
 
         Vector3 dragForce = transform.right * dragForceMagnitude;
-        
+
         carRB.AddForceAtPosition(dragForce, carRB.worldCenterOfMass, ForceMode.Acceleration);
     }
 
@@ -188,7 +203,7 @@ public class Controller : MonoBehaviour
     private void TireVisuals()
     {
         float steeringAngle = maxSteeringAngle * steerInput;
-        
+
         for (int i = 0; i < tires.Length; i++)
         {
             if (i < 2)
@@ -226,7 +241,7 @@ public class Controller : MonoBehaviour
             // skidMark.emitting = toggle;
         }
     }
-    
+
     private void ToggleSkidSmokes(bool toggle)
     {
         // foreach (var smoke in skidSmokes)
