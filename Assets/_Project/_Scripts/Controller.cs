@@ -203,7 +203,7 @@ public class Controller : MonoBehaviour
 
     private void Vfx()
     {
-        if (isGrounded && currentCarLocalVelocity.x > minSideSkidVelocity)
+        if (isGrounded && Mathf.Abs(currentCarLocalVelocity.x) > minSideSkidVelocity)
         {
             ToggleSkidMarks(true);
             ToggleSkidSmokes(true);
