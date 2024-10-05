@@ -1,84 +1,92 @@
+using System.Linq;
 using UnityEngine;
 
-public class MeleEnemyInput : InputHandler
+public class MeleEnemyInput : CarController
 {
-	[SerializeField] float angleErrorMargin = 0.1f;
+    SpringHandler springHandler;
+    [SerializeField] float angleErrorMargin = 0.1f;
 
-	Vector3 previousVector = Vector3.zero;
+    Vector3 previousVector = Vector3.zero;
 
-	public float turnFactor { get; set; }
+    [SerializeField] float turnFactor = 90;
 
-	void Update()
-	{
-		if (springHandler == null)
-		{
-			Debug.LogError("No Spring Data Object");
-			return;
-		}
+    private void Start()
+    {
+        springHandler = new SpringHandler(GetComponents<SpringComponent>().Where(x => x.Data.SpringTag != SpringEnum.overrideE).ToList());
+    }
 
-		var _vector = springHandler.CalculateDirectionVector();
+    void Update()
+    {
+        if (springHandler == null)
+        {
+            Debug.LogError("No Spring Data Object");
+            return;
+        }
 
-		SetAcceleration(_vector);
+        var _vector = springHandler.CalculateDirectionVector();
+    }
 
-		SetSteering(_vector);
-	}
+    protected override void GetInputs()
+    {
+        var _vector = springHandler.CalculateDirectionVector();
+        steerInput = SetSteering(_vector);
+        moveInput = SetAcceleration(_vector);
+        //isBreaking = (verticalInput <= 0);
+    }
 
-	void SetAcceleration(Vector3 _direction)
-	{
-		var _horizontalDir = AngleDir(transform.right, _direction, Vector3.forward, angleErrorMargin);
+    float SetAcceleration(Vector3 _direction)
+    {
+        var _horizontalDir = -AngleDir(transform.right, _direction, Vector3.up, angleErrorMargin);
 
-		if (_horizontalDir > 0)
-		{
-			SetYInput(1);
-			return;
-		}
+        if (_horizontalDir != 0)
+        {
+            return 1;
+        }
 
-		SetYInput(-1);
-	}
+        return -1;
+    }
 
-	void SetSteering(Vector3 _direction)
-	{
-		var _dir = -AngleDir(transform.up, _direction, Vector3.forward, angleErrorMargin);
+    float SetSteering(Vector3 _direction)
+    {
+        var _dir = AngleDir(transform.forward, _direction, Vector3.up, angleErrorMargin);
 
-		var _angle = Vector3.Angle(transform.up, _direction);
+        var _angle = Vector3.Angle(transform.up, _direction);
 
-		if (_angle <= turnFactor)       //Keep the enemy from passing the desired rotation
-		{
-			SetXInput(Mathf.Clamp(_dir * _angle / turnFactor, -1, 1));
-			return;
-		}
+        if (_angle <= turnFactor)       //Keep the enemy from passing the desired rotation
+        {
+            return Mathf.Clamp(_dir * _angle / turnFactor, -1, 1);
+        }
 
-		SetXInput(_dir);
-	}
+        return _dir;
+    }
 
-	float AngleDir(Vector3 fwd, Vector3 targetDir, Vector3 up, float errorMargin) //-1 if to the left, 1 if to the right
-	{
-		Vector3 perp = Vector3.Cross(fwd, targetDir);
-		float dir = Vector3.Dot(perp, up);
+    float AngleDir(Vector3 fwd, Vector3 targetDir, Vector3 up, float errorMargin) //-1 if to the left, 1 if to the right
+    {
+        Vector3 perp = Vector3.Cross(fwd, targetDir);
+        float dir = Vector3.Dot(perp, up);
 
-		if (dir > errorMargin)
-		{
-			return 1f;
-		}
-		else if (dir < -errorMargin)
-		{
-			return -1f;
-		}
-		else
-		{
-			return 0f;
-		}
-	}
+        if (dir > errorMargin)
+        {
+            return 1f;
+        }
+        else if (dir < -errorMargin)
+        {
+            return -1f;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
 
-
-	private void OnDrawGizmos()
-	{
-		if (Application.isPlaying && springHandler != null)
-		{
-			var _direction = springHandler.CalculateDirectionVector();
-			Gizmos.color = Color.red;
-			Gizmos.DrawLine(transform.position, transform.position + _direction * 15);
-			Gizmos.DrawLine(transform.position, transform.position + transform.forward * 15);
-		}
-	}
+    private void OnDrawGizmos()
+    {
+        if (Application.isPlaying && springHandler != null)
+        {
+            var _direction = springHandler.CalculateDirectionVector();
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, transform.position + _direction * 15);
+            Gizmos.DrawLine(transform.position, transform.position + transform.forward * 15);
+        }
+    }
 }
