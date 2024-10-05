@@ -30,8 +30,8 @@ public class CarController : MonoBehaviour
 
     public List<Wheel> wheels;
 
-    private float moveInput;
-    private float steerInput;
+    protected float moveInput;
+    protected float steerInput;
     
     private Rigidbody carRigidbody;
 
@@ -48,10 +48,9 @@ public class CarController : MonoBehaviour
         Move();
         Steer();
         Brake();
-        
     }
 
-    private void GetInputs()
+    protected virtual void GetInputs()
     {
         moveInput = Input.GetAxis("Vertical");
         steerInput = Input.GetAxis("Horizontal");
@@ -59,34 +58,19 @@ public class CarController : MonoBehaviour
 
     private void Move()
     {
-        float currentSpeed = carRigidbody.velocity.magnitude;
-
-        if (currentSpeed < maxSpeed)
+        foreach(var wheel in wheels)
         {
-            foreach (var wheel in wheels)
-            {
-                wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * Time.deltaTime;
-            }
-        }
-        else
-        {
-            foreach (var wheel in wheels)
-            {
-                wheel.wheelCollider.motorTorque = 0;
-            }
+            wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * Time.deltaTime;
         }
     }
 
     private void Steer()
     {
-        float speedFactor = carRigidbody.velocity.magnitude / 100f; 
-        float adjustedMaxSteerAngle = Mathf.Lerp(maxSteerAngle, maxSteerAngle / 2f, speedFactor);
-
-        foreach (var wheel in wheels)
+        foreach(var wheel in wheels)
         {
             if (wheel.axel == Axel.Front)
             {
-                var steerAngle = steerInput * turnSensitivity * adjustedMaxSteerAngle;
+                var steerAngle = steerInput * turnSensitivity * maxSteerAngle;
                 wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, steerAngle, 0.6f);
             }
         }
@@ -111,19 +95,6 @@ public class CarController : MonoBehaviour
             foreach (var wheel in wheels)
             {
                 wheel.wheelCollider.brakeTorque = 300 * brakeAcceleration * Time.deltaTime;
-                
-                if (wheel.axel == Axel.Rear)
-                {
-                    WheelFrictionCurve sidewaysFriction = wheel.wheelCollider.sidewaysFriction;
-                    sidewaysFriction.extremumValue = 0.1f; // Lower grip during drift
-                    sidewaysFriction.asymptoteValue = 0.1f; // Allow more sliding
-                    wheel.wheelCollider.sidewaysFriction = sidewaysFriction;
-
-                    WheelFrictionCurve forwardFriction = wheel.wheelCollider.forwardFriction;
-                    forwardFriction.extremumValue = 0.1f;
-                    forwardFriction.asymptoteValue = 0.1f;
-                    wheel.wheelCollider.forwardFriction = forwardFriction;
-                }
             }
         }
         else
@@ -131,19 +102,7 @@ public class CarController : MonoBehaviour
             foreach (var wheel in wheels)
             {
                 wheel.wheelCollider.brakeTorque = 0;
-
-                WheelFrictionCurve sidewaysFriction = wheel.wheelCollider.sidewaysFriction;
-                sidewaysFriction.extremumValue = 1f; 
-                sidewaysFriction.asymptoteValue = 0.5f;
-                wheel.wheelCollider.sidewaysFriction = sidewaysFriction;
-
-                WheelFrictionCurve forwardFriction = wheel.wheelCollider.forwardFriction;
-                forwardFriction.extremumValue = 1f;
-                forwardFriction.asymptoteValue = 0.5f;
-                wheel.wheelCollider.forwardFriction = forwardFriction;
             }
         }
     }
 }
-
-

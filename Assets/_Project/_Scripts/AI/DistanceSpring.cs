@@ -13,7 +13,7 @@ public class DistanceSpring : SpringComponent
 		var _dist = Vector3.Distance(checkOriginPoint.position, targetPosition);
 		var _vector = (targetPosition - (Vector3)transform.position).normalized;
 
-		var _lerping =  (_dist >= 1 ? _dist : 1)/5;
+		var _lerping =  (_dist >= 1 ? _dist : 1)/7;
 
 
 		if (_dist > Data.MinDistance && _dist < Data.MaxDistance)
