@@ -29,8 +29,8 @@ public class CarController : MonoBehaviour
 
     public List<Wheel> wheels;
 
-    private float moveInput;
-    private float steerInput;
+    protected float moveInput;
+    protected float steerInput;
     
     private Rigidbody carRigidbody;
 
@@ -56,7 +56,7 @@ public class CarController : MonoBehaviour
         // Brake();
     }
 
-    private void GetInputs()
+    protected virtual void GetInputs()
     {
         moveInput = Input.GetAxis("Vertical");
         steerInput = Input.GetAxis("Horizontal");

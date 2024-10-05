@@ -26,12 +26,11 @@ public class MeleEnemyInput : CarController
         var _vector = springHandler.CalculateDirectionVector();
     }
 
-    protected override void GetInput()
+    protected override void GetInputs()
     {
         var _vector = springHandler.CalculateDirectionVector();
-        horizontalInput = SetSteering(_vector);
-        verticalInput = SetAcceleration(_vector);
-        Debug.Log(verticalInput);
+        steerInput = SetSteering(_vector);
+        moveInput = SetAcceleration(_vector);
         //isBreaking = (verticalInput <= 0);
     }
 
