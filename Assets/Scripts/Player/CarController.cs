@@ -5,8 +5,8 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     [Header("Input")]
-    private float horizontalInput;
-    private float verticalInput;
+    protected float horizontalInput;
+    protected float verticalInput;
     private Vector2 movementVector;
 
     [Header("WheelColliders")] 
@@ -27,7 +27,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private float breakForce;
     private float currentSteerAngle;
     private float currentBreakForce;
-    private bool isBreaking;
+    protected bool isBreaking;
 
     
     private void FixedUpdate()
@@ -38,7 +38,7 @@ public class CarController : MonoBehaviour
         UpdateWheelsVisuals();
     }
 
-    private void GetInput()
+    protected virtual void GetInput()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");

@@ -21,7 +21,7 @@ public abstract class SpringComponent : MonoBehaviour
 		foreach (var entity in SpringManager.EntityDict[Data.SpringTag])
 		{
 			_finalVector += SpringEval(entity.transform.position);
-			//_finalVector.Normalize();
+			_finalVector.Normalize();
 		}
 
 		return _finalVector;
