@@ -48,10 +48,9 @@ GameObject:
   - component: {fileID: 762972531957963949}
   - component: {fileID: 7093927143208889062}
   - component: {fileID: 8585138413347912411}
-  - component: {fileID: 6099514476882654449}
   - component: {fileID: 7647744212152372130}
   m_Layer: 0
-  m_Name: SR_Veh_DerbyCar_Lime
+  m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,17 +135,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792efde2d39a154468f509212cd49c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontLeftWheelCollider: {fileID: 8005968442471881169}
-  frontRightWheelCollider: {fileID: 1456175256563379306}
-  rearLeftWheelCollider: {fileID: 6596759095320304299}
-  rearRightWheelCollider: {fileID: 482899772643548945}
-  frontLeftWheelTransform: {fileID: 4223787000770916799}
-  frontRightWheelTransform: {fileID: 3867502921123838860}
-  rearLeftWheelTransform: {fileID: 3534815882879285856}
-  rearRightWheelTransform: {fileID: 7330999087640567601}
-  motorForce: 3000
+  maxAcceleration: 300
+  brakeAcceleration: 300
+  turnSensitivity: 1.2
   maxSteerAngle: 30
-  breakForce: 9000
+  centerOfMass: {x: 0, y: 0, z: 0}
+  wheels:
+  - wheelModel: {fileID: 6441087862299659290}
+    wheelCollider: {fileID: 8005968442471881169}
+    axel: 0
+  - wheelModel: {fileID: 6559246396806857917}
+    wheelCollider: {fileID: 1456175256563379306}
+    axel: 0
+  - wheelModel: {fileID: 8906541678683209170}
+    wheelCollider: {fileID: 6596759095320304299}
+    axel: 1
+  - wheelModel: {fileID: 4958999065746001898}
+    wheelCollider: {fileID: 482899772643548945}
+    axel: 1
 --- !u!54 &8585138413347912411
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,9 +161,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4138642040287103192}
   serializedVersion: 4
-  m_Mass: 1000
+  m_Mass: 350
   m_Drag: 0
-  m_AngularDrag: 2
+  m_AngularDrag: 3
   m_CenterOfMass: {x: 0, y: 0, z: 1}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -171,30 +177,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &6099514476882654449
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4138642040287103192}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 3.3261147, y: 2.0653007, z: 7.864523}
-  m_Center: {x: 0.0000019073486, y: 1.3443509, z: 0.0000104904175}
 --- !u!64 &7647744212152372130
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -260,8 +245,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 50000
-    damper: 8000
+    spring: 8000
+    damper: 2000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -278,7 +263,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2.5
+    m_Stiffness: 2.4
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -445,8 +430,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 50000
-    damper: 8000
+    spring: 8000
+    damper: 2000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -463,7 +448,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2.5
+    m_Stiffness: 2.4
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -750,8 +735,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 50000
-    damper: 8000
+    spring: 8000
+    damper: 2000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -768,7 +753,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2.5
+    m_Stiffness: 2.4
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -821,8 +806,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 50000
-    damper: 8000
+    spring: 8000
+    damper: 2000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -839,7 +824,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2.5
+    m_Stiffness: 2.4
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
