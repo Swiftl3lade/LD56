@@ -35,5 +35,6 @@ public enum SpringEnum
 	solid,
 	pickup,
 	ramp,
-	AI
+	AI,
+	bumper
 }

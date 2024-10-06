@@ -32,7 +32,7 @@ namespace _Project._Scripts
         private float _lastCollisionTime = -1f;
 
         public Action<TakeDamageEventObj> takeDamage;
-        public Action<DestroyedEventObj> destroyed;
+        public static event Action destroyed;
         
         // Start is called before the first frame update
         void Start()
@@ -79,8 +79,6 @@ namespace _Project._Scripts
                 return;
             }
             
-            // if (otherCar != null)
-            // {
             // Get the relative velocity of the two cars
             Vector3 relativeVelocity = collision.relativeVelocity;
 
@@ -118,17 +116,14 @@ namespace _Project._Scripts
         public void Reset()
         {
             currentHealth = maxHealth;
-            _rigidbody.constraints = RigidbodyConstraints.None;
         }
 
         private void Destroy()
         {
             _carController.enabled = false;
-            _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-            _rigidbody.mass = 5;
             explosionParticles.Play();
             _isDestroyed = true;
-            destroyed?.Invoke(new DestroyedEventObj());
+            destroyed?.Invoke();
         }
     }
 }
