@@ -264,10 +264,10 @@ MonoBehaviour:
   skidSmokes:
   - {fileID: 3291746202870760664}
   - {fileID: 3794033388149629835}
-  springStiffness: 50000
-  damperStiffness: 5000
+  springStiffness: 30000
+  damperStiffness: 3000
   restLength: 0.65
-  springTravel: 0.1
+  springTravel: 0.15
   wheelRadius: 0.65
   acceleration: 16
   maxSpeed: 18
