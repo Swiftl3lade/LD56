@@ -29149,7 +29149,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click on a car to start playing.
+  m_text: Use arrows or click on a car to start playing.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b171d8acb569fe479a9b4066630b2d7, type: 2}
   m_sharedMaterial: {fileID: -6053467057584556837, guid: 8b171d8acb569fe479a9b4066630b2d7,

@@ -71,7 +71,6 @@ public class MenuManager : MonoBehaviour
                     currentCarDetails = hit.collider.gameObject.GetComponent<CarDetails>();
                     currentCarCamera = hit.collider.gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
                     _currentCarIndex = GetIndexInParent(hit.collider.gameObject.transform);
-                    Debug.Log("new car index" + _currentCarIndex);
                     if (currentCarCamera == null)
                     {
                         return;
