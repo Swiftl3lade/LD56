@@ -113,14 +113,11 @@ namespace _Project._Scripts
         // Method to handle collisions
         private void OnCollisionEnter(Collision collision)
         {
-            // if (collision.rigidbody != null)
-            // {
-                Vector3 collisionPoint = collision.contacts[0].point;
-                Vector3 collisionNormal = collision.contacts[0].normal;
+            Vector3 collisionPoint = collision.contacts[0].point;
+            Vector3 collisionNormal = collision.contacts[0].normal;
 
-                // Apply deformation to the car
-                ApplyDeformation(collisionPoint, collisionNormal);
-            // }
+            // Apply deformation to the car
+            ApplyDeformation(collisionPoint, collisionNormal);
         }
 
         // Method to reset deformation
@@ -137,13 +134,13 @@ namespace _Project._Scripts
             }
         }
 
-        private void OnDrawGizmos()
-        {
-            foreach (var target in deformationTargets)
-            {
-                Gizmos.color = Color.red;
-                Gizmos.DrawWireSphere(target.transform.position, 0.2f);
-            }
-        }
+        // private void OnDrawGizmos()
+        // {
+        //     foreach (var target in deformationTargets)
+        //     {
+        //         Gizmos.color = Color.red;
+        //         Gizmos.DrawWireSphere(target.transform.position, 0.2f);
+        //     }
+        // }
     }
 }
