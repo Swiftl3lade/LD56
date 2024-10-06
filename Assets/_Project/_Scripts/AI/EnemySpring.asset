@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0353589810820f46910207814a889cb, type: 3}
   m_Name: EnemySpring
   m_EditorClassIdentifier: 
-  SpringTag: 1
-  OverMinAttraction: 0.791
+  SpringTag: 7
+  OverMinAttraction: 0.8
   UnderMinAttraction: 0
-  MinDistance: 5
-  MaxDistance: 90
+  MinDistance: 40
+  MaxDistance: 70
   <MaxColor>k__BackingField: {r: 0.745283, g: 0.46647507, b: 0.376157, a: 1}
   <MinColor>k__BackingField: {r: 0.6698113, g: 0.034754362, b: 0.034754362, a: 1}

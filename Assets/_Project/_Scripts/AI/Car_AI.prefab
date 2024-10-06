@@ -6926,8 +6926,7 @@ GameObject:
   - component: {fileID: 7824045571625453941}
   - component: {fileID: 4746078292551345247}
   - component: {fileID: 3302574459956805945}
-  - component: {fileID: 9088411068312559082}
-  - component: {fileID: 1197362389638014625}
+  - component: {fileID: 3272895703796621917}
   - component: {fileID: 3773697277510415052}
   - component: {fileID: 4321269631955107925}
   m_Layer: 6
@@ -7083,6 +7082,7 @@ MonoBehaviour:
   tireRotationSpeed: 3000
   maxSteeringAngle: 30
   minSideSkidVelocity: 2.5
+  flipAfterSeconds: 10
   angleErrorMargin: 0.05
   steeringSmoothMinAngle: 4
   reverseAngle: 160
@@ -7137,7 +7137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 1
+  <springTag>k__BackingField: 7
 --- !u!114 &2019012952952554757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7205,7 +7205,7 @@ MonoBehaviour:
     type: 2}
   <checkOriginPoint>k__BackingField: {fileID: 8028459029952241783}
   isDisabled: 0
---- !u!114 &9088411068312559082
+--- !u!114 &3272895703796621917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7214,41 +7214,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6541962933025894321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71726dd79afba614abf4d5505f77d950, type: 3}
+  m_Script: {fileID: 11500000, guid: bdc6a25d2925ed24495661e1417d5d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: {fileID: 11400000, guid: 0f86b9480aafb6c4586a7150b0d3cb60,
+  <Data>k__BackingField: {fileID: 11400000, guid: 0be65309823a08d469c66d0bd378233a,
     type: 2}
   <checkOriginPoint>k__BackingField: {fileID: 3966772240422062715}
   isDisabled: 0
-  springs:
-  - {fileID: 3302574459956805945}
-  - {fileID: 4746078292551345247}
-  - {fileID: 7824045571625453941}
-  - {fileID: 2019012952952554757}
-  - {fileID: 3940779304823099738}
---- !u!114 &1197362389638014625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6541962933025894321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71726dd79afba614abf4d5505f77d950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Data>k__BackingField: {fileID: 11400000, guid: 0f86b9480aafb6c4586a7150b0d3cb60,
-    type: 2}
-  <checkOriginPoint>k__BackingField: {fileID: 8028459029952241783}
-  isDisabled: 0
-  springs:
-  - {fileID: 3302574459956805945}
-  - {fileID: 4746078292551345247}
-  - {fileID: 7824045571625453941}
-  - {fileID: 2019012952952554757}
-  - {fileID: 3940779304823099738}
 --- !u!114 &3773697277510415052
 MonoBehaviour:
   m_ObjectHideFlags: 0

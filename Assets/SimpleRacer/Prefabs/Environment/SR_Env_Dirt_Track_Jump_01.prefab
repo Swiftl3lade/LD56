@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3327546}
   - component: {fileID: 2342120}
   - component: {fileID: 3007573351079170767}
+  - component: {fileID: 7293184883811629361}
   m_Layer: 0
   m_Name: SR_Env_Dirt_Track_Jump_01
   m_TagString: Untagged
@@ -106,3 +107,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 9b09859cdfc0827479ca0d52f27846c0, type: 3}
+--- !u!114 &7293184883811629361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 6

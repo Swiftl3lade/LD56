@@ -33,5 +33,7 @@ public enum SpringEnum
 	walls,
 	danger,
 	solid,
-	pickup
+	pickup,
+	ramp,
+	AI
 }

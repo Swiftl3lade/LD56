@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3312044}
   - component: {fileID: 2321930}
   - component: {fileID: 2418678083451489796}
+  - component: {fileID: 4037125943543573552}
   m_Layer: 0
   m_Name: SR_Prop_Ramp_Dirt_01
   m_TagString: Untagged
@@ -106,3 +107,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 1eb62d0c4489bd340b622c5c8d89d383, type: 3}
+--- !u!114 &4037125943543573552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 6

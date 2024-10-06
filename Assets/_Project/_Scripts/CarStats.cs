@@ -125,6 +125,7 @@ namespace _Project._Scripts
         {
             _carController.enabled = false;
             _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            _rigidbody.mass = 5;
             explosionParticles.Play();
             _isDestroyed = true;
             destroyed?.Invoke(new DestroyedEventObj());
