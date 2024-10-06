@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
@@ -34,19 +35,26 @@ public class Controller : MonoBehaviour
     [Header("Car Settings")] 
     [SerializeField] private float acceleration = 25f;
     [SerializeField] private float maxSpeed = 100f;
-    [SerializeField] private float deceleration = 10f;
+    [SerializeField] private float deceleration = 10f;// New braking force
+    [SerializeField] private float defaultDrag = 0f;// New braking force
+    [SerializeField] private float brakeForce = 4f;// New braking force
     [SerializeField] private float steerStrength = 15f;
     [SerializeField] private AnimationCurve turningCurve;
     [SerializeField] private float dragCoefficient;
-
-    private Vector3 currentCarLocalVelocity = Vector3.zero;
-    private float carVelocityRatio = 0;
+    
+    [Header("Drifting Settings")]
+    [SerializeField] private float driftFactor = 0.95f; // The factor that reduces the sideways speed during a drift
+    [SerializeField] private float maxDriftAngle = 45f; // The maximum angle of drift
 
     [Header("Visuals")] 
     [SerializeField] private float tireRotationSpeed = 3000f;
     [SerializeField] private float maxSteeringAngle = 30f;
     [SerializeField] private float minSideSkidVelocity = 10f;
-
+    
+    private Vector3 currentCarLocalVelocity = Vector3.zero;
+    private float carVelocityRatio = 0;
+    private float previousMoveInput = 0f; // Store previous move input
+    
     private void Start()
     {
         carRB = GetComponent<Rigidbody>();
@@ -78,7 +86,7 @@ public class Controller : MonoBehaviour
                 wheelIsGrounded[i] = 1;
                 
                 float currentSpringLength = hit.distance - wheelRadius;
-                float springCompression = (restLength - currentSpringLength) / springTravel;
+                float springCompression = Mathf.Clamp((restLength - currentSpringLength) / springTravel, 0f, 1f);
 
                 float springVelocity = Vector3.Dot(carRB.GetPointVelocity(rayPoints[i].position), rayPoints[i].up);
                 float dampForce = damperStiffness * springVelocity;
@@ -104,30 +112,15 @@ public class Controller : MonoBehaviour
 
     private void GroundCheck()
     {
-        int tempGroundedWheels = 0;
+        var tempGroundedWheels = wheelIsGrounded.Sum();
 
-        for (int i = 0; i < wheelIsGrounded.Length; i++)
-        {
-            tempGroundedWheels += wheelIsGrounded[i];
-        }
-
-        if (tempGroundedWheels > 1)
-        {
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
+        isGrounded = tempGroundedWheels > 1;
     }
 
     private void GetPlayerInput()
     {
-        // if (isGrounded)
-        // {
-            moveInput = Input.GetAxis("Vertical");
-            steerInput = Input.GetAxis("Horizontal");
-        // }
+        moveInput = Input.GetAxis("Vertical");
+        steerInput = Input.GetAxis("Horizontal");
     }
 
     private void CalculateCarVelocity()
@@ -141,36 +134,68 @@ public class Controller : MonoBehaviour
         if (isGrounded)
         {
             Acceleration();
-            Deceleration();
-            Turn();
-            SidewaysDrag();
         }
-        
+
+        Turn();
+
+        SidewaysDrag();
     }
 
     private void Acceleration()
     {
-        carRB.AddForceAtPosition(acceleration * moveInput * transform.forward, accelerationPoint.position, ForceMode.Acceleration);
+        float currentSpeed = carRB.velocity.magnitude;
+        
+        Vector3 localVelocity = transform.InverseTransformDirection(carRB.velocity);
+
+        carRB.drag = (moveInput > 0 && localVelocity.z < 0) || (moveInput < 0 && localVelocity.z > 0)
+            ? brakeForce
+            : defaultDrag;
+
+        if (currentSpeed < maxSpeed)
+        {
+            carRB.AddForceAtPosition(acceleration * moveInput * transform.forward, accelerationPoint.position, ForceMode.Acceleration);
+        }
     }
 
     private void Deceleration()
     {
-        carRB.AddForceAtPosition(deceleration * moveInput * -transform.forward, accelerationPoint.position, ForceMode.Acceleration);
+        // If moving backward, apply more acceleration until reaching speed 0
+        if (carRB.velocity.z > 0)
+        {
+            // If moving forward, apply more braking force until speed is 0
+            carRB.AddForceAtPosition(transform.forward * (deceleration * Mathf.Abs(moveInput) * 2), accelerationPoint.position, ForceMode.Acceleration);
+        }
+        else
+        {
+            // Apply reverse acceleration
+            carRB.AddForceAtPosition(deceleration * moveInput * transform.forward, accelerationPoint.position, ForceMode.Acceleration);
+        }
     }
 
     private void Turn()
     {
-        carRB.AddRelativeTorque (steerStrength * steerInput * turningCurve.Evaluate(Mathf.Abs(carVelocityRatio)) * Mathf.Sign(carVelocityRatio) * carRB.transform.up, ForceMode.Acceleration);
+        float steerInputAdjusted = Mathf.Clamp(steerInput, -1f, 1f);
+        float currentSidewaysSpeed = currentCarLocalVelocity.x;
+
+        // Adjusting torque based on drift
+        float driftTorqueAdjustment = Mathf.Abs(currentSidewaysSpeed) > 1 ? driftFactor : 1;
+
+        carRB.AddRelativeTorque(steerStrength * steerInputAdjusted * turningCurve.Evaluate(Mathf.Abs(carVelocityRatio)) * Mathf.Sign(carVelocityRatio) * carRB.transform.up * driftTorqueAdjustment, ForceMode.Acceleration);
     }
 
     private void SidewaysDrag()
     {
         float currentSidewaysSpeed = currentCarLocalVelocity.x;
-
         float dragForceMagnitude = -currentSidewaysSpeed * dragCoefficient;
 
+        // Reduce drag when drifting
+        if (Mathf.Abs(currentSidewaysSpeed) > 1) 
+        {
+            dragForceMagnitude *= 0.5f; // Example value, adjust for your needs
+        }
+
         Vector3 dragForce = transform.right * dragForceMagnitude;
-        
+
         carRB.AddForceAtPosition(dragForce, carRB.worldCenterOfMass, ForceMode.Acceleration);
     }
 
@@ -200,7 +225,7 @@ public class Controller : MonoBehaviour
             }
             else
             {
-                tires[i].transform.Rotate(Vector3.right, tireRotationSpeed * moveInput * Time.deltaTime, Space.Self);
+                tires[i].transform.Rotate(Vector3.right, tireRotationSpeed * Mathf.Abs(carRB.velocity.z) * Time.deltaTime, Space.Self);
             }
         }
     }
