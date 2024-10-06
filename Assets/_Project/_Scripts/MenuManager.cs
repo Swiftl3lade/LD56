@@ -8,13 +8,18 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("Standard Menu")]
     [SerializeField] TMP_Text standardInstruction;
-    [SerializeField] Button playButton;
     [SerializeField] CinemachineVirtualCamera standardCamera;
+
+    [Header("Car Menu")]
+    [SerializeField] Button playButton;
     [SerializeField] CinemachineVirtualCamera playCamera;
+    [SerializeField] GameObject carDetails;
 
     private CinemachineVirtualCamera currentCarCamera;
     private CinemachineBrain brain;
+
     private void OnEnable()
     {
         playButton.onClick.RemoveAllListeners();
