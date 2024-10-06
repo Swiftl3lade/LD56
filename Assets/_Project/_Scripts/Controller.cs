@@ -28,8 +28,8 @@ public class Controller : MonoBehaviour
     private int[] wheelIsGrounded = new int[4];
     private bool isGrounded = false;
 
-    [Header("Input")] protected float moveInput = 0;
-
+    [Header("Input")] 
+    protected float moveInput = 0;
     protected float steerInput = 0;
 
     [Header("Car Settings")] 
