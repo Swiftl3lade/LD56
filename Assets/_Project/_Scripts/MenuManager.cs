@@ -25,6 +25,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] Transform powerStats;
     [SerializeField] Transform handlingStats;
     [SerializeField] Transform resistanceStats;
+    [SerializeField] Button leftArrowButton;
+    [SerializeField] Button rightArrowButton;
 
     [Header("Prefabs")]
     [SerializeField] GameObject UpgradedStatPrefab;
@@ -40,10 +42,18 @@ public class MenuManager : MonoBehaviour
     {
         playButton.onClick.RemoveAllListeners();
         playButton.onClick.AddListener(OnPlayButtonPressed);
+
+        leftArrowButton.onClick.RemoveAllListeners();
+        leftArrowButton.onClick.AddListener(OnLeftArrowPressed);
+
+        rightArrowButton.onClick.RemoveAllListeners();
+        rightArrowButton.onClick.AddListener(OnRightArrowPressed);
     }
     private void OnDisable()
     {
         playButton.onClick.RemoveAllListeners();
+        leftArrowButton.onClick.RemoveAllListeners();
+        rightArrowButton.onClick.RemoveAllListeners();
     }
     void Start()
     {
@@ -56,6 +66,57 @@ public class MenuManager : MonoBehaviour
         CheckFocusCarCamera();
         CheckStandardCamera();
         CheckArrowControls();
+    }
+    private void OnLeftArrowPressed()
+    {
+        ChangeCarPaint(true);
+    }
+    private void OnRightArrowPressed()
+    {
+        ChangeCarPaint(false);
+    }
+    private void ChangeCarPaint(bool left)
+    {
+        Transform currentCarTransform = currentCarDetails.transform;
+
+        // Use currentCarTransform as the parent transform
+        Transform parent = currentCarTransform;
+
+        int childCount = parent.childCount - 1;
+        if (childCount == 0) return; // If no children, exit early
+
+        // Step 1: Find the currently active child
+        int activeIndex = -1;
+        for (int i = 0; i < childCount; i++)
+        {
+            if (parent.GetChild(i).gameObject.activeSelf)
+            {
+                activeIndex = i;
+                break;
+            }
+        }
+
+        // Step 2: Deactivate all children
+        for (int i = 0; i < childCount; i++)
+        {
+            parent.GetChild(i).gameObject.SetActive(false);
+        }
+
+        // Step 3: Calculate the new index (either previous or next)
+        int newIndex;
+        if (left)
+        {
+            // Move left (previous index), wrapping around if needed
+            newIndex = (activeIndex - 1 + childCount) % childCount;
+        }
+        else
+        {
+            // Move right (next index), wrapping around if needed
+            newIndex = (activeIndex + 1) % childCount;
+        }
+
+        // Step 4: Activate the new child
+        parent.GetChild(newIndex).gameObject.SetActive(true);
     }
     private void CheckFocusCarCamera()
     {
