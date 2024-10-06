@@ -7,6 +7,8 @@ public abstract class SpringComponent : MonoBehaviour
 	[field: SerializeField] public SpringData Data { get; protected set; }
 	[field: SerializeField] protected Transform checkOriginPoint { get; private set; }
 
+	public bool isDisabled = false;
+
 	protected abstract Vector3 SpringEval(Vector3 _targetPosition);
 
 	protected void Awake()
@@ -16,6 +18,7 @@ public abstract class SpringComponent : MonoBehaviour
 
 	public Vector3 Evaluate()
 	{
+		if (isDisabled) return Vector3.zero;
 		var _finalVector = Vector3.zero;
 
 		foreach (var entity in SpringManager.EntityDict[Data.SpringTag])
@@ -24,7 +27,7 @@ public abstract class SpringComponent : MonoBehaviour
 			_finalVector.Normalize();
 		}
 
-		return _finalVector;
+		return _finalVector.normalized;
 	}
 
 	protected void OnDrawGizmosSelected()

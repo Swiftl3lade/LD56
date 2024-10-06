@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: EnemySpring
   m_EditorClassIdentifier: 
   SpringTag: 1
-  OverMinAttraction: 1
-  UnderMinAttraction: -1
-  MinDistance: 2
-  MaxDistance: Infinity
+  OverMinAttraction: 0.791
+  UnderMinAttraction: 0
+  MinDistance: 40
+  MaxDistance: 60
   <MaxColor>k__BackingField: {r: 0.745283, g: 0.46647507, b: 0.376157, a: 1}
   <MinColor>k__BackingField: {r: 0.6698113, g: 0.034754362, b: 0.034754362, a: 1}

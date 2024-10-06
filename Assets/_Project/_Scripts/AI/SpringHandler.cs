@@ -24,7 +24,7 @@ public class SpringHandler
 			_vector += spring.Evaluate();
 		}
 
-		//_vector = Vector3.Lerp(previousVector, _vector.normalized, Mathf.Clamp(0,1,lerp*Time.deltaTime)).normalized;
+		_vector = Vector3.Lerp(previousVector, _vector.normalized, Mathf.Clamp(0,1,lerp*Time.deltaTime));
 		previousVector = _vector;
 
 		return _vector;

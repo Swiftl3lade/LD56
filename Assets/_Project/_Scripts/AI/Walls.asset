@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Walls
   m_EditorClassIdentifier: 
   SpringTag: 2
-  OverMinAttraction: -1
+  OverMinAttraction: -0.15
   UnderMinAttraction: 0
   MinDistance: 0
-  MaxDistance: 7
+  MaxDistance: 3
   <MaxColor>k__BackingField: {r: 1, g: 0.7198543, b: 0, a: 1}
   <MinColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}

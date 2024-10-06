@@ -20,6 +20,7 @@ namespace AI
         protected override void Start()
         {
             base.Start();
+            moveInput = 1;
             springHandler = new SpringHandler(GetComponents<SpringComponent>().Where(x => x.Data.SpringTag != SpringEnum.overrideE).ToList());
         }
 
@@ -27,7 +28,6 @@ namespace AI
         {
             var _vector = springHandler.CalculateDirectionVector();
             var mag = _vector.magnitude;
-            _vector.y = 0;
             /*_vector.Normalize();
             _vector *= mag;*/
             steerInput = SetSteering(_vector);
@@ -82,14 +82,20 @@ namespace AI
         {
             var _horizontalDir = -AngleDir(transform.right, _direction, Vector3.up, angleErrorMargin);
 
-            if (_horizontalDir == 0) return moveInput;
+            Vector2 perp = Vector3.Cross(transform.right, _direction);
+            float dir = -Vector2.Dot(perp, Vector3.up);
 
-            if (_horizontalDir > 0)
+            if (dir > angleErrorMargin - 0.5f)
             {
-                return 1;
+                return 1f;
             }
 
-            return -1;
+            if (dir < -angleErrorMargin - 0.5f)
+            {
+                return -1f;
+            }
+
+            return moveInput;
         }
 
         float SetSteering(Vector3 _direction)
@@ -129,7 +135,6 @@ namespace AI
             if (Application.isPlaying && springHandler != null)
             {
                 var _direction = springHandler.CalculateDirectionVector();
-                _direction.y = 0;
                 Gizmos.color = Color.red;
                 Gizmos.DrawLine(transform.position, transform.position + _direction * 15);
                 Gizmos.DrawLine(transform.position, transform.position + transform.forward * 15);

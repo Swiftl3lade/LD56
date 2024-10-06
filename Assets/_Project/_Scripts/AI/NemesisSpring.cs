@@ -1,29 +1,34 @@
+using System;
 using UnityEngine;
 
 [System.Serializable]
-public class DistanceSpring : SpringComponent
+public class NemesisSpring : SpringComponent
 {
 	private void Start()
 	{
-		if (Data != null) Data.OverMinAttraction = Mathf.Clamp(Data.OverMinAttraction, -1, 1);
+		try
+		{
+			Data.OverMinAttraction = Mathf.Clamp(Data.OverMinAttraction, -1, 1);
+		}
+		catch (NullReferenceException)
+		{
+			Debug.LogError("No Spring Data Object Added");
+		}
 	}
 
 	protected override Vector3 SpringEval(Vector3 targetPosition)
 	{
+		if (UnityEngine.Random.Range(0, 4) > 0) return Vector3.zero;
 		var _dist = Vector3.Distance(checkOriginPoint.position, targetPosition);
 		var _vector = (targetPosition - transform.position).normalized;
-	/*	_vector.y = 0;
-		_vector.Normalize();*/
-		var _lerping =  (_dist >= 1 ? _dist : 1);
-
 
 		if (_dist > Data.MinDistance && _dist < Data.MaxDistance)
 		{
-			_vector *= Data.OverMinAttraction / _lerping;
+			_vector *= Data.OverMinAttraction;
 		}
 		else
 		{
-			_vector *= -Data.UnderMinAttraction / _lerping;
+			_vector *= Data.UnderMinAttraction;
 		}
 
 		return _vector;
