@@ -1311,6 +1311,7 @@ MonoBehaviour:
   tireRotationSpeed: 3000
   maxSteeringAngle: 30
   minSideSkidVelocity: 2.5
+  flipAfterSeconds: 10
 --- !u!114 &2149767010751127913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12059,6 +12060,7 @@ GameObject:
   - component: {fileID: 4643405990700195606}
   - component: {fileID: 126717287594536909}
   - component: {fileID: 5284275284859038771}
+  - component: {fileID: 4741096897800914391}
   m_Layer: 6
   m_Name: FrontBumper
   m_TagString: FrontBumper
@@ -12141,6 +12143,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4741096897800914391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4781180775216300969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 8
 --- !u!1 &4900099343641306648
 GameObject:
   m_ObjectHideFlags: 0
