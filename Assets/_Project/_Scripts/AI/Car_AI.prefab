@@ -11423,7 +11423,7 @@ Transform:
   m_GameObject: {fileID: 5835608055806811928}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.01, z: -3.77}
+  m_LocalPosition: {x: 0, y: 1.01, z: -3.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11565,7 +11565,6 @@ GameObject:
   - component: {fileID: 271193363086222659}
   - component: {fileID: 1367935320942896738}
   - component: {fileID: 3522303952626779890}
-  - component: {fileID: 3940779304823099738}
   - component: {fileID: 3966522455608330925}
   - component: {fileID: 2019012952952554757}
   - component: {fileID: 7824045571625453941}
@@ -11578,6 +11577,7 @@ GameObject:
   - component: {fileID: 4321269631955107925}
   - component: {fileID: 2244940369531338946}
   - component: {fileID: 3842624352386278522}
+  - component: {fileID: 4463657468534158879}
   m_Layer: 6
   m_Name: Car_AI
   m_TagString: Untagged
@@ -11677,6 +11677,7 @@ MonoBehaviour:
   restLength: 0.75
   springTravel: 0.5
   wheelRadius: 0.56
+  isGrounded: 0
   acceleration: 25
   maxSpeed: 20
   deceleration: 21
@@ -11758,22 +11759,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f839a9081a6846649a5c0b597c0a3084, type: 3}
---- !u!114 &3940779304823099738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6541962933025894321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdc6a25d2925ed24495661e1417d5d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Data>k__BackingField: {fileID: 11400000, guid: 3c63f74e8261c9c468762880a9b4b82c,
-    type: 2}
-  <checkOriginPoint>k__BackingField: {fileID: 9035609493091176046}
-  isDisabled: 0
 --- !u!114 &3966522455608330925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12099,6 +12084,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4463657468534158879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6541962933025894321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc6a25d2925ed24495661e1417d5d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Data>k__BackingField: {fileID: 11400000, guid: 3c63f74e8261c9c468762880a9b4b82c,
+    type: 2}
+  <checkOriginPoint>k__BackingField: {fileID: 9035609493091176046}
+  isDisabled: 0
 --- !u!1 &6579112327566460195
 GameObject:
   m_ObjectHideFlags: 0
@@ -12155,7 +12156,7 @@ Transform:
   m_GameObject: {fileID: 6705680671453883440}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.17}
+  m_LocalPosition: {x: 0, y: 0, z: 3.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DangerBarrel
   m_EditorClassIdentifier: 
   SpringTag: 3
-  OverMinAttraction: -0.601
+  OverMinAttraction: -0.2
   UnderMinAttraction: 0
   MinDistance: 0
   MaxDistance: 4

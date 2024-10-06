@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CloseEnemySpring
   m_EditorClassIdentifier: 
   SpringTag: 7
-  OverMinAttraction: -0.85
+  OverMinAttraction: 0.65
   UnderMinAttraction: 0
   MinDistance: 0
-  MaxDistance: 5
+  MaxDistance: 20
   <MaxColor>k__BackingField: {r: 0.33459416, g: 0.75082284, b: 0.9716981, a: 1}
   <MinColor>k__BackingField: {r: 0.6698113, g: 0.034754362, b: 0.034754362, a: 1}
