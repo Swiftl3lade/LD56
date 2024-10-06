@@ -16,6 +16,6 @@ MonoBehaviour:
   OverMinAttraction: -1
   UnderMinAttraction: 0
   MinDistance: 0
-  MaxDistance: 4
-  <MaxColor>k__BackingField: {r: 0, g: 0.3490566, b: 0.2948404, a: 1}
+  MaxDistance: 6
+  <MaxColor>k__BackingField: {r: 0.07132578, g: 0, b: 1, a: 1}
   <MinColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}

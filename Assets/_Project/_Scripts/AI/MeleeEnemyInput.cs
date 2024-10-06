@@ -132,13 +132,13 @@ namespace AI
 
         private void OnDrawGizmos()
         {
-            if (Application.isPlaying && springHandler != null)
+            /*if (Application.isPlaying && springHandler != null)
             {
                 var _direction = springHandler.CalculateDirectionVector();
                 Gizmos.color = Color.red;
                 Gizmos.DrawLine(transform.position, transform.position + _direction * 15);
                 Gizmos.DrawLine(transform.position, transform.position + transform.forward * 15);
-            }
+            }*/
         }
     }
 }

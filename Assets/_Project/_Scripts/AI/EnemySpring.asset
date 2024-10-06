@@ -15,7 +15,7 @@ MonoBehaviour:
   SpringTag: 1
   OverMinAttraction: 0.791
   UnderMinAttraction: 0
-  MinDistance: 40
-  MaxDistance: 60
+  MinDistance: 5
+  MaxDistance: 90
   <MaxColor>k__BackingField: {r: 0.745283, g: 0.46647507, b: 0.376157, a: 1}
   <MinColor>k__BackingField: {r: 0.6698113, g: 0.034754362, b: 0.034754362, a: 1}

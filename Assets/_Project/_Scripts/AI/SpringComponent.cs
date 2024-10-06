@@ -18,7 +18,11 @@ public abstract class SpringComponent : MonoBehaviour
 
 	public Vector3 Evaluate()
 	{
-		if (isDisabled) return Vector3.zero;
+		if (isDisabled)
+		{
+			Debug.Log("disabled");
+			return Vector3.zero;
+		}
 		var _finalVector = Vector3.zero;
 
 		foreach (var entity in SpringManager.EntityDict[Data.SpringTag])

@@ -29,6 +29,7 @@ public class PrioritySpring : SpringComponent
             foreach (var item in springs)
             {
 				item.isDisabled = true;
+				Debug.Log("Priority");
             }
 		}
 		else
@@ -37,6 +38,7 @@ public class PrioritySpring : SpringComponent
 			foreach (var item in springs)
 			{
 				item.isDisabled = false;
+				Debug.Log("Change Priority");
 			}
 		}
 
