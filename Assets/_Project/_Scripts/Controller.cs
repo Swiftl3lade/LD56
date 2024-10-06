@@ -225,7 +225,7 @@ public class Controller : MonoBehaviour
             }
             else
             {
-                tires[i].transform.Rotate(Vector3.right, tireRotationSpeed * Mathf.Abs(carRB.velocity.z) * Time.deltaTime, Space.Self);
+                tires[i].transform.Rotate(Vector3.right, tireRotationSpeed * carVelocityRatio * Time.deltaTime, Space.Self);
             }
         }
     }
@@ -248,22 +248,22 @@ public class Controller : MonoBehaviour
     {
         foreach (var skidMark in skidMarks)
         {
-            // skidMark.emitting = toggle;
+            skidMark.emitting = toggle;
         }
     }
     
     private void ToggleSkidSmokes(bool toggle)
     {
-        // foreach (var smoke in skidSmokes)
-        // {
-        //     if (toggle)
-        //     {
-        //         smoke.Play();
-        //     }
-        //     else
-        //     {
-        //         smoke.Stop();
-        //     }
-        // }
+        foreach (var smoke in skidSmokes)
+        {
+            if (toggle)
+            {
+                smoke.Play();
+            }
+            else
+            {
+                smoke.Stop();
+            }
+        }
     }
 }
