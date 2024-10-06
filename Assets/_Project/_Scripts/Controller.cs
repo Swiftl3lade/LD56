@@ -55,7 +55,7 @@ public class Controller : MonoBehaviour
     private float carVelocityRatio = 0;
     private float previousMoveInput = 0f; // Store previous move input
     
-    private void Start()
+    protected virtual void Start()
     {
         carRB = GetComponent<Rigidbody>();
     }
@@ -117,7 +117,7 @@ public class Controller : MonoBehaviour
         isGrounded = tempGroundedWheels > 1;
     }
 
-    private void GetPlayerInput()
+    protected virtual void GetPlayerInput()
     {
         moveInput = Input.GetAxis("Vertical");
         steerInput = Input.GetAxis("Horizontal");

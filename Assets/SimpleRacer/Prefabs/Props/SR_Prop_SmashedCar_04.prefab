@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3330176}
   - component: {fileID: 2357130}
   - component: {fileID: 849133013527396168}
+  - component: {fileID: 7409977156747101130}
   m_Layer: 0
   m_Name: SR_Prop_SmashedCar_04
   m_TagString: Untagged
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.0249376, y: 1.7598997, z: 2.4135005}
   m_Center: {x: 0.038610935, y: 0.75545424, z: 0.022927403}
+--- !u!114 &7409977156747101130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 4
