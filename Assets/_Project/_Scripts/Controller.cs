@@ -26,7 +26,7 @@ public class Controller : MonoBehaviour
     [SerializeField] private float wheelRadius;
 
     private int[] wheelIsGrounded = new int[4];
-    private bool isGrounded = false;
+    public bool isGrounded = false;
 
     [Header("Input")] 
     protected float moveInput = 0;
