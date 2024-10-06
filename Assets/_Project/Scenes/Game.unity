@@ -6954,8 +6954,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1805506708}
-  m_Follow: {fileID: 1805506708}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -24016,12 +24016,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1802023520}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1805506708 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1014209262683174793, guid: e2c896884347e364d848454eadebdd6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 8663909811102945512}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1808964900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28093,6 +28087,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697856083895781915, guid: e2c896884347e364d848454eadebdd6a,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697856083895781915, guid: e2c896884347e364d848454eadebdd6a,
+        type: 3}
+      propertyPath: acceleration
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697856083895781915, guid: e2c896884347e364d848454eadebdd6a,
+        type: 3}
+      propertyPath: dragCoefficient
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2276653073949840316, guid: e2c896884347e364d848454eadebdd6a,
         type: 3}
