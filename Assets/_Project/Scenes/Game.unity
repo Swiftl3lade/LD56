@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.007
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -96,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 67f40f1d5b50fab4ca098efbf45a4321,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 90e93ee8672b0bb42951982a849e7077,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3627,8 +3630,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10772683, y: 0.8817491, z: -0.24423023, w: 0.38892823}
-  m_LocalPosition: {x: -96.084946, y: 11, z: 158.9426}
+  m_LocalRotation: {x: 0.107726276, y: 0.88175, z: -0.24423063, w: 0.38892603}
+  m_LocalPosition: {x: -96.08491, y: 11, z: 158.94263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3672,12 +3675,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!114 &330585548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6554,8 +6557,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530634978}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10772683, y: 0.8817491, z: -0.24423023, w: 0.38892823}
-  m_LocalPosition: {x: -96.084946, y: 11, z: 158.9426}
+  m_LocalRotation: {x: 0.107726276, y: 0.88175, z: -0.24423063, w: 0.38892603}
+  m_LocalPosition: {x: -96.08491, y: 11, z: 158.94263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28208,22 +28211,22 @@ PrefabInstance:
     - target: {fileID: 1014209262683174793, guid: d71ff13e547a56a44a8a702b170a46c8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.40357208
+      value: 0.25452143
       objectReference: {fileID: 0}
     - target: {fileID: 1014209262683174793, guid: d71ff13e547a56a44a8a702b170a46c8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.7100429
       objectReference: {fileID: 0}
     - target: {fileID: 1014209262683174793, guid: d71ff13e547a56a44a8a702b170a46c8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9149479
+      value: 0.57703626
       objectReference: {fileID: 0}
     - target: {fileID: 1014209262683174793, guid: d71ff13e547a56a44a8a702b170a46c8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.31318852
       objectReference: {fileID: 0}
     - target: {fileID: 1014209262683174793, guid: d71ff13e547a56a44a8a702b170a46c8,
         type: 3}
@@ -28238,32 +28241,12 @@ PrefabInstance:
     - target: {fileID: 1014209262683174793, guid: d71ff13e547a56a44a8a702b170a46c8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2149767010751127913, guid: d71ff13e547a56a44a8a702b170a46c8,
-        type: 3}
-      propertyPath: <springTag>k__BackingField
-      value: 1
+      value: 101.8
       objectReference: {fileID: 0}
     - target: {fileID: 2276653073949840316, guid: d71ff13e547a56a44a8a702b170a46c8,
         type: 3}
       propertyPath: m_Name
       value: Car_v2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697856083895781915, guid: e2c896884347e364d848454eadebdd6a,
-        type: 3}
-      propertyPath: maxSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697856083895781915, guid: e2c896884347e364d848454eadebdd6a,
-        type: 3}
-      propertyPath: acceleration
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697856083895781915, guid: e2c896884347e364d848454eadebdd6a,
-        type: 3}
-      propertyPath: dragCoefficient
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
