@@ -37,14 +37,14 @@ namespace _Project._Scripts
             }
         }
 
-        void Update()
-        {
-            //for testing
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                ResetDeformation();
-            }
-        }
+        // void Update()
+        // {
+        //     //for testing
+        //     if (Input.GetKeyDown(KeyCode.Space))
+        //     {
+        //         ResetDeformation();
+        //     }
+        // }
 
         // apply deformation
         public void ApplyDeformation(Vector3 contactPoint, Vector3 contactNormal)
