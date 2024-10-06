@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0353589810820f46910207814a889cb, type: 3}
-  m_Name: Walls
+  m_Name: EnemySpring
   m_EditorClassIdentifier: 
-  SpringTag: 2
-  OverMinAttraction: -1
-  UnderMinAttraction: 0
-  MinDistance: 0
-  MaxDistance: 7
-  <MaxColor>k__BackingField: {r: 1, g: 0.7198543, b: 0, a: 1}
-  <MinColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  SpringTag: 1
+  OverMinAttraction: 1
+  UnderMinAttraction: -1
+  MinDistance: 2
+  MaxDistance: Infinity
+  <MaxColor>k__BackingField: {r: 0.745283, g: 0.46647507, b: 0.376157, a: 1}
+  <MinColor>k__BackingField: {r: 0.6698113, g: 0.034754362, b: 0.034754362, a: 1}

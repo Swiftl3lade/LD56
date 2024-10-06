@@ -5,8 +5,14 @@ namespace AI
 {
     public class MeleeEnemyInput : Controller
     {
+        [Header("AI")]
+        [Tooltip("The AI doesn't correct between this angle and it's negative value")]
         [SerializeField] private float angleErrorMargin = 0.1f;
-        [SerializeField] private float turnFactor = 90;
+        [Tooltip("The steering starts smoothing out when the angle is lower than this")]
+        [SerializeField] private float steeringSmoothMinAngle = 4;
+        [Tooltip("What angle should the angle pass in order to reverse")]
+        [SerializeField] private float reverseAngle = 90;
+        [SerializeField] private float decelSpeed = 100;
 
         private SpringHandler springHandler;
         private Vector3 previousVector = Vector3.zero;
@@ -20,17 +26,65 @@ namespace AI
         protected override void GetPlayerInput()
         {
             var _vector = springHandler.CalculateDirectionVector();
+            var mag = _vector.magnitude;
+            _vector.y = 0;
+            /*_vector.Normalize();
+            _vector *= mag;*/
             steerInput = SetSteering(_vector);
             //Debug.Log(steerInput);
-            moveInput = 1;//SetAcceleration(_vector);
+            moveInput = SetAcceleration(_vector);
             //isBreaking = (verticalInput <= 0);
         }
+
+        /* float SetAcceleration(Vector3 _direction)
+         {
+             var _horizontalDir = -AngleDir(transform.right, _direction, Vector3.up, angleErrorMargin);
+             Vector2 perp = Vector3.Cross(transform.right, _direction);
+             float dir = -Vector2.Dot(perp, Vector3.up);
+
+             if (dir > angleErrorMargin + 0.3f)
+             {
+                 return 1f;
+             }
+
+             if (dir < -angleErrorMargin + 0.3f)
+             {
+                 return -1f;
+             }
+             Vector3 localVelocity = transform.InverseTransformDirection(carRB.velocity);
+
+ *//*            if (localVelocity.z > decelSpeed)
+                 return 0f;*//*
+
+             return steerInput;
+         }
+
+         float SetSteering(Vector3 _direction)
+         {
+             var _dir = AngleDir(transform.forward, _direction, Vector3.up, 0.02f);
+
+             var _angle = Vector3.Angle(transform.forward, _direction);
+
+             if (_angle <= steeringSmoothMinAngle)       //Keep the enemy from passing the desired rotation
+             {
+                 return Mathf.Clamp(_dir * _angle / steeringSmoothMinAngle, -1, 1);
+             }
+
+             if (SetAcceleration(_direction) > 0)
+             {
+                 return _dir;
+             }
+
+             return -1 * _dir;
+         }*/
 
         float SetAcceleration(Vector3 _direction)
         {
             var _horizontalDir = -AngleDir(transform.right, _direction, Vector3.up, angleErrorMargin);
 
-            if (_horizontalDir != 0)
+            if (_horizontalDir == 0) return moveInput;
+
+            if (_horizontalDir > 0)
             {
                 return 1;
             }
@@ -42,13 +96,13 @@ namespace AI
         {
             var _dir = AngleDir(transform.forward, _direction, Vector3.up, angleErrorMargin);
 
-            var _angle = Vector3.Angle(transform.up, _direction);
+            var _angle = Vector2.Angle(transform.up, _direction);
 
-            if (_angle <= turnFactor)       //Keep the enemy from passing the desired rotation
+            if (_angle <= steeringSmoothMinAngle)       //Keep the enemy from passing the desired rotation
             {
-                return Mathf.Clamp(_dir * _angle / turnFactor, -1, 1);
+                _dir = Mathf.Clamp(_dir * _angle / steeringSmoothMinAngle, -1, 1);
             }
-
+            if (SetAcceleration(_direction) < 0) return -1 * _dir;
             return _dir;
         }
 
@@ -61,12 +115,12 @@ namespace AI
             {
                 return 1f;
             }
-            
+
             if (dir < -errorMargin)
             {
                 return -1f;
             }
-            
+
             return 0f;
         }
 
@@ -75,6 +129,7 @@ namespace AI
             if (Application.isPlaying && springHandler != null)
             {
                 var _direction = springHandler.CalculateDirectionVector();
+                _direction.y = 0;
                 Gizmos.color = Color.red;
                 Gizmos.DrawLine(transform.position, transform.position + _direction * 15);
                 Gizmos.DrawLine(transform.position, transform.position + transform.forward * 15);

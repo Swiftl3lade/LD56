@@ -8,7 +8,7 @@ public class Controller : MonoBehaviour
 {
     [Header("References")] 
     
-    [SerializeField] private Rigidbody carRB;
+    [SerializeField] protected Rigidbody carRB;
     [SerializeField] private Transform[] rayPoints;
     [SerializeField] private LayerMask driveable;
     [SerializeField] private Transform accelerationPoint;

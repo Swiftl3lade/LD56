@@ -11,9 +11,9 @@ public class DistanceSpring : SpringComponent
 	protected override Vector3 SpringEval(Vector3 targetPosition)
 	{
 		var _dist = Vector3.Distance(checkOriginPoint.position, targetPosition);
-		var _vector = (targetPosition - (Vector3)transform.position).normalized;
+		var _vector = (targetPosition - transform.position).normalized;
 
-		var _lerping =  (_dist >= 1 ? _dist : 1)/7;
+		var _lerping =  (_dist >= 1 ? _dist : 1);
 
 
 		if (_dist > Data.MinDistance && _dist < Data.MaxDistance)

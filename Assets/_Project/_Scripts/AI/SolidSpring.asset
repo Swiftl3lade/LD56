@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SolidSpring
   m_EditorClassIdentifier: 
   SpringTag: 4
-  OverMinAttraction: -0.887
-  UnderMinAttraction: 0
-  MinDistance: 0
-  MaxDistance: 10
+  OverMinAttraction: -0.771
+  UnderMinAttraction: -0.915
+  MinDistance: 3
+  MaxDistance: 8
   <MaxColor>k__BackingField: {r: 0.32955217, g: 1, b: 0, a: 1}
   <MinColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}

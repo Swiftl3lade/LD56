@@ -9,7 +9,7 @@ public class SpringHandler
 	[SerializeField] public List<SpringComponent> springs;
 
 	Vector3 previousVector = Vector3.zero;
-	float lerp = 1f;
+	float lerp = 2f;
 
 	public SpringHandler(List<SpringComponent> _springs)
 	{
@@ -24,9 +24,9 @@ public class SpringHandler
 			_vector += spring.Evaluate();
 		}
 
-		//_vector = Vector3.Lerp(previousVector, _vector.normalized, lerp*Time.deltaTime).normalized;
+		//_vector = Vector3.Lerp(previousVector, _vector.normalized, Mathf.Clamp(0,1,lerp*Time.deltaTime)).normalized;
 		previousVector = _vector;
 
-		return _vector.normalized;
+		return _vector;
 	}
 }
