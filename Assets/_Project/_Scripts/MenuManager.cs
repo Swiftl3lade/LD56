@@ -6,6 +6,8 @@ using Cinemachine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using Unity.VisualScripting;
+using Unity.Burst.CompilerServices;
 
 public class MenuManager : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class MenuManager : MonoBehaviour
     [Header("Car Menu")]
     [SerializeField] Button playButton;
     [SerializeField] CinemachineVirtualCamera playCamera;
+    [SerializeField] Transform carsTransform;
     [SerializeField] GameObject carDetails;
     [SerializeField] TMP_Text carNameText;
     [SerializeField] TMP_Text carDescriptionText;
@@ -31,6 +34,8 @@ public class MenuManager : MonoBehaviour
     private CinemachineVirtualCamera currentCarCamera;
     private CinemachineBrain brain;
 
+    private int _currentCarIndex = -1;
+
     private void OnEnable()
     {
         playButton.onClick.RemoveAllListeners();
@@ -43,13 +48,14 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         brain = Camera.main.GetComponent<CinemachineBrain>();
-        standardCamera.Priority = 20;
+        standardCamera.Priority = 10;
         ActiveStandardCameraUI(true);
     }
     void Update()
     {
         CheckFocusCarCamera();
         CheckStandardCamera();
+        CheckArrowControls();
     }
     private void CheckFocusCarCamera()
     {
@@ -64,7 +70,9 @@ public class MenuManager : MonoBehaviour
                 {
                     currentCarDetails = hit.collider.gameObject.GetComponent<CarDetails>();
                     currentCarCamera = hit.collider.gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
-                    if(currentCarCamera == null)
+                    _currentCarIndex = GetIndexInParent(hit.collider.gameObject.transform);
+                    Debug.Log("new car index" + _currentCarIndex);
+                    if (currentCarCamera == null)
                     {
                         return;
                     }
@@ -81,7 +89,88 @@ public class MenuManager : MonoBehaviour
         {
             standardCamera.Priority = 10;
             currentCarCamera.Priority = 0;
+            _currentCarIndex = -1;
             StartCoroutine(WaitForTransition(standardCamera));
+        }
+    }
+    private void SetNewCarCamera(int _carIndex)
+    {
+        _currentCarIndex = _carIndex; 
+        Debug.Log("new car index" + _currentCarIndex);
+        if (currentCarCamera == null)
+        {
+            standardCamera.Priority= 0;
+        }
+        else
+        {
+            currentCarCamera.Priority = 0;
+        }
+        currentCarDetails = carsTransform.GetChild(_carIndex).gameObject.GetComponent<CarDetails>();
+        currentCarCamera = carsTransform.GetChild(_carIndex).gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
+        if (currentCarCamera == null)
+        {
+            return;
+        }
+        currentCarCamera.Priority = 10;
+        StartCoroutine(WaitForTransition(currentCarCamera));
+    }
+    private void CheckArrowControls()
+    {
+        int _newIndex = -1;
+
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (_currentCarIndex == -1)
+            {
+                _newIndex = 0;
+            }
+            else
+            {
+                _newIndex = _currentCarIndex - 2;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (_currentCarIndex == -1)
+            {
+                _newIndex = 0;
+            }
+            else
+            {
+                _newIndex = _currentCarIndex + 2;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (_currentCarIndex == -1)
+            {
+                _newIndex = 0;
+            }
+            else
+            {
+                _newIndex = _currentCarIndex - 1;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (_currentCarIndex == -1)
+            {
+                _newIndex = 0;
+            }
+            else
+            {
+                _newIndex = _currentCarIndex + 1;
+            }
+        }
+        
+        
+        if (_newIndex != -1)
+        {
+            _newIndex = Mathf.Clamp(_newIndex, 0, carsTransform.childCount - 1);
+            SetNewCarCamera(_newIndex);
         }
     }
     private IEnumerator WaitForTransition(CinemachineVirtualCamera targetCamera)
@@ -120,7 +209,9 @@ public class MenuManager : MonoBehaviour
     }
     private void OnPlayButtonPressed()
     {
+        carDetails.SetActive(false);
         playButton.gameObject.SetActive(false);
+
         standardCamera.Priority = 0;
         currentCarCamera.Priority = 0;
         playCamera.Priority = 10;
@@ -163,31 +254,62 @@ public class MenuManager : MonoBehaviour
     }
     private void DeleteAllChildren(Transform _parent)
     {
-        while(_parent.childCount > 0)
+        List<GameObject> children = new List<GameObject>();
+
+        // Collect all children
+        foreach (Transform child in _parent)
         {
-            DestroyImmediate(_parent.GetChild(0));
+            children.Add(child.gameObject);
+        }
+
+        // Now destroy them
+        foreach (GameObject child in children)
+        {
+            DestroyImmediate(child);
         }
     }
     private void ActiveStandardCameraUI(bool _state)
     {
         standardInstruction.gameObject.SetActive(_state);
 
-        ActiveCarCameraUI(!_state);
+        carDetails.SetActive(!_state);
+        playButton.gameObject.SetActive(!_state);
     }
     private void ActiveCarCameraUI(bool _state)
     {
         carDetails.SetActive(_state);
         playButton.gameObject.SetActive(_state);
 
-        ActiveStandardCameraUI(!_state);
+        standardInstruction.gameObject.SetActive(!_state);
 
-        if(_state == true)
+        if (_state == true)
         {
             InitializeTextDetails(currentCarDetails.carName, currentCarDetails.carDescription);
             InitializeStats(StatType.Power, currentCarDetails.power, currentCarDetails.maxPower);
             InitializeStats(StatType.Handling, currentCarDetails.handling, currentCarDetails.maxHandling);
             InitializeStats(StatType.Resistance, currentCarDetails.resistance, currentCarDetails.maxResistance);
         }
+    }
+    private int GetIndexInParent(Transform child)
+    {
+        Transform parent = child.parent;
+
+        if (parent == null)
+        {
+            Debug.LogError("The provided transform has no parent.");
+            return -1; // Return an invalid index if there's no parent
+        }
+
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            if (parent.GetChild(i) == child)
+            {
+                return i; // Return the index when the child is found
+            }
+        }
+
+        Debug.LogError("The transform is not a child of its parent.");
+        return -1; // Return an invalid index if the child is not found
     }
 }
 public enum StatType
