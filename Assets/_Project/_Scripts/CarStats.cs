@@ -10,8 +10,8 @@ namespace _Project._Scripts
         [SerializeField] private float maxHealth;
         [SerializeField] private float currentHealth;
         [Header("Endurance")]
-        [SerializeField] private float endurance;
-        [SerializeField] private float enduranceModifier = 1;
+        [SerializeField] private float resistance;
+        [SerializeField] private float resistanceModifier = 1;
         [Header("Speed")]
         [SerializeField] private float maxSpeed;
         [SerializeField] private float currentSpeed;
@@ -24,7 +24,7 @@ namespace _Project._Scripts
         [SerializeField] private ParticleSystem explosionParticles;
 
         private Rigidbody _rigidbody;
-        private CarController _carController;
+        private Controller _carController;
         private bool _isDestroyed;
 
         public Action<TakeDamageEventObj> takeDamage;
@@ -34,7 +34,7 @@ namespace _Project._Scripts
         void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
-            _carController = GetComponent<CarController>();
+            _carController = GetComponent<Controller>();
             
             Reset();
         }
@@ -50,7 +50,7 @@ namespace _Project._Scripts
 
         public void TakeDamage(float damageReceived)
         {
-            currentHealth -= damageReceived - endurance * enduranceModifier;
+            currentHealth -= damageReceived - resistance * resistanceModifier;
             takeDamage?.Invoke(new TakeDamageEventObj(damageReceived));
             if (currentHealth <= 0)
             {
