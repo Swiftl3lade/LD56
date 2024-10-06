@@ -670,7 +670,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1697856083895781915
@@ -714,6 +714,7 @@ MonoBehaviour:
   restLength: 0.65
   springTravel: 0.1
   wheelRadius: 0.65
+  isGrounded: 0
   acceleration: 35
   maxSpeed: 45
   deceleration: 15
@@ -11064,6 +11065,7 @@ GameObject:
   - component: {fileID: 9024110403018474042}
   - component: {fileID: 3387638239918844430}
   - component: {fileID: 4639048429895285971}
+  - component: {fileID: 7670733338838648846}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -11657,6 +11659,7 @@ GameObject:
   - component: {fileID: 2965621914826431815}
   - component: {fileID: 5947805055606087763}
   - component: {fileID: 425053555744198634}
+  - component: {fileID: 8962640929492101975}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -12039,7 +12042,6 @@ Transform:
   - {fileID: 293143170345533225}
   - {fileID: 4196822785806205903}
   - {fileID: 4317608588869301867}
-  - {fileID: 8981960329889246469}
   - {fileID: 3279946257810370510}
   - {fileID: 854211539611311284}
   - {fileID: 4064939386387106960}
