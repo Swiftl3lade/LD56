@@ -4,20 +4,25 @@ using UnityEngine;
 using Cinemachine;
 public class CarDetails : MonoBehaviour
 {
-    [SerializeField] string carName;
-    [SerializeField] string carDescription;
+    public string carName;
+    public string carDescription;
 
     private CinemachineVirtualCamera virtualCamera;
 
-    private int power;
-    private int resistance;
-    private int handling;
+    [HideInInspector] public int power;
+    [HideInInspector] public int resistance;
+    [HideInInspector] public int handling;
 
-    private int maxPower;
-    private int maxResistance;
-    private int maxHandling;
+    [HideInInspector] public int maxPower;
+    [HideInInspector] public int maxResistance;
+    [HideInInspector] public int maxHandling;
     private void Start()
     {
+        if(carName == "")
+        {
+            carName = transform.name;
+        }
+
         if (virtualCamera == null)
         {
             virtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
