@@ -938,7 +938,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1697856083895781915
@@ -982,6 +982,7 @@ MonoBehaviour:
   restLength: 1.25
   springTravel: 0.15
   wheelRadius: 0.93
+  isGrounded: 0
   acceleration: 10
   maxSpeed: 10
   deceleration: 10
@@ -1047,8 +1048,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.8731728, y: 3.9135065, z: 8.719666}
-  m_Center: {x: -0.08420372, y: 3.3282466, z: -0.11230469}
+  m_Size: {x: 3.8731728, y: 4.158161, z: 8.614723}
+  m_Center: {x: -0.08420372, y: 3.2059193, z: -0.16477585}
 --- !u!114 &8444765462684082735
 MonoBehaviour:
   m_ObjectHideFlags: 0
