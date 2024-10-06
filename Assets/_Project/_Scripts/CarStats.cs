@@ -118,14 +118,11 @@ namespace _Project._Scripts
         public void Reset()
         {
             currentHealth = maxHealth;
-            _rigidbody.constraints = RigidbodyConstraints.None;
         }
 
         private void Destroy()
         {
             _carController.enabled = false;
-            _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-            _rigidbody.mass = 5;
             explosionParticles.Play();
             _isDestroyed = true;
             destroyed?.Invoke(new DestroyedEventObj());
