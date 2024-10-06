@@ -54,6 +54,11 @@ namespace _Project._Scripts
 
         public void TakeDamage(float damageReceived)
         {
+            if (_isDestroyed)
+            {
+                return;
+            }
+            
             currentHealth -= damageReceived - resistance * damageReceived / 100;
             takeDamage?.Invoke(new TakeDamageEventObj(damageReceived));
             if (currentHealth <= 0)

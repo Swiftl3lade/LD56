@@ -51,9 +51,14 @@ public class Controller : MonoBehaviour
     [SerializeField] private float maxSteeringAngle = 30f;
     [SerializeField] private float minSideSkidVelocity = 10f;
     
+    [Header("Flip")]
+    [SerializeField] private float flipAfterSeconds = 10f;
+
+    
     private Vector3 currentCarLocalVelocity = Vector3.zero;
     private float carVelocityRatio = 0;
     private float previousMoveInput = 0f; // Store previous move input
+    private float timeNotGrounded = 0f;
     
     protected virtual void Start()
     {
@@ -63,6 +68,7 @@ public class Controller : MonoBehaviour
     private void Update()
     {
         GetPlayerInput();
+        CheckFlip();
     }
 
     private void FixedUpdate()
@@ -72,6 +78,35 @@ public class Controller : MonoBehaviour
         CalculateCarVelocity();
         Movement();
         Visuals();
+    }
+
+    private void CheckFlip()
+    {
+        if (!isGrounded)
+        {
+            timeNotGrounded += Time.deltaTime;
+
+            // If airborne for longer than the set time, flip the car
+            if (timeNotGrounded >= flipAfterSeconds)
+            {
+                FlipCar();
+                timeNotGrounded = 0f; // Reset timer after flipping
+            }
+        }
+        else
+        {
+            // Reset airborne time if the car is grounded
+            timeNotGrounded = 0f;
+        }
+    }
+    
+    void FlipCar()
+    {
+        // Get the current rotation and only reset the car's rotation along the x and z axes (to upright it)
+        Quaternion uprightRotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+
+        // Smoothly rotate the car back to an upright position
+        transform.rotation = uprightRotation;
     }
 
     private void Suspension()
