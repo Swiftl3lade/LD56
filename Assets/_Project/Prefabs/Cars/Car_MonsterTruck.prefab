@@ -937,6 +937,7 @@ GameObject:
   - component: {fileID: -1181742245895000265}
   - component: {fileID: 2110471950934983738}
   - component: {fileID: 7863564992602527913}
+  - component: {fileID: 4924909099484323037}
   m_Layer: 6
   m_Name: Car_MonsterTruck
   m_TagString: Untagged
@@ -953,8 +954,8 @@ Transform:
   m_GameObject: {fileID: 2276653073949840316}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.258819, z: -0, w: 0.9659259}
-  m_LocalPosition: {x: -2.4900017, y: 2.3, z: 30.629997}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 179681758988154286}
@@ -965,7 +966,7 @@ Transform:
   - {fileID: 4248356135687258089}
   - {fileID: 8794838065512769499}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -30, z: 0}
 --- !u!54 &3728688768702794326
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1031,9 +1032,9 @@ MonoBehaviour:
   - {fileID: 3794033388149629835}
   springStiffness: 30000
   damperStiffness: 3000
-  restLength: 1.05
-  springTravel: 0.15
-  wheelRadius: 1.45
+  restLength: 0.75
+  springTravel: 0.1
+  wheelRadius: 1
   isGrounded: 0
   acceleration: 12
   maxSpeed: 12
@@ -1100,8 +1101,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.6019135, y: 3.331746, z: 9.06863}
-  m_Center: {x: -0.0006017685, y: 4.150822, z: -0.051942825}
+  m_Size: {x: 4.6019135, y: 3.9510787, z: 8.899767}
+  m_Center: {x: -0.0006016663, y: 3.841132, z: -0.00082646095}
 --- !u!114 &-2053682139731527062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,6 +1227,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <springTag>k__BackingField: 0
+--- !u!114 &4924909099484323037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a727e564d8004264d9ade49ff888f186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeshiftDuration: 10
 --- !u!1 &2343209151527903217
 GameObject:
   m_ObjectHideFlags: 0

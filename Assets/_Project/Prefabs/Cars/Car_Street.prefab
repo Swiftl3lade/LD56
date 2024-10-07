@@ -527,8 +527,8 @@ GameObject:
   - component: {fileID: 2123434948101359811}
   - component: {fileID: 4914923271641502763}
   - component: {fileID: 5586908627393884926}
-  - component: {fileID: 6866859879188657190}
   - component: {fileID: 781647629881716609}
+  - component: {fileID: 423608188109865362}
   m_Layer: 6
   m_Name: Car_Street
   m_TagString: Untagged
@@ -544,8 +544,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276653073949840316}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9063079, z: -0, w: 0.42261827}
-  m_LocalPosition: {x: -2.4900093, y: 2.3, z: 158.93}
+  m_LocalRotation: {x: 0, y: -0.9063079, z: 0, w: 0.42261827}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -558,7 +558,7 @@ Transform:
   - {fileID: 5091931225249804034}
   - {fileID: 5790822931683129179}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -130, z: 0}
 --- !u!54 &3728688768702794326
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -624,7 +624,7 @@ MonoBehaviour:
   - {fileID: 3794033388149629835}
   springStiffness: 30000
   damperStiffness: 3000
-  restLength: 0.7
+  restLength: 0.8
   springTravel: 0.15
   wheelRadius: 0.65
   isGrounded: 0
@@ -775,19 +775,6 @@ MonoBehaviour:
   - {fileID: 6283804368408079808}
   - {fileID: 4840663729700337483}
   maxDeformationsPerVertex: 10
---- !u!114 &6866859879188657190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276653073949840316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 0
 --- !u!114 &781647629881716609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,6 +788,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <springTag>k__BackingField: 0
+--- !u!114 &423608188109865362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057c4b280640c5c469eb92b7bbe3fd06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pullForce: 200
+  slipstreamBoost: 50
+  spawnHeight: 10
+  bulletSpeed: 1000
+  moveDuration: 0.3
 --- !u!1 &2343209151527903217
 GameObject:
   m_ObjectHideFlags: 0
