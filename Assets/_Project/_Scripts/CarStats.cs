@@ -175,6 +175,7 @@ namespace _Project._Scripts
             explosionParticles.Play();
             _isDestroyed = true;
             renderer.material = deadMaterial;
+            destroyedLocal?.Invoke();
             destroyed?.Invoke();
         }
     }
