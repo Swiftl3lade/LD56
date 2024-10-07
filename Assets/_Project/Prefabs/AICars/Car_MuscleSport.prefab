@@ -725,7 +725,6 @@ GameObject:
   - component: {fileID: 4411590962166558991}
   - component: {fileID: 2116795036531877043}
   - component: {fileID: 566515684757287750}
-  - component: {fileID: 6692588810775427542}
   - component: {fileID: 4090879179564603968}
   - component: {fileID: 2874315407866285476}
   m_Layer: 6
@@ -974,19 +973,6 @@ MonoBehaviour:
   - {fileID: 7439436464561973206}
   - {fileID: 4436266566714911683}
   maxDeformationsPerVertex: 10
---- !u!114 &6692588810775427542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276653073949840316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 0
 --- !u!114 &4090879179564603968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1016,6 +1002,7 @@ MonoBehaviour:
   isPlayer: 0
   hasBotActivatedAbility: 0
   canActivateAbility: 0
+  isPossibleToActivateAbility: 1
   blackHolePrefab: {fileID: 8443784709051186282, guid: dfbe5e263a953f44492674dd94d2195d,
     type: 3}
   blackHoleSpawner: {fileID: 5145011932458554418}

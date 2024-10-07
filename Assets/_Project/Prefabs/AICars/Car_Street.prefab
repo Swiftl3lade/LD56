@@ -664,7 +664,6 @@ GameObject:
   - component: {fileID: 2123434948101359811}
   - component: {fileID: 4914923271641502763}
   - component: {fileID: 5586908627393884926}
-  - component: {fileID: 781647629881716609}
   - component: {fileID: 423608188109865362}
   m_Layer: 6
   m_Name: Car_Street
@@ -911,19 +910,6 @@ MonoBehaviour:
   - {fileID: 6283804368408079808}
   - {fileID: 4840663729700337483}
   maxDeformationsPerVertex: 10
---- !u!114 &781647629881716609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276653073949840316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 0
 --- !u!114 &423608188109865362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +926,7 @@ MonoBehaviour:
   isPlayer: 1
   hasBotActivatedAbility: 0
   canActivateAbility: 0
+  isPossibleToActivateAbility: 1
   pullForce: 200
   slipstreamBoost: 50
   spawnHeight: 10

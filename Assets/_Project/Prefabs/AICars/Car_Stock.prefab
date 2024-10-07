@@ -514,7 +514,6 @@ GameObject:
   - component: {fileID: 3308577815484806851}
   - component: {fileID: -2790264474865159410}
   - component: {fileID: -5117105724198004397}
-  - component: {fileID: 9195765006544579859}
   - component: {fileID: 1429932528328220043}
   m_Layer: 6
   m_Name: Car_Stock
@@ -779,19 +778,6 @@ MonoBehaviour:
   - {fileID: 6013646517106932423}
   - {fileID: 7265133576344278113}
   maxDeformationsPerVertex: 10
---- !u!114 &9195765006544579859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276653073949840316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 0
 --- !u!114 &1429932528328220043
 MonoBehaviour:
   m_ObjectHideFlags: 0

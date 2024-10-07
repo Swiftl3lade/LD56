@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RampSpring
   m_EditorClassIdentifier: 
   SpringTag: 6
-  OverMinAttraction: 0.5
+  OverMinAttraction: 0
   UnderMinAttraction: 0
   MinDistance: 0
   MaxDistance: 6

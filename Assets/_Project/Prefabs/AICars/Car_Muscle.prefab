@@ -649,7 +649,6 @@ GameObject:
   - component: {fileID: 6920179658787129738}
   - component: {fileID: -8708708794368143710}
   - component: {fileID: -3882722696086931061}
-  - component: {fileID: 1850364426674525582}
   - component: {fileID: 4662593581391441499}
   - component: {fileID: 6359309837923282884}
   m_Layer: 6
@@ -897,19 +896,6 @@ MonoBehaviour:
   - {fileID: 6272862630409792279}
   - {fileID: 2681610923095786511}
   maxDeformationsPerVertex: 10
---- !u!114 &1850364426674525582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276653073949840316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 0
 --- !u!114 &4662593581391441499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,6 +925,7 @@ MonoBehaviour:
   isPlayer: 0
   hasBotActivatedAbility: 0
   canActivateAbility: 0
+  isPossibleToActivateAbility: 1
   blastSpherePrefab: {fileID: 1745759480705046284, guid: d309ed2cefcd7904c908672fda5881a8,
     type: 3}
   expansionSpeed: 100

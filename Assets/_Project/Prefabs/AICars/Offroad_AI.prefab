@@ -11662,7 +11662,6 @@ GameObject:
   - component: {fileID: 271193363086222659}
   - component: {fileID: 1367935320942896738}
   - component: {fileID: 3522303952626779890}
-  - component: {fileID: 3966522455608330925}
   - component: {fileID: 939482741353994360}
   - component: {fileID: 7824045571625453941}
   - component: {fileID: 4746078292551345247}
@@ -11677,7 +11676,7 @@ GameObject:
   - component: {fileID: 4463657468534158879}
   - component: {fileID: 3416988079800661577}
   m_Layer: 6
-  m_Name: Car_AI 1
+  m_Name: Offroad_AI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11857,19 +11856,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f839a9081a6846649a5c0b597c0a3084, type: 3}
---- !u!114 &3966522455608330925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6541962933025894321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 7
 --- !u!114 &939482741353994360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12067,6 +12053,7 @@ MonoBehaviour:
   explosionParticles: {fileID: 1819111837123544778}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 298426776679966773}
+  _isDestroyed: 0
 --- !u!114 &2244940369531338946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12224,6 +12211,7 @@ MonoBehaviour:
   isPlayer: 0
   hasBotActivatedAbility: 0
   canActivateAbility: 0
+  isPossibleToActivateAbility: 1
   blastSpherePrefab: {fileID: 1745759480705046284, guid: d309ed2cefcd7904c908672fda5881a8,
     type: 3}
   expansionSpeed: 100

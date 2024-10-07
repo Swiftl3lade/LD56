@@ -388,7 +388,6 @@ GameObject:
   - component: {fileID: 7608753474368859434}
   - component: {fileID: -6178548245331300432}
   - component: {fileID: 8091975679481002011}
-  - component: {fileID: 878948694289671046}
   - component: {fileID: 422461021150728360}
   m_Layer: 6
   m_Name: Car_OffRoadTruck
@@ -635,19 +634,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.7994614, y: 2.0194738, z: 6.5152845}
   m_Center: {x: -0.000000018771624, y: 2.4363651, z: -0.41768268}
---- !u!114 &878948694289671046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276653073949840316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 0
 --- !u!114 &422461021150728360
 MonoBehaviour:
   m_ObjectHideFlags: 0

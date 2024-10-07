@@ -1001,7 +1001,6 @@ GameObject:
   - component: {fileID: 6870858506502287954}
   - component: {fileID: -2053682139731527062}
   - component: {fileID: -1181742245895000265}
-  - component: {fileID: 2110471950934983738}
   - component: {fileID: 4924909099484323037}
   - component: {fileID: 7767047470977101227}
   - component: {fileID: 7030023231453678174}
@@ -1277,19 +1276,6 @@ MonoBehaviour:
   - {fileID: 7268002506642260854}
   - {fileID: 8962062059164699451}
   maxDeformationsPerVertex: 10
---- !u!114 &2110471950934983738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276653073949840316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 7
 --- !u!114 &4924909099484323037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1306,6 +1292,7 @@ MonoBehaviour:
   isPlayer: 1
   hasBotActivatedAbility: 0
   canActivateAbility: 0
+  isPossibleToActivateAbility: 1
   shapeshiftDuration: 10
   wheelsCollider: {fileID: 846675802859192766}
 --- !u!114 &7767047470977101227

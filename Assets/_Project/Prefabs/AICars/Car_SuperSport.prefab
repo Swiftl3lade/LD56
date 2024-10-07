@@ -645,11 +645,11 @@ GameObject:
   - component: {fileID: 5772739159090647048}
   - component: {fileID: -8159690647808098219}
   - component: {fileID: 8769855243034823734}
-  - component: {fileID: 1801173374074906609}
   - component: {fileID: 6941401541190655982}
   - component: {fileID: 5978025100093316199}
   - component: {fileID: 5523401426256895845}
   - component: {fileID: 3999586360489972539}
+  - component: {fileID: 7440335248040922695}
   m_Layer: 6
   m_Name: Car_SuperSport
   m_TagString: Untagged
@@ -850,19 +850,6 @@ MonoBehaviour:
   deformDist: 2
   deformationTargets: []
   maxDeformationsPerVertex: 3
---- !u!114 &1801173374074906609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276653073949840316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 0
 --- !u!114 &6941401541190655982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,7 +862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 0
+  <springTag>k__BackingField: 1
 --- !u!114 &5978025100093316199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,6 +879,7 @@ MonoBehaviour:
   isPlayer: 1
   hasBotActivatedAbility: 0
   canActivateAbility: 0
+  isPossibleToActivateAbility: 1
   dopleganger: {fileID: 2276653073949840316, guid: fb7936a999ec8a840a90ad8f2fd4252c,
     type: 3}
   rb: {fileID: 3728688768702794326}
@@ -1020,6 +1008,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7440335248040922695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 7
 --- !u!1 &2343209151527903217
 GameObject:
   m_ObjectHideFlags: 0
