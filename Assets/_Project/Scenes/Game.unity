@@ -3883,6 +3883,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_AI (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4281,6 +4286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
@@ -5162,6 +5172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
@@ -8555,6 +8570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
@@ -12255,6 +12275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
@@ -15982,6 +16007,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_AI (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18359,6 +18389,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_AI (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19204,6 +19239,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_AI (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19633,6 +19673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
@@ -20880,6 +20925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}

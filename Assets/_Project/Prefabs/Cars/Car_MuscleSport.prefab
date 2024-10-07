@@ -908,6 +908,7 @@ MonoBehaviour:
   explosionParticles: {fileID: 2892705459018955949}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 2674577831309723270}
+  _isDestroyed: 0
 --- !u!114 &566515684757287750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10908,7 +10909,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2674577831311738526}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: d872241246906fa4d84c803619470f9f, type: 3}
 --- !u!23 &2674577831309723270
 MeshRenderer:
   m_ObjectHideFlags: 0
