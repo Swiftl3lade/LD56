@@ -1,3 +1,4 @@
+using _Project._Scripts;
 using System.Linq;
 using UnityEngine;
 
@@ -22,6 +23,17 @@ namespace AI
             base.Start();
             moveInput = 1;
             springHandler = new SpringHandler(GetComponents<SpringComponent>().Where(x => x.Data.SpringTag != SpringEnum.overrideE).ToList());
+            GetComponent<CarStats>().destroyedLocal += MeleeEnemyInput_destroyed;
+        }
+
+        private void MeleeEnemyInput_destroyed()
+        {
+            GetComponent<SpringEntity>().springTag = SpringEnum.solid;
+            var entities = GetComponentsInChildren<SpringEntity>();
+            foreach (var item in entities)
+            {
+                item.springTag = SpringEnum.solid;
+            } 
         }
 
         protected override void GetPlayerInput()

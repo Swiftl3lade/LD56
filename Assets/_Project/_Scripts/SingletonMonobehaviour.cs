@@ -37,7 +37,6 @@ public class SingletonMonobehaviour<T> : MonoBehaviour where T :MonoBehaviour
         if (instance == null)
         {
             instance = this as T;
-            DontDestroyOnLoad(gameObject); // Prevents the instance from being destroyed when loading a new scene
         }
         else
         {

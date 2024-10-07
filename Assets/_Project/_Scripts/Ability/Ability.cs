@@ -7,21 +7,23 @@ namespace _Project._Scripts.Ability
     public class Ability : MonoBehaviour
     {
         public float botAbilityMaxDelay = 5;
-        
+
         private Image abilityBar;
-        
+
         public bool isPlayer;
         private CarStats _carStats;
         private float currentCharge;
-        
+
         [HideInInspector] public bool hasBotActivatedAbility;
         [HideInInspector] public bool canActivateAbility;
-        
+        [HideInInspector] public bool isPossibleToActivateAbility = true;
+
         // Start is called before the first frame update
         public virtual void Start()
         {
             abilityBar = AbilityBarReference.Instance.GetComponent<Image>();
             _carStats = GetComponent<CarStats>();
+            isPossibleToActivateAbility = true;
         }
 
         private void UpdateAbilityBar()
@@ -32,11 +34,11 @@ namespace _Project._Scripts.Ability
             }
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             RechargeAbility();
-            
-            if (canActivateAbility)
+
+            if (canActivateAbility && isPossibleToActivateAbility)
             {
                 if (Input.GetKeyDown(KeyCode.Space) && isPlayer)
                 {
@@ -67,15 +69,15 @@ namespace _Project._Scripts.Ability
         {
             // Increase the charge based on the car's recharge rate
             if (canActivateAbility) return;
-            
-            currentCharge += _carStats.abilityRechargeRate/100 * Time.deltaTime;
+
+            currentCharge += _carStats.abilityRechargeRate / 100 * Time.deltaTime;
             // currentCharge = Mathf.Clamp(currentCharge, 0f, 100f);  // Clamp between 0 and 100
 
             // Update the slider UI to reflect the current charge
             UpdateAbilityBar();
 
             // print(currentCharge);
-                
+
             // Check if the ability is fully charged
             if (currentCharge >= 1)
             {
@@ -85,7 +87,7 @@ namespace _Project._Scripts.Ability
 
         public virtual void ActivateAbility()
         {
-            
+
         }
     }
 }
