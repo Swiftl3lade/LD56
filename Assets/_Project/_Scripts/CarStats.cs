@@ -30,6 +30,7 @@ namespace _Project._Scripts
 
         public Action<TakeDamageEventObj> takeDamage;
         public static event Action destroyed;
+        public Action destroyedLocal;
         
         void Awake()
         {

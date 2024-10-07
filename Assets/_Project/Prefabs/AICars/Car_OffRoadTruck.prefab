@@ -429,7 +429,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276653073949840316}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2a53e0576e1348418535650b72e8960, type: 3}
   m_Name: 
@@ -516,14 +516,10 @@ MonoBehaviour:
   maxHealth: 1000
   currentHealth: 0
   resistance: 0
-  resistanceModifier: 1
-  maxSpeed: 0
-  currentSpeed: 0
-  speedModifier: 1
   damage: 0
   damageMitigationModifier: 1000
   collisionCooldown: 0.2
-  powerUpRate: 0
+  abilityRechargeRate: 0
   explosionParticles: {fileID: 349924604879688679}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 4037123421067958567}

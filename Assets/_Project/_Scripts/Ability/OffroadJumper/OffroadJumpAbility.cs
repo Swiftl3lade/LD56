@@ -1,27 +1,37 @@
+using _Project._Scripts.Ability;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OffroadJumpAbility : MonoBehaviour
+public class OffroadJumpAbility : Ability
 {
     [SerializeField] Rigidbody rb;
     [SerializeField] Controller controller;
-    [SerializeField] float jumpForce = 10f;
-    [SerializeField] float stompForce = 10f;
+    [SerializeField] float jumpForce = 10000f;
+    [SerializeField] float stompForce = 20000f;
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        isPossibleToActivateAbility = controller.isGrounded;
+        base.Update();
+        
         if (!Input.GetKeyDown(KeyCode.Space))
         {
             return;
         }
 
-        Debug.Log("Space");
-
         if (!controller.isGrounded)
         {
             Stomp();
+            return;
+        }
+    }
+
+    public override void ActivateAbility()
+    {
+        if (!controller.isGrounded)
+        {
             return;
         }
 
