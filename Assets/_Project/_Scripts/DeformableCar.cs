@@ -28,7 +28,7 @@ namespace _Project._Scripts
         private Vector3[] _originalVertices;
         private Dictionary<int, int> _deformationCounts;
 
-        void Start()
+        void Awake()
         {
             if (carMeshFilter != null)
             {
