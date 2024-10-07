@@ -64,22 +64,23 @@ public class CarAudio : MonoBehaviour
         engineState = state.idle;
 
         audioSource.clip = RandomSound(idleSounds);
-        audioSource.Play();
+        // audioSource.Play();
     }
 
     private void TurnAudio()
     {   if (isTurning) return;
         isTurning = true;
-        tireAudioSource.clip = RandomSound(breakSounds);
-        tireAudioSource.Play();
+        tireAudioSource.clip = RandomSound(turnSounds);
+        // tireAudioSource.Play();
     }
 
     private void BreakAudio()
     {
-        engineState = state.idle;
-        if (audioSource.isPlaying) return;
-        audioSource.clip = RandomSound(breakSounds);
-        audioSource.Play();
+        // engineState = state.idle;
+        // if (audioSource.isPlaying) return;
+        // audioSource.clip = RandomSound(breakSounds);
+        // audioSource.Play();
+        AudioSource.PlayClipAtPoint(RandomSound(breakSounds), transform.position, 0.1f);
     }
 
     private void MaxSpeedEvent()
@@ -88,7 +89,7 @@ public class CarAudio : MonoBehaviour
         engineState = state.maxSpeed;
 
         audioSource.clip = RandomSound(maxSpeedSounds);
-        audioSource.Play();
+        // audioSource.Play();
     }
 
     private void AccelerateAudio()
@@ -97,7 +98,7 @@ public class CarAudio : MonoBehaviour
         engineState = state.accelerating;
 
         audioSource.clip = RandomSound(accelerateSounds);
-        audioSource.Play();
+        // audioSource.Play();
     }
 
     private void DamageAudio(TakeDamageEventObj obj)

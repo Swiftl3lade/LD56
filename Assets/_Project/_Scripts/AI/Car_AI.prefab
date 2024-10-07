@@ -11451,7 +11451,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -12060,10 +12060,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   resistance: 20
-  resistanceModifier: 1
-  maxSpeed: 0
-  currentSpeed: 0
-  speedModifier: 1
   damage: 10
   damageMitigationModifier: 1000
   collisionCooldown: 0.2
@@ -12092,9 +12088,9 @@ MonoBehaviour:
   accelerateSounds:
   - {fileID: 8300000, guid: 2dc29be2b75ca7a47a0955a5c6622d55, type: 3}
   maxSpeedSounds:
-  - {fileID: 8300000, guid: 8db9ab2d5a19cf147a791c5e36cb04f4, type: 3}
+  - {fileID: 8300000, guid: 2dc29be2b75ca7a47a0955a5c6622d55, type: 3}
   breakSounds:
-  - {fileID: 8300000, guid: 2036aea44ed919d4aa07b962043be654, type: 3}
+  - {fileID: 8300000, guid: 761cbdb1899fb0c4d8692982c5faf33e, type: 3}
   turnSounds:
   - {fileID: 8300000, guid: c5bceda82ccb0da4d9d843dc98d0fca5, type: 3}
   idleSounds:
@@ -12121,7 +12117,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

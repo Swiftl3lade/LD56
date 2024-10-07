@@ -36,6 +36,11 @@ namespace _Project._Scripts.Ability
 
         protected virtual void Update()
         {
+            if (_carStats._isDestroyed)
+            {
+                return;
+            }
+            
             RechargeAbility();
 
             if (canActivateAbility && isPossibleToActivateAbility)
