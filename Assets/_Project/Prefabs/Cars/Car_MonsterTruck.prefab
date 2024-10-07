@@ -1276,6 +1276,7 @@ MonoBehaviour:
   isPlayer: 1
   hasBotActivatedAbility: 0
   canActivateAbility: 0
+  isPossibleToActivateAbility: 1
   shapeshiftDuration: 10
   wheelsCollider: {fileID: 846675802859192766}
 --- !u!1 &2343209151527903217
