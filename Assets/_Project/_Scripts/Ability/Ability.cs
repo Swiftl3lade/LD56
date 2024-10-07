@@ -18,7 +18,7 @@ namespace _Project._Scripts.Ability
         [HideInInspector] public bool canActivateAbility;
         
         // Start is called before the first frame update
-        void Start()
+        public virtual void Start()
         {
             abilityBar = AbilityBarReference.Instance.GetComponent<Image>();
             _carStats = GetComponent<CarStats>();

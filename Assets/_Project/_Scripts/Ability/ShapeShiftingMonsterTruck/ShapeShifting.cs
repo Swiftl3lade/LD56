@@ -12,8 +12,9 @@ public class ShapeShifting : Ability
 
     private bool isShapeshifted = false; // To prevent multiple shapeshifts
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         transform.localScale = initialScale;
         wheelsCollider.enabled = false;
     }

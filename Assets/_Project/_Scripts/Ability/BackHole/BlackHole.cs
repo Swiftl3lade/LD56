@@ -1,30 +1,26 @@
-using System;
 using UnityEngine;
 
-namespace _Project._Scripts.Ability.Blast
+namespace _Project._Scripts.Ability.BackHole
 {
-    public class BlastSphere : MonoBehaviour
+    public class BlackHole : MonoBehaviour
     {
         private float expansionSpeed;
         private float maxRadius;
-        private float blastForce;
+        private float time;
         private GameObject triggeringCar;
 
-        private MeshRenderer sphereRenderer; // Reference to the Renderer component
-        private Vector3 initialScale; // Store initial scale
-        private float currentScale = 1f; // Start with a scale of 1
+        private MeshRenderer sphereRenderer;
+        private Vector3 initialScale;
+        private float currentScale = 1f;
         
-        public void Initialize(float expansionSpeed, float maxRadius, float blastForce, GameObject triggeringCar)
+        public void Initialize(float expansionSpeed, float maxRadius, float time, GameObject triggeringCar)
         {
             this.expansionSpeed = expansionSpeed;
             this.maxRadius = maxRadius;
-            this.blastForce = blastForce;
+            this.time = time;
             this.triggeringCar = triggeringCar;
             
-            sphereRenderer = GetComponent<MeshRenderer>();
             initialScale = transform.localScale;
-
-            sphereRenderer.enabled = false; // Renderer is disabled initially
         }
 
         private void Update()
@@ -34,12 +30,6 @@ namespace _Project._Scripts.Ability.Blast
 
         private void ExpandSphere()
         {
-            // Enable the renderer while the sphere expands
-            if (!sphereRenderer.enabled)
-            {
-                sphereRenderer.enabled = true;
-            }
-
             // Expand the sphere as long as it's below the max size
             if (currentScale < maxRadius)
             {
@@ -72,7 +62,7 @@ namespace _Project._Scripts.Ability.Blast
             
             // Calculate direction from the blast center to the object
             Vector3 forceDirection = (other.transform.position - transform.position).normalized;
-            rb.AddForce(forceDirection * blastForce, ForceMode.Impulse); // Apply force to the object
+            // rb.AddForce(forceDirection * blastForce, ForceMode.Impulse); // Apply force to the object
         }
     }
 }
