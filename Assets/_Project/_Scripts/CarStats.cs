@@ -21,11 +21,11 @@ namespace _Project._Scripts
         [SerializeField] private float damageMitigationModifier = 1000;        
         [SerializeField] private float collisionCooldown = 0.2f; // Cooldown to prevent multiple damage calculations
         [Header("PowerUp")]
-        [SerializeField] private float powerUpRate;
+        public float abilityRechargeRate;
 
         [SerializeField] private ParticleSystem explosionParticles;
         [SerializeField] private Material deadMaterial;
-        [SerializeField] private MeshRenderer renderer;
+        [SerializeField] public MeshRenderer renderer;
         
         private Rigidbody _rigidbody;
         private Controller _carController;
@@ -37,7 +37,7 @@ namespace _Project._Scripts
         public static event Action destroyed;
         
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
             _carController = GetComponent<Controller>();
