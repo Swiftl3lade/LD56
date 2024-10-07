@@ -493,7 +493,7 @@ MonoBehaviour:
   maxDriftAngle: 45
   tireRotationSpeed: 1800
   maxSteeringAngle: 25
-  minSideSkidVelocity: 1
+  minSideSkidVelocity: 2.5
   flipAfterSeconds: 10
 --- !u!114 &7608753474368859434
 MonoBehaviour:
@@ -507,16 +507,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1fc1b997a23104fb2eeed404c06238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 180
   currentHealth: 0
-  resistance: 0
+  resistance: 25
   resistanceModifier: 1
   maxSpeed: 0
   currentSpeed: 0
   speedModifier: 1
-  damage: 0
+  damage: 18
   damageMitigationModifier: 1000
-  collisionCooldown: 0.2
+  collisionCooldown: 0.5
   powerUpRate: 0
   explosionParticles: {fileID: 349924604879688679}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 1
+  <springTag>k__BackingField: 0
 --- !u!114 &422461021150728360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 7
+  <springTag>k__BackingField: 0
 --- !u!1 &2343209151527903217
 GameObject:
   m_ObjectHideFlags: 0
