@@ -10,7 +10,7 @@ public class CarSelectionManager : SingletonMonobehaviour<CarSelectionManager>
     public void SelectCar(CarDetails car)
     {
         selectedCar = car.playerCar;
-        selectedCar.GetComponent<CarStats>().renderer.gameObject.GetComponent<MeshFilter>().mesh = car.color;
+        if(car.color) selectedCar.GetComponent<CarStats>().renderer.gameObject.GetComponent<MeshFilter>().mesh = car.color;
     }
 
     public GameObject GetCar()
