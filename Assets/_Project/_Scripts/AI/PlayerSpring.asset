@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerSpring
   m_EditorClassIdentifier: 
   SpringTag: 1
-  OverMinAttraction: 0.5
+  OverMinAttraction: 1
   UnderMinAttraction: -1
   MinDistance: 3.5
   MaxDistance: Infinity

@@ -59,6 +59,8 @@ public class Controller : MonoBehaviour
     private float carVelocityRatio = 0;
     private float previousMoveInput = 0f; // Store previous move input
     private float timeNotGrounded = 0f;
+    private float initialRestLength;
+    private float initialWheelRadius;
 
     public Action breakEvent;
     public Action turnEvent;
@@ -308,5 +310,20 @@ public class Controller : MonoBehaviour
                 smoke.Stop();
             }
         }
+    }
+
+    public void UpdateStats(float restLength, float wheelRadius)
+    {
+        initialRestLength = this.restLength;
+        initialWheelRadius = this.wheelRadius;
+        
+        this.restLength = restLength;
+        this.wheelRadius = wheelRadius;
+    }
+
+    public void RevertStats()
+    {
+        restLength = initialRestLength;
+        wheelRadius = initialWheelRadius;
     }
 }
