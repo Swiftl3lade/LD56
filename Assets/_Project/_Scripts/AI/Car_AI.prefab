@@ -11675,6 +11675,7 @@ GameObject:
   - component: {fileID: 2244940369531338946}
   - component: {fileID: 9014548171823823413}
   - component: {fileID: 4463657468534158879}
+  - component: {fileID: 3416988079800661577}
   m_Layer: 6
   m_Name: Car_AI
   m_TagString: Untagged
@@ -12066,7 +12067,7 @@ MonoBehaviour:
   damage: 10
   damageMitigationModifier: 1000
   collisionCooldown: 0.2
-  abilityRechargeRate: 0
+  abilityRechargeRate: 10
   explosionParticles: {fileID: 1819111837123544778}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 298426776679966773}
@@ -12211,6 +12212,27 @@ MonoBehaviour:
     type: 2}
   <checkOriginPoint>k__BackingField: {fileID: 9035609493091176046}
   isDisabled: 0
+--- !u!114 &3416988079800661577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6541962933025894321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aecf640c28b4aa448c537e81a549c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botAbilityMaxDelay: 5
+  isPlayer: 0
+  hasBotActivatedAbility: 0
+  canActivateAbility: 0
+  blastSpherePrefab: {fileID: 1745759480705046284, guid: d309ed2cefcd7904c908672fda5881a8,
+    type: 3}
+  expansionSpeed: 100
+  maxRadius: 30
+  blastForce: 100000
 --- !u!1 &6579112327566460195
 GameObject:
   m_ObjectHideFlags: 0

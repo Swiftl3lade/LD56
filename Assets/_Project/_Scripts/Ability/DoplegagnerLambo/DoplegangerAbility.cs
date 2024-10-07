@@ -1,21 +1,17 @@
+using _Project._Scripts.Ability;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoplegangerAbility : MonoBehaviour
+public class DoplegangerAbility : Ability
 {
     [SerializeField] GameObject dopleganger;
     [SerializeField] Rigidbody rb;
 
     private GameObject doplegangerInstance = null;
     // Update is called once per frame
-    void Update()
+    public override void ActivateAbility()
     {
-        if (!Input.GetKeyDown(KeyCode.Space))
-        {
-            return;
-        }
-        Debug.Log("Space");
         if (doplegangerInstance == null)
         {
             doplegangerInstance = Instantiate(dopleganger, transform.position + Vector3.up, transform.rotation);
@@ -33,6 +29,6 @@ public class DoplegangerAbility : MonoBehaviour
         doplegangerInstance.transform.position = _carPosition + Vector3.up;
         doplegangerInstance.transform.rotation = _carRotation;
 
-        rb.velocity = transform.TransformDirection(localVelocity);
+        //rb.velocity = transform.TransformDirection(localVelocity);
     }
 }
