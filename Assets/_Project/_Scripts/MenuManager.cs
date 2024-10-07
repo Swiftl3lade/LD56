@@ -118,7 +118,32 @@ public class MenuManager : MonoBehaviour
         // Step 4: Activate the new child
         var _child = parent.GetChild(newIndex);
         _child.gameObject.SetActive(true);
-        currentCarDetails.SetColor(_child.gameObject.GetComponent<MeshFilter>().mesh);
+        SetCar();
+    }
+
+    public void SetCar()
+    {
+        Transform currentCarTransform = currentCarDetails.transform;
+
+        // Use currentCarTransform as the parent transform
+        Transform parent = currentCarTransform;
+
+        int childCount = parent.childCount - 1;
+        if (childCount == 0) return; // If no children, exit early
+
+        int activeIndex = -1;
+        for (int i = 0; i < childCount; i++)
+        {
+            if (parent.GetChild(i).gameObject.activeSelf)
+            {
+                activeIndex = i;
+                break;
+            }
+        }
+
+        currentCarDetails.SetColor(parent.GetChild(activeIndex).gameObject.GetComponent<MeshFilter>().mesh);
+
+        CarSelectionManager.Instance.SelectCar(currentCarDetails);
     }
     private void CheckFocusCarCamera()
     {
@@ -168,7 +193,7 @@ public class MenuManager : MonoBehaviour
             currentCarCamera.Priority = 0;
         }
         currentCarDetails = carsTransform.GetChild(_carIndex).gameObject.GetComponent<CarDetails>();
-        CarSelectionManager.Instance.SelectCar(currentCarDetails);
+        SetCar();
         currentCarCamera = carsTransform.GetChild(_carIndex).gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
         if (currentCarCamera == null)
         {
@@ -347,7 +372,7 @@ public class MenuManager : MonoBehaviour
 
         if (_state == true)
         {
-            CarSelectionManager.Instance.SelectCar(currentCarDetails);
+            SetCar();
             InitializeTextDetails(currentCarDetails.carName, currentCarDetails.carDescription);
             InitializeStats(StatType.Power, currentCarDetails.power, currentCarDetails.maxPower);
             InitializeStats(StatType.Handling, currentCarDetails.handling, currentCarDetails.maxHandling);
