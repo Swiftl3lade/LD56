@@ -22436,8 +22436,7 @@ MonoBehaviour:
   explosionParticles: {fileID: 349924604879688679, guid: 1e1fb9acf95d13e4fbfbc8461936b8c2,
     type: 3}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
-  renderer: {fileID: 4037123421067958567, guid: 1e1fb9acf95d13e4fbfbc8461936b8c2,
-    type: 3}
+  renderer: {fileID: 1198363367156147793}
   _isDestroyed: 0
 --- !u!114 &2244940369531338946
 MonoBehaviour:
