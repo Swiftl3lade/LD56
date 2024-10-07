@@ -822,15 +822,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  resistance: 0
+  resistance: 20
   resistanceModifier: 1
   maxSpeed: 0
   currentSpeed: 0
   speedModifier: 1
-  damage: 0
+  damage: 10
   damageMitigationModifier: 1000
   collisionCooldown: 0.2
-  powerUpRate: 0
+  powerUpRate: 5
   explosionParticles: {fileID: 5417611360312513989}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 2723921151207885634}

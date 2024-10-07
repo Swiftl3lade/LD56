@@ -37,7 +37,7 @@ namespace _Project._Scripts
         public static event Action destroyed;
         
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
             _carController = GetComponent<Controller>();
