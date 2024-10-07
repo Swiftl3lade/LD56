@@ -56,12 +56,14 @@ namespace _Project._Scripts
 
             EnableCars(false);
             SetCarsAtStartPositions();
+            
 
             _unDestroyedCarsCount = cars.Count;
             pauseMenuPanel.SetActive(false);
             gameMenuPanel.SetActive(true);
             centerText.text = "";
 
+            remainingCarsText.text = $"{_unDestroyedCarsCount}/{cars.Count} cars";
             StartCoroutine(StartCountdown());
         }
 
@@ -116,7 +118,6 @@ namespace _Project._Scripts
             _gameStarted = true;
             _gameTimer = 0f;
             gameTimerText.gameObject.SetActive(true);
-            remainingCarsText.text = $"{_unDestroyedCarsCount}/{cars.Count} cars";
 
             EnableCars();
         }
@@ -186,6 +187,11 @@ namespace _Project._Scripts
 
             gameOverPanel.SetActive(true);
             Time.timeScale = 0;
+        }
+
+        private void OnDisable()
+        {
+            CarStats.destroyed -= OnCarDestroyed;
         }
     }
 }

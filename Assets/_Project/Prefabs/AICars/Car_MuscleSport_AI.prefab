@@ -13728,7 +13728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botAbilityMaxDelay: 5
-  isPlayer: 1
+  isPlayer: 0
   hasBotActivatedAbility: 0
   canActivateAbility: 0
   isPossibleToActivateAbility: 1
