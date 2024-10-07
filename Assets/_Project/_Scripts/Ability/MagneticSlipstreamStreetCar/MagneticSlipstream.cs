@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Project._Scripts;
 using _Project._Scripts.Ability;
 using AI;
 using UnityEngine;
@@ -13,12 +14,13 @@ public class MagneticSlipstream : Ability
     public float moveDuration = 2f; 
     private bool isSlipstreamActive = false;
     private GameObject nearestEnemy;
-    private List<MeleeEnemyInput> enemyCars;
+    private List<GameObject> enemyCars;
     private Rigidbody rb;
 
-    private void Start()
+    public override void Start()
     {
-        enemyCars = new List<MeleeEnemyInput>(FindObjectsOfType<MeleeEnemyInput>());
+        base.Start();
+        enemyCars = GameManager.Instance.cars;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -38,14 +40,17 @@ public class MagneticSlipstream : Ability
         GameObject closestEnemy = null;
         float closestDistance = Mathf.Infinity;
 
-        foreach (MeleeEnemyInput enemy in enemyCars)
+        foreach (GameObject enemy in enemyCars)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-
-            if (distanceToEnemy < closestDistance)
+            if (enemy != gameObject && enemy.GetComponent<Controller>() != null)
             {
-                closestDistance = distanceToEnemy;
-                closestEnemy = enemy.gameObject;
+                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+
+                if (distanceToEnemy < closestDistance)
+                {
+                    closestDistance = distanceToEnemy;
+                    closestEnemy = enemy.gameObject;
+                }
             }
         }
 

@@ -10,6 +10,8 @@ namespace _Project._Scripts
 {
     public class GameManager : MonoBehaviour
     {
+        public static GameManager Instance { get; private set; }
+        
         [SerializeField] Transform playerSpawn;
         [SerializeField] CinemachineVirtualCamera followCam;
 
@@ -28,6 +30,19 @@ namespace _Project._Scripts
         private float _gameTimer = 0f;
         private bool _gameStarted = false;
         private int _unDestroyedCarsCount;
+        
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this; // Set the instance
+                DontDestroyOnLoad(gameObject); // Optional: persist across scenes
+            }
+            else
+            {
+                Destroy(gameObject); // Destroy duplicate instances
+            }
+        }
 
         private void Start()
         {

@@ -686,7 +686,7 @@ MonoBehaviour:
   damage: 11
   damageMitigationModifier: 1000
   collisionCooldown: 0.5
-  abilityRechargeRate: 5
+  abilityRechargeRate: 10
   explosionParticles: {fileID: 490025534046282129}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 6383689057752729769}
@@ -12206,8 +12206,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.01, y: 0.78, z: 0.39}
-  m_Center: {x: 0.025499344, y: -0.21051127, z: 0}
+  m_Size: {x: 3.01, y: 1.0127771, z: 1.0321159}
+  m_Center: {x: 0.025499351, y: -0.3268999, z: 0.3210584}
 --- !u!114 &6762445053608013795
 MonoBehaviour:
   m_ObjectHideFlags: 0
