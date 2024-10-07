@@ -26,7 +26,10 @@ namespace _Project._Scripts.Ability
 
         private void UpdateAbilityBar()
         {
-            abilityBar.fillAmount = currentCharge;
+            if (isPlayer)
+            {
+                abilityBar.fillAmount = currentCharge;
+            }
         }
 
         private void Update()

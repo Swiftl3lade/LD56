@@ -94,6 +94,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4704518890854441641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &196431548871678269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7321159494079211667}
+  m_Layer: 6
+  m_Name: BarrelSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7321159494079211667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196431548871678269}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 2.86, z: -3.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1014209262683174793}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &316083050992314257
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +800,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1155,6 +1186,7 @@ GameObject:
   - component: {fileID: -5675922871234684212}
   - component: {fileID: 4101220015501241293}
   - component: {fileID: 1971428268057326430}
+  - component: {fileID: 1702625115685512923}
   m_Layer: 6
   m_Name: Car_Derby
   m_TagString: Untagged
@@ -1183,8 +1215,9 @@ Transform:
   - {fileID: 5188166813253213857}
   - {fileID: 7048408515691611705}
   - {fileID: 4704518890854441641}
+  - {fileID: 7321159494079211667}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
 --- !u!54 &3728688768702794326
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1352,7 +1385,7 @@ MonoBehaviour:
   damage: 12
   damageMitigationModifier: 1000
   collisionCooldown: 0.5
-  abilityRechargeRate: 0
+  abilityRechargeRate: 5
   explosionParticles: {fileID: 1583934636962794526}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 8775366411834637379}
@@ -1445,6 +1478,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <springTag>k__BackingField: 0
+--- !u!114 &1702625115685512923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718327656a83b7d43a439a5979509611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botAbilityMaxDelay: 5
+  isPlayer: 0
+  hasBotActivatedAbility: 0
+  canActivateAbility: 0
+  barrelPrefab: {fileID: 178208, guid: 2de86c9d7766d2b4f859c7a9ea75b1d2, type: 3}
+  barrelSpawner: {fileID: 7321159494079211667}
+  throwForce: 1000
 --- !u!1 &2343209151527903217
 GameObject:
   m_ObjectHideFlags: 0
@@ -12127,7 +12179,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -12666,7 +12718,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -12772,7 +12824,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

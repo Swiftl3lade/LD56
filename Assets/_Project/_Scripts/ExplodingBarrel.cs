@@ -28,13 +28,13 @@ namespace _Project._Scripts
         {
            var carStats = collision.gameObject.GetComponent<CarStats>();
            
-           explosionParticles.Play();
-           
-           visuals.SetActive(false);
-           _collider.enabled = false;
-
            if (carStats)
            {
+               explosionParticles.Play();
+           
+               visuals.SetActive(false);
+               _collider.enabled = false;
+               
                carStats.TakeDamage(damage);
            }
         }
