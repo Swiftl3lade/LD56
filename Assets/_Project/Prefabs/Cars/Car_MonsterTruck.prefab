@@ -935,6 +935,8 @@ GameObject:
   - component: {fileID: 6870858506502287954}
   - component: {fileID: -2053682139731527062}
   - component: {fileID: -1181742245895000265}
+  - component: {fileID: 2110471950934983738}
+  - component: {fileID: 7863564992602527913}
   m_Layer: 6
   m_Name: Car_MonsterTruck
   m_TagString: Untagged
@@ -950,8 +952,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276653073949840316}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50.79, y: 2, z: 72.74}
+  m_LocalRotation: {x: -0, y: -0.258819, z: -0, w: 0.9659259}
+  m_LocalPosition: {x: -2.4900017, y: 2.3, z: 30.629997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1124,8 +1126,8 @@ MonoBehaviour:
   collisionCooldown: 0.2
   powerUpRate: 0
   explosionParticles: {fileID: 4011134703797193685}
-  deadMaterial: {fileID: 0}
-  renderer: {fileID: 0}
+  deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
+  renderer: {fileID: 179681758990171874}
 --- !u!114 &-1181742245895000265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1198,6 +1200,32 @@ MonoBehaviour:
   - {fileID: 7268002506642260854}
   - {fileID: 8962062059164699451}
   maxDeformationsPerVertex: 10
+--- !u!114 &2110471950934983738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 7
+--- !u!114 &7863564992602527913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 1
 --- !u!1 &2343209151527903217
 GameObject:
   m_ObjectHideFlags: 0

@@ -527,6 +527,8 @@ GameObject:
   - component: {fileID: 2462170138506860598}
   - component: {fileID: -5612953415348805320}
   - component: {fileID: -2193325147577821648}
+  - component: {fileID: 4849044161357622802}
+  - component: {fileID: 7814491981943814097}
   m_Layer: 6
   m_Name: Car_Rally
   m_TagString: Untagged
@@ -542,11 +544,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276653073949840316}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50.79, y: 2, z: 72.74}
+  m_LocalRotation: {x: -0, y: 0.9063079, z: -0, w: -0.42261827}
+  m_LocalPosition: {x: -2.6899986, y: 2.3, z: 104.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7996731595246782827}
   - {fileID: 5500736176894242404}
   - {fileID: 5480526372377041951}
   - {fileID: 2793810364838776018}
@@ -681,8 +684,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2878437, y: 1.9204988, z: 5.6966934}
-  m_Center: {x: 0.0000009536743, y: 1.8325543, z: -0.19317245}
+  m_Size: {x: 3.2878437, y: 1.8901858, z: 5.3062415}
+  m_Center: {x: 0.0000009647108, y: 1.8477108, z: -0.38839933}
 --- !u!114 &-5612953415348805320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,8 +710,8 @@ MonoBehaviour:
   collisionCooldown: 0.2
   powerUpRate: 0
   explosionParticles: {fileID: 978433666421410516}
-  deadMaterial: {fileID: 0}
-  renderer: {fileID: 0}
+  deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
+  renderer: {fileID: 5500736176892396264}
 --- !u!114 &-2193325147577821648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +775,32 @@ MonoBehaviour:
   - {fileID: 2915337554176252441}
   - {fileID: 13245603802907648}
   maxDeformationsPerVertex: 10
+--- !u!114 &4849044161357622802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 1
+--- !u!114 &7814491981943814097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 7
 --- !u!1 &2343209151527903217
 GameObject:
   m_ObjectHideFlags: 0
@@ -12484,6 +12513,114 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2164508279482700123}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8954416613991674624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7996731595246782827}
+  - component: {fileID: 3286381452114245700}
+  - component: {fileID: 8592773872930762066}
+  - component: {fileID: 7653026499344267159}
+  - component: {fileID: 3816624525879035193}
+  m_Layer: 6
+  m_Name: FrontBumper
+  m_TagString: FrontBumper
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7996731595246782827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954416613991674624}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.59, z: 2.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1014209262683174793}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3286381452114245700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954416613991674624}
+  m_Material: {fileID: 13400000, guid: e588eca4c7ab2be4aa1f51ed46f741dc, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.58, y: 0.74, z: 0.08}
+  m_Center: {x: 0.025499344, y: -0.21051127, z: 0}
+--- !u!114 &8592773872930762066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954416613991674624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6c746cfb8861b4a95e019c3d4db1a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &7653026499344267159
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954416613991674624}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3816624525879035193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954416613991674624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 8
 --- !u!1 &9014178329902982672
 GameObject:
   m_ObjectHideFlags: 0

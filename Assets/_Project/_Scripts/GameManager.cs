@@ -68,12 +68,8 @@ namespace _Project._Scripts
         {
             for (int i = 0; i < cars.Count; i++)
             {
-                print("car " + i);
-                print(cars[i].transform.position);
-                print(carStartingPositions[i].position);
                 cars[i].transform.position = carStartingPositions[i].position;
                 cars[i].transform.rotation = carStartingPositions[i].rotation;
-                print(cars[i].transform.position);
             }
         }
         

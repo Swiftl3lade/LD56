@@ -514,6 +514,8 @@ GameObject:
   - component: {fileID: 3308577815484806851}
   - component: {fileID: -2790264474865159410}
   - component: {fileID: -5117105724198004397}
+  - component: {fileID: 9195765006544579859}
+  - component: {fileID: 1429932528328220043}
   m_Layer: 6
   m_Name: Car_Stock
   m_TagString: Untagged
@@ -529,11 +531,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276653073949840316}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50.79, y: 2, z: 72.74}
+  m_LocalRotation: {x: -0, y: 0.9063079, z: -0, w: 0.42261827}
+  m_LocalPosition: {x: -97.89, y: 2.3, z: 152.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8179097745628143731}
   - {fileID: 6867149525566221308}
   - {fileID: 5480526372377041951}
   - {fileID: 2793810364838776018}
@@ -686,8 +689,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.7472076, y: 1.575717, z: 5.843689}
-  m_Center: {x: 0, y: 1.3479705, z: 0.028411865}
+  m_Size: {x: 2.7472076, y: 1.575717, z: 5.4335637}
+  m_Center: {x: -0.0000000032991898, y: 1.3479705, z: -0.17665039}
 --- !u!114 &-2790264474865159410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,8 +715,8 @@ MonoBehaviour:
   collisionCooldown: 0.2
   powerUpRate: 0
   explosionParticles: {fileID: 474269137046894257}
-  deadMaterial: {fileID: 0}
-  renderer: {fileID: 0}
+  deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
+  renderer: {fileID: 6867149525567950952}
 --- !u!114 &-5117105724198004397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -777,6 +780,32 @@ MonoBehaviour:
   - {fileID: 6013646517106932423}
   - {fileID: 7265133576344278113}
   maxDeformationsPerVertex: 10
+--- !u!114 &9195765006544579859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 1
+--- !u!114 &1429932528328220043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 7
 --- !u!1 &2313397460113330129
 GameObject:
   m_ObjectHideFlags: 0
@@ -11186,6 +11215,114 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6322417122447666130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5331480517324675661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8179097745628143731}
+  - component: {fileID: 4560595740312946687}
+  - component: {fileID: 6308520126822261147}
+  - component: {fileID: 5615750364627217870}
+  - component: {fileID: 5418963840020307554}
+  m_Layer: 6
+  m_Name: FrontBumper
+  m_TagString: FrontBumper
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8179097745628143731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331480517324675661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.405, z: 2.723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1014209262683174793}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4560595740312946687
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331480517324675661}
+  m_Material: {fileID: 13400000, guid: e588eca4c7ab2be4aa1f51ed46f741dc, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.68, y: 0.78, z: 0.08}
+  m_Center: {x: 0.025499344, y: -0.21051127, z: 0}
+--- !u!114 &6308520126822261147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331480517324675661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6c746cfb8861b4a95e019c3d4db1a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &5615750364627217870
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331480517324675661}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5418963840020307554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331480517324675661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <springTag>k__BackingField: 8
 --- !u!1 &5719686176909256044
 GameObject:
   m_ObjectHideFlags: 0

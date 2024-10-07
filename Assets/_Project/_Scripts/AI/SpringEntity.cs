@@ -14,14 +14,14 @@ public class SpringEntity : MonoBehaviour
 			return;
 		}
 
-		SpringManager.EntityDict[springTag].Add(this);
+		SpringManager.EntityDict[springTag]?.Add(this);
 	}
 
 	void OnDestroy()
 	{
 		if (springTag == SpringEnum.overrideE) return;
 
-		SpringManager.EntityDict[springTag].Remove(this);
+		SpringManager.EntityDict[springTag]?.Remove(this);
 	}
 }
 
