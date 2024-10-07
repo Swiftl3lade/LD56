@@ -25,7 +25,7 @@ namespace _Project._Scripts
         private Rigidbody _rigidbody;
         private Controller _carController;
 
-        private bool _isDestroyed;
+        [HideInInspector] public bool _isDestroyed;
         private float _lastCollisionTime = -1f;
 
         public Action<TakeDamageEventObj> takeDamage;

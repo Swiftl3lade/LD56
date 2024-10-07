@@ -34,6 +34,11 @@ namespace _Project._Scripts.Ability
 
         private void Update()
         {
+            if (_carStats._isDestroyed)
+            {
+                return;
+            }
+            
             RechargeAbility();
             
             if (canActivateAbility)
