@@ -114,6 +114,60 @@ namespace _Project._Scripts
             // print(finalDamage);
             otherCar.TakeDamage(finalDamage);
         }
+        
+        public void DealDamage(Collider other, bool isBumper)
+        {
+            if (Time.time - _lastCollisionTime < collisionCooldown) return; // Prevent repeated collisions
+            _lastCollisionTime = Time.time;
+
+            CarStats otherCar = other.gameObject.GetComponent<CarStats>();
+            if (otherCar == null)
+            {
+                return;
+            }
+
+            // Retrieve Rigidbody component from the other car
+            Rigidbody otherRigidbody = other.attachedRigidbody;
+            if (otherRigidbody == null)
+            {
+                return; // No rigidbody, can't calculate damage
+            }
+
+            // Get the relative velocity between the two cars
+            Vector3 relativeVelocity = _rigidbody.velocity - otherRigidbody.velocity;
+
+            // Calculate the speed of the impact
+            float impactSpeed = relativeVelocity.magnitude;
+
+            // Get the direction of impact by normalizing the relative velocity
+            Vector3 impactDirection = relativeVelocity.normalized;
+
+            // Get the angle of impact (assume the collision normal is pointing towards the current object)
+            Vector3 collisionNormal = other.transform.position - transform.position;
+            float impactAngle = Vector3.Dot(impactDirection, collisionNormal.normalized);
+
+            // Normalize the angle to a value between 0 (glancing hit) and 1 (direct hit)
+            float angleFactor = Mathf.Abs(impactAngle);
+
+            // Use mass and speed to calculate base damage
+            float baseDamage = _rigidbody.mass * impactSpeed * damage / damageMitigationModifier;
+
+            // Scale damage based on impact angle
+            float finalDamage = baseDamage * angleFactor;
+
+            if (finalDamage > damage)
+            {
+                finalDamage = damage;
+            }
+
+            if (isBumper)
+            {
+                finalDamage /= 2;
+            }
+
+            // Apply damage to the other car
+            otherCar.TakeDamage(finalDamage);
+        }
 
         public void Reset()
         {
