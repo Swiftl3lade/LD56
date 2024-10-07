@@ -9,13 +9,8 @@ namespace _Project._Scripts
         [Header("Health")]
         [SerializeField] private float maxHealth;
         [SerializeField] private float currentHealth;
-        [Header("Endurance")]
-        [SerializeField] private float resistance;
-        [SerializeField] private float resistanceModifier = 1;
-        [Header("Speed")]
-        [SerializeField] private float maxSpeed;
-        [SerializeField] private float currentSpeed;
-        [SerializeField] private float speedModifier = 1;
+        [Header("Resistance")]
+        public float resistance;
         [Header("Damage")]
         [SerializeField] private float damage = 20;        
         [SerializeField] private float damageMitigationModifier = 1000;        

@@ -19,16 +19,18 @@ public class DoplegangerAbility : Ability
         }
 
         Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
+        Vector3 localAngularVelocity = transform.InverseTransformDirection(rb.angularVelocity);
 
         var _carPosition = transform.position;
         var _carRotation = transform.rotation;
 
-        transform.position = doplegangerInstance.transform.position;
-        transform.rotation = doplegangerInstance.transform.rotation;
+        rb.position = doplegangerInstance.transform.position;
+        rb.rotation = doplegangerInstance.transform.rotation;
 
         doplegangerInstance.transform.position = _carPosition + Vector3.up;
         doplegangerInstance.transform.rotation = _carRotation;
 
-        //rb.velocity = transform.TransformDirection(localVelocity);
+        rb.velocity = rb.rotation * localVelocity;
+        //rb.angularVelocity = doplegangerInstance.transform.TransformDirection(localAngularVelocity);
     }
 }

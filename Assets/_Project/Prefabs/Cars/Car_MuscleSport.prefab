@@ -401,6 +401,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4525537472458319263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &923165503966107298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5145011932458554418}
+  m_Layer: 6
+  m_Name: BlackHoleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5145011932458554418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923165503966107298}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 3.45, z: 1.736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1014209262683174793}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1169636665949598151
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +727,7 @@ GameObject:
   - component: {fileID: 566515684757287750}
   - component: {fileID: 6692588810775427542}
   - component: {fileID: 4090879179564603968}
+  - component: {fileID: 2874315407866285476}
   m_Layer: 6
   m_Name: Car_MuscleSport
   m_TagString: Untagged
@@ -711,7 +743,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276653073949840316}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.2588191, z: -0, w: 0.9659258}
+  m_LocalRotation: {x: 0, y: 0.2588191, z: 0, w: 0.9659258}
   m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -724,8 +756,9 @@ Transform:
   - {fileID: 8493685931425869330}
   - {fileID: 5143396916123096809}
   - {fileID: 4525537472458319263}
+  - {fileID: 5145011932458554418}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
 --- !u!54 &3728688768702794326
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -875,7 +908,7 @@ MonoBehaviour:
   damage: 114
   damageMitigationModifier: 1000
   collisionCooldown: 0.5
-  abilityRechargeRate: 0
+  abilityRechargeRate: 10
   explosionParticles: {fileID: 2892705459018955949}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 2674577831309723270}
@@ -968,6 +1001,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <springTag>k__BackingField: 0
+--- !u!114 &2874315407866285476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d841a5ad5012c3479982420b6470154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botAbilityMaxDelay: 5
+  isPlayer: 0
+  hasBotActivatedAbility: 0
+  canActivateAbility: 0
+  blackHolePrefab: {fileID: 8443784709051186282, guid: dfbe5e263a953f44492674dd94d2195d,
+    type: 3}
+  blackHoleSpawner: {fileID: 5145011932458554418}
+  throwForce: 1000
+  expansionSpeed: 10
+  maxRadius: 5
+  pullForce: 1000
+  time: 5
 --- !u!1 &2343209151527903217
 GameObject:
   m_ObjectHideFlags: 0

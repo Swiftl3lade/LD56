@@ -36,7 +36,6 @@ namespace _Project._Scripts
             if (Instance == null)
             {
                 Instance = this; // Set the instance
-                DontDestroyOnLoad(gameObject); // Optional: persist across scenes
             }
             else
             {
@@ -48,10 +47,10 @@ namespace _Project._Scripts
         {
             CarStats.destroyed += OnCarDestroyed;
 
-            // var _playerCar = CarSelectionManager.Instance.CreateCar(playerSpawn.position);
-            // cars.Add(_playerCar);
-            // followCam.Follow = _playerCar.transform;
-            // followCam.LookAt = _playerCar.transform;
+            var _playerCar = CarSelectionManager.Instance.CreateCar(playerSpawn.position);
+            cars.Add(_playerCar);
+            followCam.Follow = _playerCar.transform;
+            followCam.LookAt = _playerCar.transform;
 
             EnableCars(false);
             SetCarsAtStartPositions();
