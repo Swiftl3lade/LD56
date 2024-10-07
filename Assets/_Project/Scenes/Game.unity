@@ -1879,27 +1879,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2775895203016841822}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &248261674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248261656}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aecf640c28b4aa448c537e81a549c61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  botAbilityMaxDelay: 5
-  isPlayer: 0
-  hasBotActivatedAbility: 0
-  canActivateAbility: 0
-  blastSpherePrefab: {fileID: 1745759480705046284, guid: d309ed2cefcd7904c908672fda5881a8,
-    type: 3}
-  expansionSpeed: 100
-  maxRadius: 30
-  blastForce: 100000
 --- !u!1001 &249751135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3882,6 +3861,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_AI (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4241,6 +4225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
@@ -4912,6 +4901,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
@@ -8140,6 +8134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
@@ -11764,6 +11763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
@@ -15490,6 +15494,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_AI (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17701,6 +17710,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_AI (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18546,6 +18560,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_AI (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18975,6 +18994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
@@ -20222,6 +20246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car_AI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541962933025894321, guid: d53d7ccd787154c42836862ac63d33cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9035609493091176046, guid: d53d7ccd787154c42836862ac63d33cc,
         type: 3}
