@@ -797,7 +797,7 @@ MonoBehaviour:
   damage: 9
   damageMitigationModifier: 1000
   collisionCooldown: 0.5
-  powerUpRate: 5
+  abilityRechargeRate: 0
   explosionParticles: {fileID: 298608754890881673}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 8525565675900321023}

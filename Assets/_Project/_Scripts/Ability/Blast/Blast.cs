@@ -2,23 +2,15 @@ using UnityEngine;
 
 namespace _Project._Scripts.Ability.Blast
 {
-    public class Blast : MonoBehaviour
+    public class Blast : Ability
     {
         public GameObject blastSpherePrefab;
         public float expansionSpeed = 10f;  
         public float maxRadius = 5f;       
-        public float blastForce = 500f;     
+        public float blastForce = 500f;
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                ActivateBlast();
-            }
-        }
-        
         // Call this function to activate the blast
-        public void ActivateBlast()
+        public override void ActivateAbility()
         {
             GameObject blastSphere = Instantiate(blastSpherePrefab, transform.position, Quaternion.identity);
             blastSphere.transform.SetParent(transform);

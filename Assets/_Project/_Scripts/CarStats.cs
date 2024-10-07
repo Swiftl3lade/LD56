@@ -21,7 +21,7 @@ namespace _Project._Scripts
         [SerializeField] private float damageMitigationModifier = 1000;        
         [SerializeField] private float collisionCooldown = 0.2f; // Cooldown to prevent multiple damage calculations
         [Header("PowerUp")]
-        [SerializeField] private float powerUpRate;
+        public float abilityRechargeRate;
 
         [SerializeField] private ParticleSystem explosionParticles;
         [SerializeField] private Material deadMaterial;
