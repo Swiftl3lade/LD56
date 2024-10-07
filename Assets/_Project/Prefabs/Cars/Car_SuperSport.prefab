@@ -654,7 +654,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276653073949840316}
   serializedVersion: 4
-  m_Mass: 1500
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 10
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276653073949840316}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2a53e0576e1348418535650b72e8960, type: 3}
   m_Name: 
@@ -771,8 +771,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.14, y: 1.0610951, z: 6.79776}
-  m_Center: {x: -0.039435387, y: 1.6371663, z: -0.095710754}
+  m_Size: {x: 3.14, y: 1.3977916, z: 6.79776}
+  m_Center: {x: -0.039435387, y: 1.4688181, z: -0.095710754}
 --- !u!114 &-8159690647808098219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,6 +797,8 @@ MonoBehaviour:
   collisionCooldown: 0.2
   powerUpRate: 5
   explosionParticles: {fileID: 0}
+  deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
+  renderer: {fileID: 8525565675900321023}
 --- !u!114 &8769855243034823734
 MonoBehaviour:
   m_ObjectHideFlags: 0

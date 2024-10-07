@@ -590,7 +590,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276653073949840316}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2a53e0576e1348418535650b72e8960, type: 3}
   m_Name: 
@@ -707,6 +707,8 @@ MonoBehaviour:
   collisionCooldown: 0.2
   powerUpRate: 0
   explosionParticles: {fileID: 490025534046282129}
+  deadMaterial: {fileID: 0}
+  renderer: {fileID: 0}
 --- !u!114 &5586908627393884926
 MonoBehaviour:
   m_ObjectHideFlags: 0

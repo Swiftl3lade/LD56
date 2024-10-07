@@ -6,6 +6,7 @@ public class CarDetails : MonoBehaviour
 {
     public string carName;
     public string carDescription;
+    public GameObject playerCar;
 
     private CinemachineVirtualCamera virtualCamera;
 
@@ -18,8 +19,8 @@ public class CarDetails : MonoBehaviour
     [HideInInspector] public int maxHandling;
     private void Start()
     {
-        
-        if(carName == "")
+
+        if (carName == "")
         {
             carName = transform.name;
         }
@@ -32,9 +33,9 @@ public class CarDetails : MonoBehaviour
         resistance = Random.Range(1, 4);
         handling = Random.Range(1, 4);
 
-        maxPower = Random.Range(4, 6);  
-        maxResistance = Random.Range(4, 6);  
-        maxHandling = Random.Range(4, 6);  
-        
-        }
+        maxPower = Random.Range(4, 6);
+        maxResistance = Random.Range(4, 6);
+        maxHandling = Random.Range(4, 6);
+
+    }
 }

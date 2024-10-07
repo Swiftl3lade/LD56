@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1821132, g: 0.22781011, b: 0.30738592, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3044,6 +3043,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carDescription: BLABLA
+  playerCar: {fileID: 2276653073949840316, guid: 92e78a400bf257b4b8ff6e08f39e428e,
+    type: 3}
   power: 0
   resistance: 0
   handling: 0
@@ -4409,12 +4410,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!114 &330585548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4905,6 +4906,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carDescription: Fugi ca te mananc!
+  playerCar: {fileID: 2276653073949840316, guid: 8b31d154349fb5341a4520e65aaa7567,
+    type: 3}
   power: 0
   resistance: 0
   handling: 0
@@ -5345,7 +5348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464228, guid: 8bdbd6ed29100d04da370b3d67d3cd47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -35.51
       objectReference: {fileID: 0}
     - target: {fileID: 464228, guid: 8bdbd6ed29100d04da370b3d67d3cd47, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9884,6 +9887,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carDescription: NE VEDEM LA 4 BENZI
+  playerCar: {fileID: 2276653073949840316, guid: 3edc0dae80957164d81f896cfc93bfb5,
+    type: 3}
   power: 0
   resistance: 0
   handling: 0
@@ -10448,6 +10453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carDescription: Ola mami que guapa.
+  playerCar: {fileID: 2276653073949840316, guid: b22c12d472361104d86679f5b583c005,
+    type: 3}
   power: 0
   resistance: 0
   handling: 0
@@ -11752,6 +11759,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carDescription: AM CRIZA VARSTEI MIJLOCII
+  playerCar: {fileID: 2276653073949840316, guid: 89ae09728081a484eb6eee3b135d81ad,
+    type: 3}
   power: 0
   resistance: 0
   handling: 0
@@ -12088,73 +12097,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 465524, guid: a60d847df9fca6948ba375c6d1c50613,
     type: 3}
   m_PrefabInstance: {fileID: 889068450}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &892108401
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2090773950}
-    m_Modifications:
-    - target: {fileID: 124158, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_Name
-      value: SR_Veh_SprintCar_Black
-      objectReference: {fileID: 0}
-    - target: {fileID: 124158, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 489624, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489624, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489624, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489624, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 489624, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489624, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489624, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489624, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489624, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489624, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3c01b65658a401944a75d0de41281f79, type: 3}
---- !u!4 &892108402 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 489624, guid: 3c01b65658a401944a75d0de41281f79,
-    type: 3}
-  m_PrefabInstance: {fileID: 892108401}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &895210762
 PrefabInstance:
@@ -13122,6 +13064,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carDescription: STAI DREPT! NU MISCA!
+  playerCar: {fileID: 2276653073949840316, guid: 1e1fb9acf95d13e4fbfbc8461936b8c2,
+    type: 3}
   power: 0
   resistance: 0
   handling: 0
@@ -18226,6 +18170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carDescription: KA CHOW!
+  playerCar: {fileID: 2276653073949840316, guid: a31f468bff597d945976a21fbb64a750,
+    type: 3}
   power: 0
   resistance: 0
   handling: 0
@@ -20828,6 +20774,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carDescription: GOLF 1.9 TDI ALH SOFTAT
+  playerCar: {fileID: 2276653073949840316, guid: 1ee2cbde6ebed2541952028ff8dd46cd,
+    type: 3}
   power: 0
   resistance: 0
   handling: 0
@@ -23856,6 +23804,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1708031270}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1733059718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1733059719}
+  - component: {fileID: 1733059720}
+  m_Layer: 0
+  m_Name: CarSelectionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1733059719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733059718}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -30.629997, y: 1.3176273, z: 123.48}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1733059720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733059718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba03725328590d4f880e56fcbee74e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedCar: {fileID: 0}
 --- !u!1 &1735679451
 GameObject:
   m_ObjectHideFlags: 0
@@ -24178,6 +24171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carDescription: OK. AM PLECAT.
+  playerCar: {fileID: 2276653073949840316, guid: 1547fe7bcf89cda4f81a0a1a27a8ecc4,
+    type: 3}
   power: 0
   resistance: 0
   handling: 0
@@ -28006,6 +28001,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carDescription: EU SUNT CEL MAI TARE
+  playerCar: {fileID: 2276653073949840316, guid: de443826af1b4dc4b9d75e6788a04eff,
+    type: 3}
   power: 0
   resistance: 0
   handling: 0
@@ -29030,7 +29027,6 @@ Transform:
   - {fileID: 1518713493}
   - {fileID: 2074775392}
   - {fileID: 1012299069}
-  - {fileID: 892108402}
   - {fileID: 673473129}
   m_Father: {fileID: 1173109416}
   m_LocalEulerAnglesHint: {x: 0, y: -54.671, z: 0}
@@ -29069,6 +29065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carDescription: ABCDEFGHIJ
+  playerCar: {fileID: 0}
   power: 0
   resistance: 0
   handling: 0
@@ -30725,3 +30722,4 @@ SceneRoots:
   - {fileID: 84343385}
   - {fileID: 1802540634}
   - {fileID: 80925876}
+  - {fileID: 1733059719}

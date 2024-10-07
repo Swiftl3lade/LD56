@@ -166,6 +166,7 @@ public class MenuManager : MonoBehaviour
             currentCarCamera.Priority = 0;
         }
         currentCarDetails = carsTransform.GetChild(_carIndex).gameObject.GetComponent<CarDetails>();
+        CarSelectionManager.Instance.SelectCar(currentCarDetails);
         currentCarCamera = carsTransform.GetChild(_carIndex).gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
         if (currentCarCamera == null)
         {
@@ -344,6 +345,7 @@ public class MenuManager : MonoBehaviour
 
         if (_state == true)
         {
+            CarSelectionManager.Instance.SelectCar(currentCarDetails);
             InitializeTextDetails(currentCarDetails.carName, currentCarDetails.carDescription);
             InitializeStats(StatType.Power, currentCarDetails.power, currentCarDetails.maxPower);
             InitializeStats(StatType.Handling, currentCarDetails.handling, currentCarDetails.maxHandling);

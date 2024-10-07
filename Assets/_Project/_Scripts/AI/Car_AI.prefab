@@ -11771,7 +11771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 7
+  <springTag>k__BackingField: 0
 --- !u!114 &2019012952952554757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11974,6 +11974,8 @@ MonoBehaviour:
   collisionCooldown: 0.2
   powerUpRate: 5
   explosionParticles: {fileID: 1819111837123544778}
+  deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
+  renderer: {fileID: 298426776679966773}
 --- !u!114 &2244940369531338946
 MonoBehaviour:
   m_ObjectHideFlags: 0

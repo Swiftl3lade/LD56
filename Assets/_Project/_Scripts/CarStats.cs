@@ -24,6 +24,8 @@ namespace _Project._Scripts
         [SerializeField] private float powerUpRate;
 
         [SerializeField] private ParticleSystem explosionParticles;
+        [SerializeField] private Material deadMaterial;
+        [SerializeField] private MeshRenderer renderer;
         
         private Rigidbody _rigidbody;
         private Controller _carController;
@@ -123,6 +125,7 @@ namespace _Project._Scripts
             _carController.enabled = false;
             explosionParticles.Play();
             _isDestroyed = true;
+            renderer.material = deadMaterial;
             destroyed?.Invoke();
         }
     }

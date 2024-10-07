@@ -11,7 +11,7 @@ namespace _Project._Scripts
     {
         [Header("Game Settings")]
         public Transform[] carStartingPositions;  
-        public GameObject[] cars;               
+        public List<GameObject> cars;               
         public float countdownTime = 3f;         
 
         [Header("UI Elements")]
@@ -28,11 +28,14 @@ namespace _Project._Scripts
         private void Start()
         {
             CarStats.destroyed += OnCarDestroyed;
-            
+
+            var _playerCar = Instantiate(CarSelectionManager.Instance.GetCar());
+            cars.Add(_playerCar);
+
             EnableCars(false);
             SetCarsAtStartPositions();
             
-            _unDestroyedCarsCount = cars.Length;
+            _unDestroyedCarsCount = cars.Count;
             pauseMenuPanel.SetActive(false);
             gameMenuPanel.SetActive(true);
             centerText.text = "";
@@ -63,7 +66,7 @@ namespace _Project._Scripts
         
         void SetCarsAtStartPositions()
         {
-            for (int i = 0; i < cars.Length; i++)
+            for (int i = 0; i < cars.Count; i++)
             {
                 print("car " + i);
                 print(cars[i].transform.position);
@@ -95,7 +98,7 @@ namespace _Project._Scripts
             _gameStarted = true;
             _gameTimer = 0f;
             gameTimerText.gameObject.SetActive(true);
-            remainingCarsText.text = $"{_unDestroyedCarsCount}/{cars.Length} cars";
+            remainingCarsText.text = $"{_unDestroyedCarsCount}/{cars.Count} cars";
 
             EnableCars();
         }
@@ -103,7 +106,7 @@ namespace _Project._Scripts
         private void EnableCars(bool enable = true)
         {
             // Enable movement for all cars
-            for (int i = 0; i < cars.Length; i++)
+            for (int i = 0; i < cars.Count; i++)
             {
                 Controller carController = cars[i].GetComponent<Controller>();
                 if (carController != null)
@@ -147,7 +150,7 @@ namespace _Project._Scripts
         {
             _unDestroyedCarsCount--;
             
-            remainingCarsText.text = $"{_unDestroyedCarsCount}/{cars.Length} cars";
+            remainingCarsText.text = $"{_unDestroyedCarsCount}/{cars.Count} cars";
             if (_unDestroyedCarsCount == 1)
             {
                 ShowGameOver();

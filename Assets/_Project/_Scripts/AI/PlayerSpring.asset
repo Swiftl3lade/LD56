@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerSpring
   m_EditorClassIdentifier: 
   SpringTag: 1
-  OverMinAttraction: 1
+  OverMinAttraction: 0.5
   UnderMinAttraction: -1
-  MinDistance: 2
+  MinDistance: 3.5
   MaxDistance: Infinity
   <MaxColor>k__BackingField: {r: 0, g: 0, b: 1, a: 1}
   <MinColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
