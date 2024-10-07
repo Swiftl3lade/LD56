@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpringEntity : MonoBehaviour
 {
-	[field: SerializeField] public SpringEnum springTag { get; private set; } = SpringEnum.walls;
+	[field: SerializeField] public SpringEnum springTag { get; set; } = SpringEnum.walls;
 	private void Start()
 	{
 		if (springTag == SpringEnum.overrideE)

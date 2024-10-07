@@ -30,8 +30,8 @@ namespace _Project._Scripts
 
         public Action<TakeDamageEventObj> takeDamage;
         public static event Action destroyed;
+        public Action destroyedLocal;
         
-        // Start is called before the first frame update
         void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
