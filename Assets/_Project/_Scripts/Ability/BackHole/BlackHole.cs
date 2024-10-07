@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Project._Scripts.Ability.BackHole
@@ -6,15 +7,17 @@ namespace _Project._Scripts.Ability.BackHole
     {
         private float expansionSpeed;
         private float maxRadius;
+        private float pullForce;
         private float time;
         private GameObject triggeringCar;
+        private bool isExpanding = false;
 
-        private MeshRenderer sphereRenderer;
         private Vector3 initialScale;
         private float currentScale = 1f;
         
-        public void Initialize(float expansionSpeed, float maxRadius, float time, GameObject triggeringCar)
+        public void Initialize(float pullForce, float expansionSpeed, float maxRadius, float time, GameObject triggeringCar)
         {
+            this.pullForce = pullForce;
             this.expansionSpeed = expansionSpeed;
             this.maxRadius = maxRadius;
             this.time = time;
@@ -25,7 +28,19 @@ namespace _Project._Scripts.Ability.BackHole
 
         private void Update()
         {
-            ExpandSphere();
+            if (isExpanding)
+            {
+                ExpandSphere();
+            }
+        }
+
+        private void OnTriggerEnter(Collider collision)
+        {
+            if (!isExpanding)
+            {
+                isExpanding = true;
+                GetComponent<Rigidbody>().isKinematic = true;
+            }
         }
 
         private void ExpandSphere()
@@ -44,13 +59,13 @@ namespace _Project._Scripts.Ability.BackHole
                 // Once the sphere reaches the maximum size, destroy the object and disable the renderer
                 if (currentScale >= maxRadius)
                 {
-                    sphereRenderer.enabled = false; // Hide the sphere after the effect ends
-                    Destroy(gameObject); // Destroy the sphere after reaching max size
+                    isExpanding = false;
+                    Destroy(gameObject, time); // Destroy the sphere after reaching max size
                 }
             }
         }
-
-        private void OnTriggerEnter(Collider other)
+        
+        private void OnTriggerStay(Collider other)
         {
             if (other.gameObject == triggeringCar) return; // Ignore the car that triggered the ability
 
@@ -60,9 +75,9 @@ namespace _Project._Scripts.Ability.BackHole
             Rigidbody rb = car.GetComponent<Rigidbody>();
             if (rb == null) return;
             
-            // Calculate direction from the blast center to the object
-            Vector3 forceDirection = (other.transform.position - transform.position).normalized;
-            // rb.AddForce(forceDirection * blastForce, ForceMode.Impulse); // Apply force to the object
+            // Apply force towards the orb's center
+            Vector3 pullDirection = (transform.position - other.transform.position).normalized;
+            rb.AddForce(pullDirection * pullForce * Time.deltaTime, ForceMode.Acceleration);
         }
     }
 }

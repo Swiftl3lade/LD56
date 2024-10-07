@@ -9,6 +9,7 @@ namespace _Project._Scripts.Ability.BackHole
         public float throwForce = 1000f;
         public float expansionSpeed = 10f;  
         public float maxRadius = 5f;       
+        public float pullForce = 1000f;       
         public float time = 5f;
 
         // Call this function to activate the blast
@@ -18,7 +19,7 @@ namespace _Project._Scripts.Ability.BackHole
             blackHole.GetComponent<Rigidbody>().AddForce(throwForce * transform.forward);
             
             BlackHole blackHoleScript = blackHole.GetComponent<BlackHole>();
-            blackHoleScript.Initialize(expansionSpeed, maxRadius, time, gameObject);
+            blackHoleScript.Initialize(pullForce, expansionSpeed, maxRadius, time, gameObject);
         }
     }
 }
