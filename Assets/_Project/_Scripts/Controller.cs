@@ -65,6 +65,8 @@ public class Controller : MonoBehaviour
     public Action accelerateEvent;
     public Action maxSpeedEvent;
     public Action idleEvent;
+    public Action stopTurningEvent;
+    public Action stopBreakingEvent;
 
     protected virtual void Start()
     {
@@ -192,19 +194,21 @@ public class Controller : MonoBehaviour
         if ((moveInput > 0 && localVelocity.z < 0) || (moveInput < 0 && localVelocity.z > 0))
         {
             carRB.drag = brakeForce;
-            turnEvent?.Invoke();
+            breakEvent?.Invoke();
         }
-
-        carRB.drag = defaultDrag;
+        else
+        {
+            carRB.drag = defaultDrag;
+            stopBreakingEvent?.Invoke();
+        }
 
         if (currentSpeed < maxSpeed)
         {
             if (moveInput > 0)
                 accelerateEvent?.Invoke();
             carRB.AddForceAtPosition(acceleration * moveInput * transform.forward, accelerationPoint.position, ForceMode.Acceleration);
-            return;
         }
-        if (moveInput > 0)
+        else if (moveInput > 0)
             maxSpeedEvent?.Invoke();
     }
 
@@ -279,6 +283,7 @@ public class Controller : MonoBehaviour
         {
             ToggleSkidMarks(false);
             ToggleSkidSmokes(false);
+            stopTurningEvent?.Invoke();
         }
     }
 

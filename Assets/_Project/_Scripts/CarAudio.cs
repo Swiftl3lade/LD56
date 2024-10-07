@@ -23,8 +23,11 @@ public class CarAudio : MonoBehaviour
     [SerializeField] private List<AudioClip> idleSounds;
 
     AudioSource audioSource;
+    [SerializeField] AudioSource tireAudioSource;
 
     state engineState = state.idle;
+
+    bool isTurning = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +41,21 @@ public class CarAudio : MonoBehaviour
         carController.accelerateEvent += AccelerateAudio;
         carController.maxSpeedEvent += MaxSpeedEvent;
         carController.breakEvent += BreakAudio;
+        carController.stopBreakingEvent += StopBreaking;
         carController.turnEvent += TurnAudio;
         carController.idleEvent += IdleAudio;
+        carController.stopTurningEvent += StopTurning;
+    }
+
+    private void StopBreaking()
+    {
+        audioSource.Stop();
+    }
+
+    private void StopTurning()
+    {
+        isTurning = false;
+        tireAudioSource.Stop();
     }
 
     private void IdleAudio()
@@ -52,17 +68,18 @@ public class CarAudio : MonoBehaviour
     }
 
     private void TurnAudio()
-    {
-        AudioSource.PlayClipAtPoint(RandomSound(turnSounds), transform.position);
+    {   if (isTurning) return;
+        isTurning = true;
+        tireAudioSource.clip = RandomSound(breakSounds);
+        tireAudioSource.Play();
     }
 
     private void BreakAudio()
     {
         engineState = state.idle;
-
+        if (audioSource.isPlaying) return;
         audioSource.clip = RandomSound(breakSounds);
         audioSource.Play();
-
     }
 
     private void MaxSpeedEvent()
