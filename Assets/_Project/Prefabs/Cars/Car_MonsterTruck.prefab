@@ -1117,7 +1117,7 @@ MonoBehaviour:
   tireRotationSpeed: 1300
   maxSteeringAngle: 20
   minSideSkidVelocity: 2.5
-  flipAfterSeconds: 10
+  flipAfterSeconds: 5
 --- !u!65 &6870858506502287954
 BoxCollider:
   m_ObjectHideFlags: 0

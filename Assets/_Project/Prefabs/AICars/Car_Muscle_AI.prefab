@@ -1793,7 +1793,7 @@ MonoBehaviour:
   tireRotationSpeed: 3000
   maxSteeringAngle: 30
   minSideSkidVelocity: 2.5
-  flipAfterSeconds: 10
+  flipAfterSeconds: 5
   angleErrorMargin: 0.05
   steeringSmoothMinAngle: 4
   reverseAngle: 160
@@ -1992,8 +1992,7 @@ MonoBehaviour:
   damageMitigationModifier: 1000
   collisionCooldown: 0.5
   abilityRechargeRate: 10
-  explosionParticles: {fileID: 5417611360312513989, guid: b024cc3e82cdb4e4a86a4a4f8b0b76ae,
-    type: 3}
+  explosionParticles: {fileID: 2005251414879485793}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 8446046484991484390}
   _isDestroyed: 0
@@ -13279,6 +13278,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c8c19b0f6a7c0746b96cc6427a7c675, type: 3}
+--- !u!198 &2005251414879485793 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1573340092680058484, guid: 9c8c19b0f6a7c0746b96cc6427a7c675,
+    type: 3}
+  m_PrefabInstance: {fileID: 1009287850718300437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5057335235697110494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5201365554583332043, guid: 9c8c19b0f6a7c0746b96cc6427a7c675,

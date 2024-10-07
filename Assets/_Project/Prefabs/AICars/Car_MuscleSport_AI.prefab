@@ -13350,7 +13350,7 @@ MonoBehaviour:
   tireRotationSpeed: 3000
   maxSteeringAngle: 30
   minSideSkidVelocity: 2.5
-  flipAfterSeconds: 10
+  flipAfterSeconds: 5
   angleErrorMargin: 0.05
   steeringSmoothMinAngle: 4
   reverseAngle: 160
