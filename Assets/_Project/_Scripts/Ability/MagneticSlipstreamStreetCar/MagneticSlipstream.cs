@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Project._Scripts.Ability;
 using AI;
 using UnityEngine;
 
-public class MagneticSlipstream : MonoBehaviour
+public class MagneticSlipstream : Ability
 {
     public float pullForce = 500f; 
     public float slipstreamBoost = 10f;
@@ -21,7 +22,7 @@ public class MagneticSlipstream : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    public override void ActivateAbility()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isSlipstreamActive)
         {

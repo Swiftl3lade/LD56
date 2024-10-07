@@ -662,8 +662,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.5038261, y: 1.5127685, z: 4.9282293}
-  m_Center: {x: 0.0012683902, y: 1.6037441, z: -0.2488818}
+  m_Size: {x: 3.5038261, y: 1.362601, z: 4.9282293}
+  m_Center: {x: 0.0012683902, y: 1.6788279, z: -0.2488818}
 --- !u!114 &4914923271641502763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +686,7 @@ MonoBehaviour:
   damage: 11
   damageMitigationModifier: 1000
   collisionCooldown: 0.5
-  abilityRechargeRate: 0
+  abilityRechargeRate: 5
   explosionParticles: {fileID: 490025534046282129}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 6383689057752729769}
@@ -778,6 +778,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057c4b280640c5c469eb92b7bbe3fd06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botAbilityMaxDelay: 5
+  isPlayer: 1
+  hasBotActivatedAbility: 0
+  canActivateAbility: 0
   pullForce: 200
   slipstreamBoost: 50
   spawnHeight: 10
