@@ -25,7 +25,7 @@ namespace _Project._Scripts
 
         [SerializeField] private ParticleSystem explosionParticles;
         [SerializeField] private Material deadMaterial;
-        [SerializeField] private MeshRenderer renderer;
+        [SerializeField] public MeshRenderer renderer;
         
         private Rigidbody _rigidbody;
         private Controller _carController;

@@ -116,7 +116,9 @@ public class MenuManager : MonoBehaviour
         }
 
         // Step 4: Activate the new child
-        parent.GetChild(newIndex).gameObject.SetActive(true);
+        var _child = parent.GetChild(newIndex);
+        _child.gameObject.SetActive(true);
+        currentCarDetails.SetColor(_child.gameObject.GetComponent<MeshFilter>().mesh);
     }
     private void CheckFocusCarCamera()
     {

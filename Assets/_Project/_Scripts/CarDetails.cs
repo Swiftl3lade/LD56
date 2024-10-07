@@ -7,6 +7,7 @@ public class CarDetails : MonoBehaviour
     public string carName;
     public string carDescription;
     public GameObject playerCar;
+    public Mesh color;
 
     private CinemachineVirtualCamera virtualCamera;
 
@@ -19,7 +20,6 @@ public class CarDetails : MonoBehaviour
     [HideInInspector] public int maxHandling;
     private void Start()
     {
-
         if (carName == "")
         {
             carName = transform.name;
@@ -36,6 +36,10 @@ public class CarDetails : MonoBehaviour
         maxPower = Random.Range(4, 6);
         maxResistance = Random.Range(4, 6);
         maxHandling = Random.Range(4, 6);
+    }
 
+    public void SetColor(Mesh mesh)
+    {
+        color = mesh;
     }
 }
