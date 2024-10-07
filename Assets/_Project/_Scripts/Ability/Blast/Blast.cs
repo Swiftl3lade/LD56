@@ -4,24 +4,26 @@ namespace _Project._Scripts.Ability.Blast
 {
     public class Blast : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public GameObject blastSpherePrefab;
+        public float expansionSpeed = 10f;  
+        public float maxRadius = 5f;       
+        public float blastForce = 500f;     
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                ApplyBlast();
+                ActivateBlast();
             }
         }
-
-        public void ApplyBlast()
+        
+        // Call this function to activate the blast
+        public void ActivateBlast()
         {
-            
+            GameObject blastSphere = Instantiate(blastSpherePrefab, transform.position, Quaternion.identity);
+            blastSphere.transform.SetParent(transform);
+            BlastSphere sphereScript = blastSphere.GetComponent<BlastSphere>();
+            sphereScript.Initialize(expansionSpeed, maxRadius, blastForce, gameObject);
         }
     }
 }

@@ -698,17 +698,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1fc1b997a23104fb2eeed404c06238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 110
   currentHealth: 0
-  resistance: 20
+  resistance: 15
   resistanceModifier: 1
   maxSpeed: 0
   currentSpeed: 0
   speedModifier: 1
-  damage: 10
+  damage: 11
   damageMitigationModifier: 1000
-  collisionCooldown: 0.2
-  powerUpRate: 5
+  collisionCooldown: 0.5
+  powerUpRate: 0
   explosionParticles: {fileID: 490025534046282129}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 6383689057752729769}
@@ -787,7 +787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 1
+  <springTag>k__BackingField: 0
 --- !u!114 &781647629881716609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 7
+  <springTag>k__BackingField: 0
 --- !u!1 &2343209151527903217
 GameObject:
   m_ObjectHideFlags: 0
