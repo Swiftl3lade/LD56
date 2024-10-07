@@ -11663,7 +11663,7 @@ GameObject:
   - component: {fileID: 1367935320942896738}
   - component: {fileID: 3522303952626779890}
   - component: {fileID: 3966522455608330925}
-  - component: {fileID: 2019012952952554757}
+  - component: {fileID: 939482741353994360}
   - component: {fileID: 7824045571625453941}
   - component: {fileID: 4746078292551345247}
   - component: {fileID: 3302574459956805945}
@@ -11869,7 +11869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <springTag>k__BackingField: 7
---- !u!114 &2019012952952554757
+--- !u!114 &939482741353994360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11878,16 +11878,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6541962933025894321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7aea29273fe82146b21b9ee2aa8d213, type: 3}
+  m_Script: {fileID: 11500000, guid: bdc6a25d2925ed24495661e1417d5d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 11400000, guid: dba43988fd8660844bcb191834968628,
     type: 2}
   <checkOriginPoint>k__BackingField: {fileID: 3966772240422062715}
   isDisabled: 0
-  layersToCheck:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &7824045571625453941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12069,7 +12066,7 @@ MonoBehaviour:
   damage: 10
   damageMitigationModifier: 1000
   collisionCooldown: 0.2
-  powerUpRate: 5
+  abilityRechargeRate: 0
   explosionParticles: {fileID: 1819111837123544778}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 298426776679966773}
