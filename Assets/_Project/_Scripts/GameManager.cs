@@ -26,10 +26,12 @@ namespace _Project._Scripts
         public TextMeshProUGUI remainingCarsText;
         public GameObject pauseMenuPanel;
         public GameObject gameMenuPanel;
+        public GameObject gameOverPanel;
 
         private float _gameTimer = 0f;
         private bool _gameStarted = false;
         private int _unDestroyedCarsCount;
+        private GameObject playerCar;
         
         private void Awake()
         {
@@ -47,10 +49,10 @@ namespace _Project._Scripts
         {
             CarStats.destroyed += OnCarDestroyed;
 
-            var _playerCar = CarSelectionManager.Instance.CreateCar(playerSpawn.position);
-            cars.Add(_playerCar);
-            followCam.Follow = _playerCar.transform;
-            followCam.LookAt = _playerCar.transform;
+            playerCar = CarSelectionManager.Instance.CreateCar(playerSpawn.position);
+            cars.Add(playerCar);
+            followCam.Follow = playerCar.transform;
+            followCam.LookAt = playerCar.transform;
 
             EnableCars(false);
             SetCarsAtStartPositions();
@@ -164,8 +166,13 @@ namespace _Project._Scripts
 
         private void OnCarDestroyed()
         {
+            if (playerCar.GetComponent<CarStats>()._isDestroyed)
+            {
+                ShowGameOver();
+                return;
+            }
             _unDestroyedCarsCount--;
-
+            
             remainingCarsText.text = $"{_unDestroyedCarsCount}/{cars.Count} cars";
             if (_unDestroyedCarsCount == 1)
             {
@@ -177,7 +184,8 @@ namespace _Project._Scripts
         {
             _gameStarted = false;
 
-            centerText.text = "victory";
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
