@@ -24,14 +24,6 @@ public class MagneticSlipstream : Ability
 
     public override void ActivateAbility()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isSlipstreamActive)
-        {
-            ActivateSlipstream();
-        }
-    }
-
-    private void ActivateSlipstream()
-    {
         nearestEnemy = FindNearestEnemyCar();
         if (nearestEnemy != null)
         {
