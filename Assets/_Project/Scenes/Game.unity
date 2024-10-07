@@ -2774,11 +2774,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2418678083451489796, guid: 640e24b2f25ff1245952a71a17efbdec,
-        type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4037125943543573552, guid: 640e24b2f25ff1245952a71a17efbdec,
         type: 3}
       propertyPath: <springTag>k__BackingField
@@ -6399,7 +6394,7 @@ PrefabInstance:
     - target: {fileID: 3007573351079170767, guid: f00291c91f7f36a428183c6584c774db,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11115,11 +11110,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2418678083451489796, guid: 640e24b2f25ff1245952a71a17efbdec,
-        type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12054,7 +12044,7 @@ PrefabInstance:
     - target: {fileID: 3007573351079170767, guid: f00291c91f7f36a428183c6584c774db,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12643,7 +12633,7 @@ PrefabInstance:
     - target: {fileID: 3007573351079170767, guid: f00291c91f7f36a428183c6584c774db,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13854,7 +13844,7 @@ PrefabInstance:
     - target: {fileID: 3007573351079170767, guid: f00291c91f7f36a428183c6584c774db,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13926,7 +13916,7 @@ PrefabInstance:
     - target: {fileID: 2418678083451489796, guid: 640e24b2f25ff1245952a71a17efbdec,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14833,7 +14823,7 @@ PrefabInstance:
     - target: {fileID: 2418678083451489796, guid: 640e24b2f25ff1245952a71a17efbdec,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
