@@ -615,7 +615,7 @@ MonoBehaviour:
   springTravel: 0.15
   wheelRadius: 0.65
   isGrounded: 0
-  acceleration: 16
+  acceleration: 17
   maxSpeed: 18
   deceleration: 10
   defaultDrag: 0
@@ -703,16 +703,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1fc1b997a23104fb2eeed404c06238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 140
   currentHealth: 0
-  resistance: 0
+  resistance: 12
   resistanceModifier: 1
   maxSpeed: 0
   currentSpeed: 0
   speedModifier: 1
-  damage: 0
+  damage: 12
   damageMitigationModifier: 1000
-  collisionCooldown: 0.2
+  collisionCooldown: 0.5
   powerUpRate: 0
   explosionParticles: {fileID: 474269137046894257}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 1
+  <springTag>k__BackingField: 0
 --- !u!114 &1429932528328220043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 7
+  <springTag>k__BackingField: 0
 --- !u!1 &2313397460113330129
 GameObject:
   m_ObjectHideFlags: 0
