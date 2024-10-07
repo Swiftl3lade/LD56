@@ -769,7 +769,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1181,6 +1181,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5040470299102793130}
+  - {fileID: 916189855727275866}
   - {fileID: 4135571674942751082}
   - {fileID: 5978630527096757343}
   - {fileID: 5480526372377041951}
@@ -1354,7 +1356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 0}
-  <checkOriginPoint>k__BackingField: {fileID: 0}
+  <checkOriginPoint>k__BackingField: {fileID: 5040470299102793130}
   isDisabled: 0
 --- !u!114 &2943897218980057723
 MonoBehaviour:
@@ -1369,7 +1371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 0}
-  <checkOriginPoint>k__BackingField: {fileID: 0}
+  <checkOriginPoint>k__BackingField: {fileID: 5040470299102793130}
   isDisabled: 0
 --- !u!114 &6254796694325696867
 MonoBehaviour:
@@ -1384,7 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 0}
-  <checkOriginPoint>k__BackingField: {fileID: 0}
+  <checkOriginPoint>k__BackingField: {fileID: 5040470299102793130}
   isDisabled: 0
 --- !u!114 &8493174813174838283
 MonoBehaviour:
@@ -1399,7 +1401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 0}
-  <checkOriginPoint>k__BackingField: {fileID: 0}
+  <checkOriginPoint>k__BackingField: {fileID: 5040470299102793130}
   isDisabled: 0
 --- !u!114 &-2794819993691041928
 MonoBehaviour:
@@ -1414,7 +1416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 0}
-  <checkOriginPoint>k__BackingField: {fileID: 0}
+  <checkOriginPoint>k__BackingField: {fileID: 5040470299102793130}
   isDisabled: 0
 --- !u!114 &175721130155599878
 MonoBehaviour:
@@ -1428,8 +1430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc6a25d2925ed24495661e1417d5d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: {fileID: 0}
-  <checkOriginPoint>k__BackingField: {fileID: 0}
+  <Data>k__BackingField: {fileID: 11400000, guid: 3c63f74e8261c9c468762880a9b4b82c,
+    type: 2}
+  <checkOriginPoint>k__BackingField: {fileID: 1014209262683174793}
   isDisabled: 0
 --- !u!114 &-3169136283173068684
 MonoBehaviour:
@@ -1444,11 +1447,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 0}
-  <checkOriginPoint>k__BackingField: {fileID: 0}
+  <checkOriginPoint>k__BackingField: {fileID: 5040470299102793130}
   isDisabled: 0
   layersToCheck:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &4975268005956602342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,19 +1475,19 @@ MonoBehaviour:
     m_Bits: 64
   accelerationPoint: {fileID: 2793810364838776018}
   tires:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3537228939912544585}
+  - {fileID: 2520673547033123023}
+  - {fileID: 316083050992314257}
+  - {fileID: 1258729727490651892}
   frontTireParents:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 632735890384316047}
+  - {fileID: 5473138513162703253}
   skidMarks:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 640073694952293656}
+  - {fileID: 9022879247497399460}
   skidSmokes:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3291746202870760664}
+  - {fileID: 3794033388149629835}
   springStiffness: 30000
   damperStiffness: 3000
   restLength: 0.75
@@ -11975,6 +11978,37 @@ Transform:
   - {fileID: 3624539663763240742}
   m_Father: {fileID: 5978630527096757343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5518093185356190750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5040470299102793130}
+  m_Layer: 6
+  m_Name: SpringCheckPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5040470299102793130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518093185356190750}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 1, z: 4.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1014209262683174793}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5591444091668238788
 GameObject:
   m_ObjectHideFlags: 0
@@ -12005,6 +12039,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4704518890854441641}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5732397239162379962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 916189855727275866}
+  m_Layer: 6
+  m_Name: SpringCheckPointRear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &916189855727275866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732397239162379962}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -4.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1014209262683174793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5829874735949515297
 GameObject:
@@ -12232,7 +12297,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -12771,7 +12836,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -12877,7 +12942,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
