@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 7
+  <springTag>k__BackingField: 0
 --- !u!114 &422461021150728360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 1
+  <springTag>k__BackingField: 0
 --- !u!114 &485304306093242653
 MonoBehaviour:
   m_ObjectHideFlags: 0

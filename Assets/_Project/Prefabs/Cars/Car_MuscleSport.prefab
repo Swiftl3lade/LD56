@@ -984,7 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 1
+  <springTag>k__BackingField: 0
 --- !u!114 &4090879179564603968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,7 +997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459bb1b4545ffeb458e53a773ea857f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <springTag>k__BackingField: 7
+  <springTag>k__BackingField: 0
 --- !u!114 &2874315407866285476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1011,16 +1011,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botAbilityMaxDelay: 5
-  isPlayer: 0
+  isPlayer: 1
   hasBotActivatedAbility: 0
   canActivateAbility: 0
   isPossibleToActivateAbility: 1
   blackHolePrefab: {fileID: 8443784709051186282, guid: dfbe5e263a953f44492674dd94d2195d,
     type: 3}
   blackHoleSpawner: {fileID: 5145011932458554418}
-  throwForce: 1000
+  throwForce: 2000
   expansionSpeed: 10
-  maxRadius: 5
+  maxRadius: 20
   pullForce: 1000
   time: 5
 --- !u!1 &2343209151527903217
