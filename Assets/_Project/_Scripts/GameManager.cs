@@ -29,8 +29,8 @@ namespace _Project._Scripts
         {
             CarStats.destroyed += OnCarDestroyed;
 
-            var _playerCar = Instantiate(CarSelectionManager.Instance.GetCar());
-            cars.Add(_playerCar);
+            // var _playerCar = Instantiate(CarSelectionManager.Instance.GetCar());
+            // cars.Add(_playerCar);
 
             EnableCars(false);
             SetCarsAtStartPositions();

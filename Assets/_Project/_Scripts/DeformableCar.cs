@@ -134,13 +134,13 @@ namespace _Project._Scripts
             }
         }
 
-        private void OnDrawGizmos()
-        {
-            foreach (var target in deformationTargets)
-            {
-                Gizmos.color = Color.red;
-                Gizmos.DrawWireSphere(target.transform.position, 0.2f);
-            }
-        }
+        // private void OnDrawGizmos()
+        // {
+        //     foreach (var target in deformationTargets)
+        //     {
+        //         Gizmos.color = Color.red;
+        //         Gizmos.DrawWireSphere(target.transform.position, 0.2f);
+        //     }
+        // }
     }
 }
