@@ -8,9 +8,9 @@ public class ShapeShifting : Ability
     private Vector3 initialScale = new Vector3(0.7f, 0.7f, 0.7f);
     private Vector3 targetScale = Vector3.one; // Scale to (1, 1, 1)
     [SerializeField] private float shapeshiftDuration = 10f; // Duration to stay at full size (10 seconds)
-    [SerializeField] private Collider wheelsCollider; 
+    [SerializeField] private Collider wheelsCollider;
 
-    private bool isShapeshifted = false; // To prevent multiple shapeshifts
+    private bool isShapeshifted;
 
     public override void Start()
     {

@@ -1,23 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Project._Scripts.Ability;
 using UnityEngine;
 
-public class BullRushPowerUp : MonoBehaviour
+public class BullRushPowerUp : Ability
 {
     [SerializeField] private float speedMultiplier = 5f;
     private Rigidbody rb;
     
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         rb = GetComponent<Rigidbody>();
     }
-    
-    private void Update()
+
+    public override void ActivateAbility()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.velocity = transform.forward * speedMultiplier;;
-        }
+        rb.velocity = transform.forward * speedMultiplier;
     }
+           
 }

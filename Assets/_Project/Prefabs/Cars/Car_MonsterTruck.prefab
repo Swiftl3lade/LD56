@@ -1161,7 +1161,7 @@ MonoBehaviour:
   damage: 20
   damageMitigationModifier: 1000
   collisionCooldown: 0.5
-  abilityRechargeRate: 0
+  abilityRechargeRate: 20
   explosionParticles: {fileID: 4011134703797193685}
   deadMaterial: {fileID: 2100000, guid: e5bf08e24e4d8ff4da52e856b274354c, type: 2}
   renderer: {fileID: 179681758990171874}
@@ -1275,6 +1275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a727e564d8004264d9ade49ff888f186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botAbilityMaxDelay: 5
+  isPlayer: 1
+  hasBotActivatedAbility: 0
+  canActivateAbility: 0
   shapeshiftDuration: 10
   wheelsCollider: {fileID: 846675802859192766}
 --- !u!1 &2343209151527903217
