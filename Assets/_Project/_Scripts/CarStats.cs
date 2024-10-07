@@ -175,7 +175,7 @@ namespace _Project._Scripts
             explosionParticles.Play();
             _isDestroyed = true;
             renderer.material = deadMaterial;
-            _rigidbody.mass = 600;
+            destroyedLocal?.Invoke();
             destroyed?.Invoke();
         }
     }
