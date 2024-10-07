@@ -101,7 +101,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -651,6 +651,7 @@ GameObject:
   - component: {fileID: -3882722696086931061}
   - component: {fileID: 1850364426674525582}
   - component: {fileID: 4662593581391441499}
+  - component: {fileID: 6359309837923282884}
   m_Layer: 6
   m_Name: Car_Muscle
   m_TagString: Untagged
@@ -666,7 +667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276653073949840316}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -55.29, y: 2.3, z: 22.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -923,6 +924,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <springTag>k__BackingField: 7
+--- !u!114 &6359309837923282884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276653073949840316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aecf640c28b4aa448c537e81a549c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blastSpherePrefab: {fileID: 1745759480705046284, guid: d309ed2cefcd7904c908672fda5881a8,
+    type: 3}
+  expansionSpeed: 100
+  maxRadius: 30
+  blastForce: 100000
 --- !u!1 &2298731583756729955
 GameObject:
   m_ObjectHideFlags: 0
@@ -11391,7 +11409,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -11605,8 +11623,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.61, y: 0.57897747, z: 0.08}
-  m_Center: {x: 0.025499344, y: -0.21051127, z: 0}
+  m_Size: {x: 3.61, y: 0.9530326, z: 0.08}
+  m_Center: {x: 0.025499344, y: -0.023483694, z: 0}
 --- !u!114 &7311650733240382202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12169,7 +12187,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -12661,7 +12679,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
