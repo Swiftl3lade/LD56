@@ -27,6 +27,7 @@ namespace _Project._Scripts
         public GameObject pauseMenuPanel;
         public GameObject gameMenuPanel;
         public GameObject gameOverPanel;
+        public GameObject victoryPanel;
 
         private float _gameTimer = 0f;
         private bool _gameStarted = false;
@@ -177,7 +178,7 @@ namespace _Project._Scripts
             remainingCarsText.text = $"{_unDestroyedCarsCount}/{cars.Count} cars";
             if (_unDestroyedCarsCount == 1)
             {
-                ShowGameOver();
+                ShowVictory();
             }
         }
 
@@ -185,7 +186,17 @@ namespace _Project._Scripts
         {
             _gameStarted = false;
 
+            gameMenuPanel.SetActive(false);
             gameOverPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+        
+        void ShowVictory()
+        {
+            _gameStarted = false;
+
+            gameMenuPanel.SetActive(false);
+            victoryPanel.SetActive(true);
             Time.timeScale = 0;
         }
 
