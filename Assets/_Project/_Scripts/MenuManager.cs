@@ -22,9 +22,12 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject carDetails;
     [SerializeField] TMP_Text carNameText;
     [SerializeField] TMP_Text carDescriptionText;
+    [SerializeField] TMP_Text powerupDescriptionText;
+    [SerializeField] TMP_Text powerupNameText;
     [SerializeField] Transform powerStats;
     [SerializeField] Transform handlingStats;
     [SerializeField] Transform resistanceStats;
+    [SerializeField] Transform speedStats;
     [SerializeField] Button leftArrowButton;
     [SerializeField] Button rightArrowButton;
 
@@ -48,6 +51,8 @@ public class MenuManager : MonoBehaviour
 
         rightArrowButton.onClick.RemoveAllListeners();
         rightArrowButton.onClick.AddListener(OnRightArrowPressed);
+
+        InitializePowerupDetails("","");
     }
     private void OnDisable()
     {
@@ -310,6 +315,12 @@ public class MenuManager : MonoBehaviour
         carNameText.text = _carName;
         carDescriptionText.text = _carDescription;
     }
+    
+    private void InitializePowerupDetails(string powerupName, string _powerupDescription)
+    {
+        powerupDescriptionText.text = _powerupDescription;
+        powerupNameText.text = powerupName;
+    }
     private void InitializeStats(StatType _type, int currentUpgrade, int maxUpgrade)
     {
         Transform _stats = null;
@@ -324,6 +335,9 @@ public class MenuManager : MonoBehaviour
                 break;
             case StatType.Resistance:
                 _stats = resistanceStats;
+                break;
+            case StatType.Speed:
+                _stats = speedStats;
                 break;
             default:
                 break;
@@ -374,9 +388,11 @@ public class MenuManager : MonoBehaviour
         {
             SetCar();
             InitializeTextDetails(currentCarDetails.carName, currentCarDetails.carDescription);
+            InitializePowerupDetails(currentCarDetails.powerupName,currentCarDetails.powerupDescription);
             InitializeStats(StatType.Power, currentCarDetails.power, currentCarDetails.maxPower);
             InitializeStats(StatType.Handling, currentCarDetails.handling, currentCarDetails.maxHandling);
             InitializeStats(StatType.Resistance, currentCarDetails.resistance, currentCarDetails.maxResistance);
+            InitializeStats(StatType.Speed, currentCarDetails.speed, currentCarDetails.maxSpeed);
         }
     }
     private int GetIndexInParent(Transform child)
@@ -405,5 +421,6 @@ public enum StatType
 {
     Power,
     Handling,
-    Resistance
+    Resistance,
+    Speed
 }

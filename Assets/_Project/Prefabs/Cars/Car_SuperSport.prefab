@@ -718,8 +718,8 @@ MonoBehaviour:
   springTravel: 0.1
   wheelRadius: 0.65
   isGrounded: 0
-  acceleration: 35
-  maxSpeed: 45
+  acceleration: 30
+  maxSpeed: 25
   deceleration: 15
   defaultDrag: 0
   brakeForce: 2

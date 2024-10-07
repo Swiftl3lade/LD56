@@ -6,18 +6,22 @@ public class CarDetails : MonoBehaviour
 {
     public string carName;
     public string carDescription;
+    public string powerupDescription;
+    public string powerupName;
     public GameObject playerCar;
     public Mesh color;
 
     private CinemachineVirtualCamera virtualCamera;
 
-    [HideInInspector] public int power;
-    [HideInInspector] public int resistance;
-    [HideInInspector] public int handling;
+    public int power;
+    public int resistance;
+    public int handling;
+    public int speed;
 
-    [HideInInspector] public int maxPower;
-    [HideInInspector] public int maxResistance;
-    [HideInInspector] public int maxHandling;
+    public int maxPower;
+    public int maxResistance;
+    public int maxHandling;
+    public int maxSpeed;
     private void Start()
     {
         if (carName == "")
@@ -29,13 +33,13 @@ public class CarDetails : MonoBehaviour
         {
             virtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
         }
-        power = Random.Range(1, 4);
-        resistance = Random.Range(1, 4);
-        handling = Random.Range(1, 4);
-
-        maxPower = Random.Range(4, 6);
-        maxResistance = Random.Range(4, 6);
-        maxHandling = Random.Range(4, 6);
+        // power = Random.Range(1, 4);
+        // resistance = Random.Range(1, 4);
+        // handling = Random.Range(1, 4);
+        //
+        // maxPower = Random.Range(4, 6);
+        // maxResistance = Random.Range(4, 6);
+        // maxHandling = Random.Range(4, 6);
     }
 
     public void SetColor(Mesh mesh)
