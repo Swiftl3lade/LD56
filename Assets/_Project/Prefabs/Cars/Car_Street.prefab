@@ -679,10 +679,6 @@ MonoBehaviour:
   maxHealth: 110
   currentHealth: 0
   resistance: 15
-  resistanceModifier: 1
-  maxSpeed: 0
-  currentSpeed: 0
-  speedModifier: 1
   damage: 11
   damageMitigationModifier: 1000
   collisionCooldown: 0.5
@@ -11713,7 +11709,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6383689057750702235}
-  m_Mesh: {fileID: 4300000, guid: 52a338df12f0afc42804b2ee2c7ac23c, type: 3}
+  m_Mesh: {fileID: 0}
 --- !u!23 &6383689057752729769
 MeshRenderer:
   m_ObjectHideFlags: 0

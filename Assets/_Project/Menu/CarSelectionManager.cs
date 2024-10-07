@@ -5,22 +5,22 @@ using UnityEngine;
 
 public class CarSelectionManager : SingletonMonobehaviour<CarSelectionManager>
 {
-    public CarDetails selectedCar;
+    public GameObject selectedCar;
 
     public void SelectCar(CarDetails car)
     {
-        selectedCar = car;
+        selectedCar = car.playerCar;
+        selectedCar.GetComponent<CarStats>().renderer.gameObject.GetComponent<MeshFilter>().mesh = car.color;
     }
 
     public GameObject GetCar()
     {
-        return selectedCar.playerCar;
+        return selectedCar;
     }
 
     public GameObject CreateCar(Vector3 position)
     {
         var _playerCar = Instantiate(GetCar(), position, Quaternion.identity);
-        _playerCar.GetComponent<CarStats>().renderer.gameObject.GetComponent<MeshFilter>().mesh = selectedCar.color;
         return _playerCar;
     }
 }

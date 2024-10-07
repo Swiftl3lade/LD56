@@ -824,10 +824,6 @@ MonoBehaviour:
   maxHealth: 140
   currentHealth: 0
   resistance: 20
-  resistanceModifier: 1
-  maxSpeed: 0
-  currentSpeed: 0
-  speedModifier: 1
   damage: 15
   damageMitigationModifier: 1000
   collisionCooldown: 0.5
@@ -937,7 +933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botAbilityMaxDelay: 5
-  isplayer: 1
+  isPlayer: 0
   hasBotActivatedAbility: 0
   canActivateAbility: 0
   blastSpherePrefab: {fileID: 1745759480705046284, guid: d309ed2cefcd7904c908672fda5881a8,
@@ -10781,7 +10777,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2723921151205904490}
-  m_Mesh: {fileID: 4300000, guid: b84b933d8fe6c9b4f83183a7a8570667, type: 3}
+  m_Mesh: {fileID: 0}
 --- !u!23 &2723921151207885634
 MeshRenderer:
   m_ObjectHideFlags: 0
